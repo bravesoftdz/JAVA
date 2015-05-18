@@ -1,6 +1,6 @@
 package br.com.siscom.view.compras;
 
-import br.com.adilson.util.PrinterMatrix;
+//import br.com.adilson.util.PrinterMatrix;
 import br.com.siscom.view.ImpressaoView;
 import java.awt.EventQueue;
 import java.beans.Beans;
@@ -11,6 +11,7 @@ import java.util.LinkedList;
 import java.util.List;
 import javax.persistence.RollbackException;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class ConfirmaCotacaoCompra extends JPanel {
@@ -513,6 +514,8 @@ public class ConfirmaCotacaoCompra extends JPanel {
     }//GEN-LAST:event_saveButtonActionPerformed
 
 private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    JOptionPane.showMessageDialog(saveButton, evt);
+    /*
     PrinterMatrix printer = new PrinterMatrix();
 
     //Define o tamanho do papel/tela para impressão, aqui 25 linhas e 140 colunas
@@ -641,7 +644,7 @@ private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     printer.printCharAtCol(++linha, 1, 140, "-");
     
     printer.toFile("impressao.txt");
-
+*/
     String arg[] = {""};
     ImpressaoView.main(arg);
 }//GEN-LAST:event_jButton1ActionPerformed

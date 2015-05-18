@@ -15,6 +15,8 @@ public class AjustePrecos extends JPanel {
     public AjustePrecos() {
         initComponents();
         if (!Beans.isDesignTime()) {
+            JOptionPane.showMessageDialog(null,"Alterado e comentado a parte abaixo: \n "
+                    + "entityManager.getTransaction().begin();");
             entityManager.getTransaction().begin();
         }
     }
@@ -29,9 +31,7 @@ public class AjustePrecos extends JPanel {
     private void initComponents() {
         bindingGroup = new org.jdesktop.beansbinding.BindingGroup();
 
-        entityManager = java.beans.Beans.isDesignTime() ? null : javax.persistence.Persistence.createEntityManagerFactory("siscomjavaPU").createEntityManager();
-        query = java.beans.Beans.isDesignTime() ? null : entityManager.createQuery("SELECT p FROM Produto p");
-        list = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : org.jdesktop.observablecollections.ObservableCollections.observableList(query.getResultList());
+        list = java.beans.Beans.isDesignTime() ? java.util.Collections.emptyList() : org.jdesktop.observablecollections.ObservableCollections.observableList(((javax.persistence.Query)null).getResultList());
         buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         masterScrollPane = new javax.swing.JScrollPane();
@@ -240,11 +240,11 @@ public class AjustePrecos extends JPanel {
             else if (evt.getSource() == deleteButton) {
                 AjustePrecos.this.deleteButtonActionPerformed(evt);
             }
-            else if (evt.getSource() == jButton2) {
-                AjustePrecos.this.jButton2ActionPerformed(evt);
-            }
             else if (evt.getSource() == jButton1) {
                 AjustePrecos.this.jButton1ActionPerformed(evt);
+            }
+            else if (evt.getSource() == jButton2) {
+                AjustePrecos.this.jButton2ActionPerformed(evt);
             }
         }
     }// </editor-fold>//GEN-END:initComponents
@@ -322,7 +322,6 @@ private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton deleteButton;
-    private javax.persistence.EntityManager entityManager;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
@@ -339,7 +338,6 @@ private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private javax.swing.JScrollPane masterScrollPane;
     private javax.swing.JTable masterTable;
     private javax.swing.JButton newButton;
-    private javax.persistence.Query query;
     private javax.swing.JButton refreshButton;
     private javax.swing.JButton saveButton;
     private org.jdesktop.beansbinding.BindingGroup bindingGroup;

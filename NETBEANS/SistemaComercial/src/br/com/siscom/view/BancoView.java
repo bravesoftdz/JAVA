@@ -1,6 +1,6 @@
 package br.com.siscom.view;
 
-import br.com.adilson.util.PrinterMatrix;
+//import br.com.adilson.util.PrinterMatrix;
 import java.awt.EventQueue;
 import java.beans.Beans;
 import java.util.ArrayList;
@@ -278,6 +278,7 @@ public class BancoView extends JPanel {
     }//GEN-LAST:event_saveButtonActionPerformed
 
 private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    /*
     PrinterMatrix printer = new PrinterMatrix();
 
     //Define o tamanho do papel/tela para impressão, aqui 25 linhas e 80 colunas
@@ -312,7 +313,7 @@ private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     printer.printCharAtCol(linha, 1, 80, "-");
 
     printer.toFile("impressao.txt");
-
+*/
     String arg[] = {""};
     ImpressaoView.main(arg);
 }//GEN-LAST:event_jButton1ActionPerformed

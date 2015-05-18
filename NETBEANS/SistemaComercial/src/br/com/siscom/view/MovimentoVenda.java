@@ -1,6 +1,6 @@
 package br.com.siscom.view;
 
-import br.com.adilson.util.PrinterMatrix;
+//import br.com.adilson.util.PrinterMatrix;
 import br.com.siscom.bean.Cliente;
 import br.com.siscom.bean.Produto;
 import br.com.siscom.bean.VendaCab;
@@ -88,7 +88,7 @@ public class MovimentoVenda extends JPanel {
         deleteDetailButton = new javax.swing.JButton();
         newDetailButton = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        BotaoGravar = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
 
         FormListener formListener = new FormListener();
@@ -238,6 +238,21 @@ public class MovimentoVenda extends JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel13)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextField8)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(13, 13, 13)
+                                .addComponent(jLabel7))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(198, 198, 198))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(masterScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -260,53 +275,37 @@ public class MovimentoVenda extends JPanel {
                                             .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel6)
-                                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                        .addGap(198, 198, 198))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel8)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel8)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel9)
+                                        .addGap(19, 19, 19)
+                                        .addComponent(jLabel10)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel9)
-                                .addGap(19, 19, 19)
-                                .addComponent(jLabel10)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel11))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel12)
-                            .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(189, 189, 189))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel13)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel11))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField8, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(13, 13, 13)
-                                .addComponent(jLabel7))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel12)
+                                    .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(198, 198, 198))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -406,19 +405,15 @@ public class MovimentoVenda extends JPanel {
         jPanel3.setBackground(new java.awt.Color(153, 204, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        newButton.setIcon(new javax.swing.ImageIcon("C:\\Documents and Settings\\Kaio\\Desktop\\SisCom Java Desktop\\Projetos\\NetBeans\\siscom\\src\\imagens\\novo.JPG")); // NOI18N
         newButton.setText("Nova Venda");
         newButton.addActionListener(formListener);
 
-        saveButton.setIcon(new javax.swing.ImageIcon("C:\\Documents and Settings\\Kaio\\Desktop\\SisCom Java Desktop\\Projetos\\NetBeans\\siscom\\src\\imagens\\confirmar.JPG")); // NOI18N
         saveButton.setText("Confirmar");
         saveButton.addActionListener(formListener);
 
-        refreshButton.setIcon(new javax.swing.ImageIcon("C:\\Documents and Settings\\Kaio\\Desktop\\SisCom Java Desktop\\Projetos\\NetBeans\\siscom\\src\\imagens\\cancelar.JPG")); // NOI18N
         refreshButton.setText("Cancelar");
         refreshButton.addActionListener(formListener);
 
-        deleteDetailButton.setIcon(new javax.swing.ImageIcon("C:\\Documents and Settings\\Kaio\\Desktop\\SisCom Java Desktop\\Projetos\\NetBeans\\siscom\\src\\imagens\\excluir.JPG")); // NOI18N
         deleteDetailButton.setText("Excluir");
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, detailTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), deleteDetailButton, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
@@ -426,7 +421,6 @@ public class MovimentoVenda extends JPanel {
 
         deleteDetailButton.addActionListener(formListener);
 
-        newDetailButton.setIcon(new javax.swing.ImageIcon("C:\\Documents and Settings\\Kaio\\Desktop\\SisCom Java Desktop\\Projetos\\NetBeans\\siscom\\src\\imagens\\inserir.JPG")); // NOI18N
         newDetailButton.setText("Inserir Item");
 
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ, masterTable, org.jdesktop.beansbinding.ELProperty.create("${selectedElement != null}"), newDetailButton, org.jdesktop.beansbinding.BeanProperty.create("enabled"));
@@ -434,12 +428,10 @@ public class MovimentoVenda extends JPanel {
 
         newDetailButton.addActionListener(formListener);
 
-        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Documents and Settings\\Kaio\\Desktop\\SisCom Java Desktop\\Projetos\\NetBeans\\siscom\\src\\imagens\\acessar.JPG")); // NOI18N
         jButton1.setText("Acessar Venda");
 
-        jButton2.setIcon(new javax.swing.ImageIcon("C:\\Documents and Settings\\Kaio\\Desktop\\SisCom Java Desktop\\Projetos\\NetBeans\\siscom\\src\\imagens\\imprimir.JPG")); // NOI18N
-        jButton2.setText("Imprimir");
-        jButton2.addActionListener(formListener);
+        BotaoGravar.setText("Imprimir");
+        BotaoGravar.addActionListener(formListener);
 
         jButton3.setText("Calcula Totais");
         jButton3.addActionListener(formListener);
@@ -456,7 +448,7 @@ public class MovimentoVenda extends JPanel {
                     .addComponent(deleteDetailButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
                     .addComponent(refreshButton, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
                     .addComponent(saveButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
+                    .addComponent(BotaoGravar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
                     .addComponent(newButton, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
                     .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE))
                 .addContainerGap())
@@ -477,7 +469,7 @@ public class MovimentoVenda extends JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(saveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BotaoGravar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(48, 48, 48)
                 .addComponent(jButton3)
                 .addContainerGap(60, Short.MAX_VALUE))
@@ -534,11 +526,11 @@ public class MovimentoVenda extends JPanel {
             else if (evt.getSource() == newDetailButton) {
                 MovimentoVenda.this.newDetailButtonActionPerformed(evt);
             }
+            else if (evt.getSource() == BotaoGravar) {
+                MovimentoVenda.this.BotaoGravarActionPerformed(evt);
+            }
             else if (evt.getSource() == jButton3) {
                 MovimentoVenda.this.jButton3ActionPerformed(evt);
-            }
-            else if (evt.getSource() == jButton2) {
-                MovimentoVenda.this.jButton2ActionPerformed(evt);
             }
         }
 
@@ -698,7 +690,8 @@ private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     
 }//GEN-LAST:event_jButton3ActionPerformed
 
-private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+private void BotaoGravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotaoGravarActionPerformed
+    /*
     PrinterMatrix printer = new PrinterMatrix();
 
     //Define o tamanho do papel/tela para impressão, aqui 25 linhas e 80 colunas
@@ -723,11 +716,13 @@ private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     //data de emissao
     printer.printTextLinCol(6, 55, jFormattedTextField1.getText());    
     
+    */
     int linha = 14;
 
     int index = masterTable.getSelectedRow();
     br.com.siscom.bean.VendaCab V = list.get(masterTable.convertRowIndexToModel(index));    
     Collection<br.com.siscom.bean.VendaDet> vs = V.getVendaDetCollection();    
+   /*
     for (VendaDet vendaDet : vs) {
 
         printer.printTextLinCol(linha, 3, String.valueOf(vendaDet.getVendaDetPK().getCodProduto()));
@@ -738,16 +733,24 @@ private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
         linha++;
 
     }
+    
+    */
+    
+    
+    /*
     printer.printTextLinCol(26, 60, jTextField14.getText());
 
     printer.toFile("impressao.txt");
 
+    */
+    
     String arg[] = {""};
     ImpressaoView.main(arg);
 
-}//GEN-LAST:event_jButton2ActionPerformed
+}//GEN-LAST:event_BotaoGravarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BotaoGravar;
     private java.util.List<br.com.siscom.bean.Cartao> cartaoList;
     private javax.persistence.Query cartaoQuery;
     private javax.persistence.Query clienteQuery;
@@ -756,7 +759,6 @@ private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     private javax.swing.JTable detailTable;
     private javax.persistence.EntityManager entityManager;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JComboBox jComboBox2;
