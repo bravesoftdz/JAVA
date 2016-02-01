@@ -31,18 +31,17 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Time;
 import java.text.DateFormat;
-import java.text.DecimalFormat;
 import java.text.ParseException;
-import java.util.ArrayList;
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
-import java.util.Date;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  * @author Gelvazio
@@ -524,18 +523,14 @@ public class FormularioPedidoCompleto extends MetodosGlobais {
         if (auxAcrescimo.equals("")) {
             auxVl_acrescimo = 0;
             edtAcrescimoTotal.setText("0,00");
-        } else {
-            if (auxVl_acrescimo <= 0) {
-                auxVl_acrescimo = 0;
-            }
+        } else if (auxVl_acrescimo <= 0) {
+            auxVl_acrescimo = 0;
         }
         if (auxDesconto.equals("")) {
             auxVl_desconto = 0;
             edtDescontoTotal.setText("0,00");
-        } else {
-            if (auxVl_desconto <= 0) {
-                auxVl_desconto = 0;
-            }
+        } else if (auxVl_desconto <= 0) {
+            auxVl_desconto = 0;
         }
         //Rotina de Rateio de Acrescimo e Desconto
         boolean rateioAcrescimo = false;
@@ -1049,9 +1044,8 @@ public class FormularioPedidoCompleto extends MetodosGlobais {
                 PIS = false;
                 COFINS = false;
                 ISS = false;
-            } else {
-                //Verifica o tipo de tributação
-                if (TipoTributacao == 0) {
+            } else //Verifica o tipo de tributação
+             if (TipoTributacao == 0) {
                     //Todos Impostos Zerados
                     ICMSNormal = false;
                     ICMSSubstituicaoTributaria = false;
@@ -1100,7 +1094,6 @@ public class FormularioPedidoCompleto extends MetodosGlobais {
                         ISS = true;
                     }
                 }
-            }
             //Validacao dos Impostos Totais
             if (!ICMSNormal) {
                 //Zera valores de ICMS
@@ -1213,15 +1206,13 @@ public class FormularioPedidoCompleto extends MetodosGlobais {
                     mensagemErro("Não foi possível alterar o item da sequencia" + auxsequencia);
                     gravouTodosItens = false;
                 }
-            } else {
-                //Apenas aqui Deve somar os totalizadores
-                if (itemdb.inserir(item)) {
+            } else //Apenas aqui Deve somar os totalizadores
+             if (itemdb.inserir(item)) {
                     //JOptionPane.showMessageDialog(null, "Item da sequencia: " + auxsequencia + " inserido com sucesso!");
                 } else {
                     mensagemErro("Não foi possível incluir o Item da sequencia: " + auxsequencia);
                     gravouTodosItens = false;
                 }
-            }
 
             //Valores Totalizadores sendo carregados
             //Custos
@@ -1386,16 +1377,14 @@ public class FormularioPedidoCompleto extends MetodosGlobais {
                         mensagemErro("Problema ao alterar a venda!");
                         gravouVenda = false;
                     }
-                } else {
-                    //Aqui deve Gravar a Venda,depois de gravar os itens
-                    if (vendacompletodb.gravarVenda(venda)) {
+                } else //Aqui deve Gravar a Venda,depois de gravar os itens
+                 if (vendacompletodb.gravarVenda(venda)) {
                         JOptionPane.showMessageDialog(null, "Venda incluída com sucesso!");
                         habilitaCampos(false);
                     } else {
                         mensagemErro("Problema ao gravar a venda!");
                         gravouVenda = false;
                     }
-                }
 
             } else {
                 //11 Valores            
@@ -2105,9 +2094,8 @@ public class FormularioPedidoCompleto extends MetodosGlobais {
                 PIS = false;
                 COFINS = false;
                 ISS = false;
-            } else {
-                //Verifica o tipo de tributação
-                if (TipoTributacao == 0) {
+            } else //Verifica o tipo de tributação
+             if (TipoTributacao == 0) {
                     //Todos Impostos Zerados
                     ICMSNormal = false;
                     ICMSSubstituicaoTributaria = false;
@@ -2156,7 +2144,6 @@ public class FormularioPedidoCompleto extends MetodosGlobais {
                         ISS = true;
                     }
                 }
-            }
             //Validacao dos Impostos Totais
             if (!ICMSNormal) {
                 //Zera valores de ICMS
@@ -2909,11 +2896,12 @@ public class FormularioPedidoCompleto extends MetodosGlobais {
     }
 
     private void ListaParcelas() throws ParseException {
+        //mensagemErro("Metodo ListaParcelas()");
         DefaultTableModel modelo = new DefaultTableModel();
         modelo.addColumn("Dia");
         modelo.addColumn("Data");
         //String Data = "01/01/2015";//Programar a conta da data         
-        java.text.DateFormat formatter = new java.text.SimpleDateFormat("dd/MM/yyyy");
+        java.text.DateFormat formatter = new java.text.SimpleDateFormat("dd/mm/yyyy");
         formatter.setLenient(false);
         java.util.Date javautilDateDataAlteracao = null;
         //Altera para java.util.date a String do campo de texto
