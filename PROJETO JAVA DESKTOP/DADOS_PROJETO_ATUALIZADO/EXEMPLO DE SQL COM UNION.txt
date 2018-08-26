@@ -1,0 +1,54 @@
+select
+    SUM(CASE COALESCE(ITENS_DOC.FG_PRODPROM, 0)                                               
+        WHEN 0 THEN TRUNC(ITENS_DOC.VL_REAL_ITE_PRO * TRUNC(ITENS_DOC.QT_ITE_PRO, 3), 2)      
+    ELSE                                                                                      
+        TRUNC(ITENS_DOC.VL_VEN_ITE_PRO * TRUNC(ITENS_DOC.QT_ITE_PRO, 3), 2)                   
+    END) VL_COMBINACAO                                                                        
+FROM                                                                                          
+    ITENS_DOC                                                                                 
+INNER JOIN DOC_FATURA ON                                                                      
+    (DOC_FATURA.CD_FILIAL = ITENS_DOC.CD_FILIAL)                                              
+    AND                                                                                       
+    (DOC_FATURA.CD_MOVIMENTO = ITENS_DOC.CD_MOVIMENTO)                                        
+WHERE                                                                                         
+    DOC_FATURA.CD_FILIAL = :CD_FILIAL                                                         
+    AND                                                                                       
+    DOC_FATURA.CD_CUPOM IS NOT NULL                                                           
+    AND                                                                                       
+    DOC_FATURA.DT_EMI_DOC = :DATA                                                             
+    --AND
+    --DOC_FATURA.NR_FAB_ECF = :NR_FAB_ECF
+    AND                                                                                       
+    (                                                                                         
+     COALESCE(DOC_FATURA.FG_SITUACAO, 1) = 2                                                  
+     OR                                                                                       
+     COALESCE(ITENS_DOC.FG_SITUACAO, 1) = 2                                                   
+    )                                                                                         
+   -- AND
+    --DOC_FATURA.CD_ORC IS NULL
+UNION
+
+SELECT                                                                                        
+    SUM(TRUNC(ITENS_DOC.VL_VEN_ITE_PRO * TRUNC(ITENS_DOC.QT_ITE_PRO, 3), 2)) VL_COMBINACAO    
+FROM                                                                                          
+    ITENS_DOC                                                                                 
+INNER JOIN DOC_FATURA ON                                                                      
+    (DOC_FATURA.CD_FILIAL = ITENS_DOC.CD_FILIAL)                                              
+    AND                                                                                       
+    (DOC_FATURA.CD_MOVIMENTO = ITENS_DOC.CD_MOVIMENTO)                                        
+WHERE                                                                                         
+    DOC_FATURA.CD_FILIAL = :CD_FILIAL                                                         
+    AND                                                                                       
+    DOC_FATURA.CD_CUPOM IS NOT NULL                                                           
+    AND                                                                                       
+    DOC_FATURA.DT_EMI_DOC = :DATA                                                             
+    --AND
+    --DOC_FATURA.NR_FAB_ECF = :NR_FAB_ECF
+    AND                                                                                       
+    (                                                                                         
+     COALESCE(DOC_FATURA.FG_SITUACAO, 1) = 2                                                  
+     OR                                                                                       
+     COALESCE(ITENS_DOC.FG_SITUACAO, 1) = 2                                                   
+    )                                                                                         
+   -- AND
+   -- DOC_FATURA.CD_ORC IS NOT NULL

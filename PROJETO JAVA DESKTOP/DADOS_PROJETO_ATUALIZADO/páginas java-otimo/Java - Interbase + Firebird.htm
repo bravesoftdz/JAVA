@@ -1,0 +1,748 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0081)http://www.vivaolinux.com.br/artigo/Conectando-com-Bco-Interbase-Firebird-em-Java -->
+<html lang="pt-BR"><head profile="http://www.w3.org/2005/10/profile"><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="icon" type="image/png" href="http://img.vivaolinux.com.br/favicon.png">
+
+<title>Linux: Conectando com Bco Interbase/Firebird em Java [Artigo]</title>
+<meta name="description" content="Este tutorial explica de maneira fácil, onde encontrar, instalar e conectar com banco de dados Firebird/Interbase via JDBC.
+
+
+">
+<meta name="keywords" content="Linux,site sobre linux,comunidade linux,instalar linux,software livre,fórum linux">
+<link rel="stylesheet" href="./Java - Interbase + Firebird_files/linux026.css" type="text/css">
+<link rel="alternate" type="application/rss+xml" title="RSS Linux" href="http://www.vivaolinux.com.br/index.rdf">
+<meta name="verify-v1" content="QT3PYQU5yGuEhXltPUTz5tRTN/hXmwUDT1wDE1iCfTU=">
+<meta http-equiv="Content-language" content="pt-BR">
+<link rel="stylesheet" type="text/css" href="chrome-extension://knnjalkmmdbjmbnkdolelamkbnjoohbe/css/about.css"></head>
+
+<body>
+
+
+<div id="cabecalho">
+<div id="topoesquerda"><a href="http://www.vivaolinux.com.br/index.php"><img id="logo" src="./Java - Interbase + Firebird_files/linux-logo-002.jpg" alt="Linux logo" width="125" height="55"></a></div>
+<div id="topodireita">
+<form method="get" action="http://www.google.com.br/custom" target="_top" name="pesquisa" id="pesquisa">
+<input type="hidden" name="domains" value="www.vivaolinux.com.br">
+<input type="hidden" name="sitesearch" value="www.vivaolinux.com.br">
+<input type="hidden" name="client" value="pub-3535276187000580">
+<input type="hidden" name="forid" value="1">
+<input type="hidden" name="ie" value="ISO-8859-1">
+<input type="hidden" name="oe" value="ISO-8859-1">
+<input type="hidden" name="cof" value="GALT:#0066CC;GL:1;DIV:#999999;VLC:336633;AH:center;BGC:FFFFFF;LBGC:FFFFFF;ALC:0066CC;LC:0066CC;T:000000;GFNT:666666;GIMP:666666;LH:45;LW:98;L:http://img.vivaolinux.com.br/imagens/banners/logo_vol_google.jpg;S:http://www.vivaolinux.com.br;LP:1;FORID:1;">
+<input type="hidden" name="hl" value="pt">
+<input type="text" name="q" class="inputText">
+<select name="tipoBusca" class="inputText" id="tipoBusca" style="height: 18px;"> 
+<option value="0">Todo o site</option> 
+<option value="artigos">Artigos</option> 
+<option value="conf">.Conf</option> 
+<option value="comunidade">Comunid.</option> 
+<option value="dicas">Dicas</option> 
+<option value="faq">Perguntas</option> 
+<option value="screenshot">Shots</option> 
+<option value="scripts">Scripts</option> 
+<option value="wallpaper">Walls</option> 
+</select>
+<input name="sa" type="image" src="./Java - Interbase + Firebird_files/linux-busca.gif" onclick="submeter_busca(document.pesquisa)" class="inputButton" alt="Busca Linux">
+</form>
+	</div>
+	<div id="topocentral"><img id="slogan" src="./Java - Interbase + Firebird_files/linux-slogan.gif" alt="Linux slogan"></div>
+</div>
+<div id="menu">
+	<div id="menuesquerda"></div>
+	<div id="menudireita">
+		<div id="loginInfo"><a class="destaque" href="http://www.vivaolinux.com.br/testarLogin.php?msg=0">Login</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a class="destaque" href="http://www.vivaolinux.com.br/formCadastro.php">Cadastre-se</a>&nbsp;&nbsp;<a href="http://www.vivaolinux.com.br/index.rdf"><img src="./Java - Interbase + Firebird_files/linux-rss.jpg" alt="Linux RSS" title="RSS do VOL" width="13" height="13" border="0"></a>&nbsp;<a href="http://www.twitter.com/vivaolinux_"><img src="./Java - Interbase + Firebird_files/linux-twitter.png" alt="VOL no Twitter" title="VOL no Twitter" width="13" height="13" border="0"></a></div>
+	</div>
+	<div id="menucentral">
+		<div id="navegacao">
+			» <a class="destaque" href="http://www.vivaolinux.com.br/linux/">O que é GNU/Linux</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a class="destaque" href="http://www.vivaolinux.com.br/download-linux/">Download do GNU/Linux</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a class="destaque" href="http://www.vivaolinux.com.br/anuncie/">Anuncie</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a class="destaque" href="http://www.vivaolinux.com.br/falecom/index.php">Fale Conosco</a>
+		</div>
+</div>
+</div>
+
+
+<div id="barratop">Visite também: <a href="http://www.vivaolinux.com.br/verBanner.php?codigo=252" target="_new" class="texttop">Segurança Linux</a>&nbsp;·&nbsp;<a href="http://www.vivaolinux.com.br/verBanner.php?codigo=134" target="_new" class="texttop">BR-Linux.org</a>&nbsp;·&nbsp;<a href="http://www.vivaolinux.com.br/verBanner.php?codigo=135" target="_new" class="texttop">Dicas-L</a>&nbsp;·&nbsp;<a href="http://www.vivaolinux.com.br/verBanner.php?codigo=130" target="_new" class="texttop">NoticiasLinux</a>&nbsp;·&nbsp;<a href="http://www.vivaolinux.com.br/verBanner.php?codigo=133" target="_new" class="texttop">SoftwareLivre.org</a>&nbsp;·&nbsp;<a href="http://www.vivaolinux.com.br/verBanner.php?codigo=131" target="_new" class="texttop">UnderLinux</a>&nbsp;·&nbsp;<a href="http://www.vivaolinux.com.br/verBanner.php?codigo=132" target="_new" class="texttop">BestLinux</a></div>
+
+
+<div id="conteudo">
+
+
+<!-- inicio do quadro da esquerda -->
+<div id="centroesquerda">
+
+<!-- inicio box menu -->
+<div class="box" style="margin-bottom: 0px;">
+<span class="titulo">» Menu</span>
+<ul class="lista">
+<li><a class="destaquemenu" href="http://www.vivaolinux.com.br/artigos/index.php" title="Artigos sobre Linux">Artigos</a></li> 
+<li><a class="destaquemenu" href="http://www.vivaolinux.com.br/conf/index.php" title="Arquivos de configuração">.Conf</a></li> 
+<li><a class="destaquemenu" style="color:black" href="http://www.vivaolinux.com.br/camisetas/" title="Camisetas Viva o Linux"><strong>Camisetas</strong></a></li>
+<li><a class="destaquemenu" href="http://www.vivaolinux.com.br/comunidades/" title="Comunidades sobre Linux">Comunidades</a></li>
+<li><a class="destaquemenu" href="http://www.vivaolinux.com.br/dicas/" title="Dicas sobre Linux">Dicas</a></li>
+<li><a class="destaquemenu" href="http://volcon.org/" title="Eventos do Viva o Linux">Eventos</a></li>
+<li><a class="destaquemenu" href="http://www.vivaolinux.com.br/perguntas/" title="Aprenda Linux">Perguntas</a></li>
+<li><a class="destaquemenu" href="http://www.vivaolinux.com.br/screenshots/" title="Telas do Linux">Screenshots</a></li>
+<li><a class="destaquemenu" href="http://www.vivaolinux.com.br/scripts/" title="Scripts Linux">Scripts</a></li>
+<li><a class="destaquemenu" href="http://www.vivaolinux.com.br/simulado/" title="Simulado Linux">Simulado</a></li>
+<li><a class="destaquemenu" href="http://www.vivaolinux.com.br/wallpapers/" title="Wallpapers para Linux">Wallpapers</a></li>
+</ul>
+</div>
+<!-- fim box menu -->
+
+<!-- inicio google left -->
+<div class="figura">
+
+<div>
+<script type="text/javascript"><!--
+google_ad_client = "pub-3535276187000580";
+/* 160x600 esquerda artigo */
+google_ad_slot = "5076429219";
+google_ad_width = 160;
+google_ad_height = 600;
+//-->
+</script>
+<script type="text/javascript" src="./Java - Interbase + Firebird_files/show_ads.js">
+</script><ins style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:160px"><ins id="aswift_0_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:160px"><iframe allowtransparency="true" frameborder="0" height="600" hspace="0" marginwidth="0" marginheight="0" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){i+=&#39;.call&#39;;setTimeout(h,0)}else if(h.match){i+=&#39;.nav&#39;;w.location.replace(h)}s.log&amp;&amp;s.log.push(i)}" scrolling="no" vspace="0" width="160" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;"></iframe></ins></ins>
+</div>
+
+</div>
+<!-- fim google left -->
+
+<!-- inicio ultimos artigos -->
+<div class="box">
+<span class="titulo">» Últimos artigos</span>
+<div id="boxartigos" class="conteudo">
+<a class="destaque" href="http://www.vivaolinux.com.br/artigo/Internet-lenta-Reclame-e-um-direito-seu-mas-antes-leia-isto." title="Ler">Internet lenta? Reclame é um direito seu, mas antes leia isto.</a>
+<a class="destaque" href="http://www.vivaolinux.com.br/artigo/Arduino-Visao-Geral" title="Ler">Arduino - Visão Geral</a>
+<a class="destaque" href="http://www.vivaolinux.com.br/artigo/Introducao-ao-Desenvolvimento-Android" title="Ler">Introdução ao Desenvolvimento Android</a>
+<a class="destaque" href="http://www.vivaolinux.com.br/artigo/Balanceamento-de-carga-e-alta-disponibilidade-com-Bonding-Driver-e-Iproute2" title="Ler">Balanceamento de carga e alta disponibilidade com Bonding Driver e Iproute2</a>
+<a class="destaque" href="http://www.vivaolinux.com.br/artigo/Instalando-o-Nagios-Core-no-Suse-Linux-Enterprise-Server" title="Ler">Instalando o Nagios Core no Suse Linux Enterprise Server </a>
+<a class="destaque" href="http://www.vivaolinux.com.br/artigo/Santos-Dumont-Pioneiro-do-Opensource-no-Brasil" title="Ler">Santos Dumont - Pioneiro do Opensource no Brasil</a>
+</div>
+</div>
+<!-- fim ultimos artigos -->
+
+
+<!-- inicio box screenshot -->
+<div class="box">
+<span class="titulo">» Screenshot</span>
+<div class="conteudo">
+<a href="http://www.vivaolinux.com.br/screenshot/Gnome-Ubuntu-Tango" class="artigo"><img src="./Java - Interbase + Firebird_files/Captur_de_tela.png" border="0" alt="Linux: Ubuntu Tango!" width="120" height="96"></a><br>
+<div style="margin-top: 3px;">Por <a class="destaque" href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=damata">damata</a></div>
+</div>
+</div>
+<!-- fim box screenshot -->
+
+<!-- inicio ultimas dicas -->
+<div class="box">
+<span class="titulo">» Últimas dicas</span>
+<div id="boxdicas" class="conteudo">
+<a class="destaque" href="http://www.vivaolinux.com.br/dica/Temas-unificados-no-openSUSE" title="Ler">Temas unificados no openSUSE</a>
+<a class="destaque" href="http://www.vivaolinux.com.br/dica/Recuperando-arquivos-skiplist-corrompidos" title="Ler">Recuperando arquivos skiplist corrompidos</a>
+<a class="destaque" href="http://www.vivaolinux.com.br/dica/Editor-de-Menus-para-o-LXDE" title="Ler">Editor de Menus para o LXDE</a>
+<a class="destaque" href="http://www.vivaolinux.com.br/dica/Instalando-Kernel-2.6.39.2-no-Slackware-12" title="Ler">Instalando Kernel 2.6.39.2 no Slackware 12</a>
+<a class="destaque" href="http://www.vivaolinux.com.br/dica/Compiz-Debian-6-squeeze-ATI-Radeon-HD" title="Ler">Compiz Debian 6 squeeze ATI Radeon HD</a>
+<a class="destaque" href="http://www.vivaolinux.com.br/dica/Como-instalar-Java-JDK-e-JRE-no-Ubuntu-Server-10.04" title="Ler">Como instalar Java JDK e JRE no Ubuntu Server 10.04?</a>
+<a class="destaque" href="http://www.vivaolinux.com.br/dica/Instalando-o-Xen-facilmente-no-Debian-Squeeze" title="Ler">Instalando o Xen facilmente no Debian Squeeze</a>
+<a class="destaque" href="http://www.vivaolinux.com.br/dica/Habilitando-Aptget-no-Damn-Small-Linux-(DSL)" title="Ler">Habilitando Apt-get no Damn Small Linux (DSL)</a>
+</div>
+</div>
+<!-- fim ultimas dicas -->
+
+<!-- inicio seguranca linux -->
+<div class="box">
+<span class="titulo">» Segurança Linux</span>
+<div id="boxscripts" class="conteudo">
+<a class="destaque" href="http://segurancalinux.com/dica/Ghost-Phisher-suite-para-ataques-de-phishing-usando-Fake-DNS-DHCP-e-BLA-BLA-BLA..." title="Segurança Linux">[Dica] Ghost Phisher - suite para ataques de phishing usando Fake DNS, DHCP e BLA, BLA, BLA...! ! !</a>
+<a class="destaque" href="http://segurancalinux.com/artigo/samhain-verificador-de-integridade-de-filesystem" title="Segurança Linux">[Artigo] samhain - verificador de integridade de filesystem</a>
+<a class="destaque" href="http://segurancalinux.com/noticia/pfSense-2-Cookbook" title="Segurança Linux">[Notícia] pfSense 2 Cookbook </a>
+<a class="destaque" href="http://segurancalinux.com/dica/T50-Experimental-Packet-Injector-Tool" title="Segurança Linux">[Dica] T50 Experimental Packet Injector Tool</a>
+<a class="destaque" href="http://segurancalinux.com/artigo/Honeypot-Aprendendo-com-o-intruso" title="Segurança Linux">[Artigo] Honeypot: Aprendendo com o intruso</a>
+<a class="destaque" href="http://segurancalinux.com/noticia/Ate-50-de-desconto-para-as-ultimas-vagas-do-treinamento-Investigacao-Forense-Digital-da-4Linux." title="Segurança Linux">[Notícia] Até 50% de desconto para as últimas vagas do treinamento Investigação Forense Digital da 4Linux.</a>
+<a class="destaque" href="http://segurancalinux.com/noticia/-curso-de-Pentest-Hands-On-aqui-em-SP" title="Segurança Linux">[Notícia]  curso de Pentest Hands On aqui em SP</a>
+</div>
+</div>
+<!-- fim seguranca linux -->
+
+<!-- inicio ultimos scripts -->
+<div class="box">
+<span class="titulo">» Últimos scripts</span>
+<div id="boxscripts" class="conteudo">
+<a class="destaque" href="http://www.vivaolinux.com.br/script/FTP-%E2%80%93-Script-para-adicionar-e-remover-usuarios-via-WEB" title="Ver">[Perl] FTP – Script para adicionar e remover usuários via WEB</a>
+<a class="destaque" href="http://www.vivaolinux.com.br/script/Script-simples-para-gerenciar-netcat" title="Ver">[Shell-Script] Script simples para gerenciar netcat</a>
+<a class="destaque" href="http://www.vivaolinux.com.br/script/IPscan-em-shell-script" title="Ver">[Shell-Script] IPscan em shell script</a>
+<a class="destaque" href="http://www.vivaolinux.com.br/script/Operacoes-Matematicas-com-utilizando-arquivo-texto." title="Ver">[Awk] Operações Matemáticas com utilizando arquivo texto.</a>
+<a class="destaque" href="http://www.vivaolinux.com.br/script/Shoes-GUIfique-scripst-em-ruby" title="Ver">[Ruby] Shoes - GUIfique scripst em ruby</a>
+</div>
+</div>
+<!-- fim ultimos scripts -->
+</div>
+<!-- fim do quadro da esqueda -->
+
+
+<!-- inicio do quadro da direita -->
+<div id="centrodireita">
+
+<!-- inicio banner -->
+
+<br>
+<div class="textosolto">
+<div class="tresbt"><a href="http://www.vivaolinux.com.br/verBanner.php?codigo=87" style="color: #000000 !important; text-decoration: none;" target="_new">Treinamento Zope Plone</a><br></div>
+<div style="margin-bottom: 8px;"><a href="http://www.vivaolinux.com.br/verBanner.php?codigo=247" target="_blank"><img src="./Java - Interbase + Firebird_files/banner-hostgator-160x120.gif" width="160" height="120" border="0"></a></div>
+<div style="margin-bottom: 8px;">
+<a href="http://www.vivaolinux.com.br/verBanner.php?codigo=341"><img src="./Java - Interbase + Firebird_files/banner-icasol.gif" width="160" height="100" border="0" alt="Linux banner"></a></div>
+<div style="margin-bottom: 8px;">
+<a href="http://www.vivaolinux.com.br/verBanner.php?codigo=339"><img src="./Java - Interbase + Firebird_files/banner-linuxuniversity-2011-05.gif" width="160" height="120" border="0" alt="Linux banner"></a></div> 
+<div style="margin-bottom: 8px;">
+<a href="http://www.vivaolinux.com.br/verBanner.php?codigo=334"><img src="./Java - Interbase + Firebird_files/banner-jpb-2011-07.gif" width="160" height="120" border="0" alt="Linux banner"></a></div>
+<div style="margin-bottom: 8px;">
+<a href="http://www.vivaolinux.com.br/verBanner.php?codigo=340"><img src="./Java - Interbase + Firebird_files/banner-clavis-2011-08.gif" width="160" height="120" border="0" alt="Linux banner"></a></div>
+<div>
+<a href="http://www.vivaolinux.com.br/verBanner.php?codigo=342"><img src="./Java - Interbase + Firebird_files/banner-projeto-linux-2011.gif" width="160" height="120" border="0" alt="Linux banner"></a></div>
+<div class="tresbt" style="padding: 3px;">[<a href="http://www.vivaolinux.com.br/anuncie/">Como anunciar?</a>]</div>
+</div>
+<br><br>
+
+<!-- fim banner -->
+
+<div class="box">
+<span class="titulo">» Destaques</span>
+<div class="conteudo" id="boxeventos">
+<a class="destaque" href="http://www.vivaolinux.com.br/topico/Divulgacao-de-eventos/Call-For-Papers-TcheLinux-Rio-Grande-Caxias-do-Sul-e-Uruguaiana/">Call For Papers - TcheLinux Rio Grande, Caxias do Sul e Uruguaiana  (0)</a>
+<a class="destaque" href="http://www.vivaolinux.com.br/topico/Divulgacao-de-eventos/Seminario-de-Tecnologia-em-Software-Livre-TcheLinux-Bento-Goncalves/">13/08 - Seminário de Tecnologia em Software Livre TcheLinux - Bento Go... (0)</a>
+
+</div>
+</div>
+
+<div class="box">
+<span class="titulo">» Login</span>
+<div class="conteudo"><div class="padrao">
+<form name="formLogin1" action="http://www.vivaolinux.com.br/testarLogin.php" method="post">
+<input type="hidden" name="referer" value="/artigo/Conectando-com-Bco-Interbase-Firebird-em-Java?">
+
+<div class="loginBox">
+Login: <input name="formLogin" style="width: 75px;" maxlength="16" class="padrao">
+</div>
+
+<div class="loginBox">
+Senha: <input type="password" style="width: 75px;" name="formSenha" maxlength="100" class="padrao">
+</div>
+
+<div class="centro">
+<input name="imageField2" type="image" src="./Java - Interbase + Firebird_files/botao_enviar.jpg" width="36" height="15" border="0" alt="Linux login">
+</div>
+
+<br>
+Se você ainda não possui uma conta, <a href="http://www.vivaolinux.com.br/formCadastro.php">clique aqui</a>.
+<br>
+<p align="center"><a href="http://www.vivaolinux.com.br/formLembrarSenha.php">Esqueci minha senha</a></p>
+</form>
+</div>
+
+</div>
+</div>
+
+<div class="box">
+<span class="titulo">» Top 10 usuários</span>
+<div id="boxtop10" class="conteudo">
+<a class="destaque" href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=fabio" title="Perfil do usuário">5858427: Fábio Berbert de Paula</a>
+<a class="destaque" href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=cabelo" title="Perfil do usuário">5017883: Alessandro de Oliveira Faria (A.K.A. CABELO)</a>
+<a class="destaque" href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=davidsonpaulo" title="Perfil do usuário">2282389: Davidson Rodrigues Paulo</a>
+<a class="destaque" href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=jeffestanislau" title="Perfil do usuário">2202614: Jefferson Estanislau da Silva</a>
+<a class="destaque" href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=elgio" title="Perfil do usuário">2162246: Elgio Schlemer</a>
+<a class="destaque" href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=percival" title="Perfil do usuário">2119756: Percival F. Jr.</a>
+<a class="destaque" href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=xerxeslins" title="Perfil do usuário">1894653: Xerxes Lins</a>
+<a class="destaque" href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=juliaojunior" title="Perfil do usuário">1842169: Cicero Juliao da Silva Junior</a>
+<a class="destaque" href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=cvs" title="Perfil do usuário">1763515: Thiago Alves</a>
+<a class="destaque" href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=wberbert" title="Perfil do usuário">1666382: Wanderson Berbert</a>
+</div>
+</div>
+
+<!-- inicio box wallpaper -->
+<div class="box">
+<span class="titulo">» Wallpaper</span>
+<div class="conteudo">
+<a href="http://www.vivaolinux.com.br/wallpaper/Menta-Azul-(1500x938)-malvescardoso" class="artigo"><img src="./Java - Interbase + Firebird_files/Menta azul-1500.png" border="0" alt="Linux: Menta Azul" width="120" height="96"></a><br>
+<div style="margin-top: 3px;">Por <a class="destaque" href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=malvescardoso">malvescardoso</a></div>
+</div>
+</div>
+<!-- fim box wallpaper -->
+
+<div>
+<!-- google 160x90 -->
+<script type="text/javascript"><!--
+google_ad_client = "pub-3535276187000580";
+/* 160x90 home links */
+google_ad_slot = "7244755630";
+google_ad_width = 160;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="./Java - Interbase + Firebird_files/show_ads.js">
+</script><ins style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:160px"><ins id="aswift_1_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:160px"><iframe allowtransparency="true" frameborder="0" height="90" hspace="0" marginwidth="0" marginheight="0" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){i+=&#39;.call&#39;;setTimeout(h,0)}else if(h.match){i+=&#39;.nav&#39;;w.location.replace(h)}s.log&amp;&amp;s.log.push(i)}" scrolling="no" vspace="0" width="160" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;"></iframe></ins></ins>
+<!-- google 160x90 -->
+</div>
+<br>
+
+<div class="box">
+<span class="titulo">» <a href="http://www.vivaolinux.com.br/perguntas/" class="boxLink">Perguntas</a></span>
+<div id="boxperguntas" class="conteudo">
+<a class="destaque" href="http://www.vivaolinux.com.br/topico/Suporte/Linux-esta-travando">Linux está travando  (0)</a>
+<a class="destaque" href="http://www.vivaolinux.com.br/topico/Iniciantes-no-Linux/erro-ao-dar-aptger-update">erro ao dar apt-ger update  (0)</a>
+<a class="destaque" href="http://www.vivaolinux.com.br/topico/Gentoo-Linux/Gentoo-Error-15-File-not-found">Gentoo: Error 15: File not found  (1)</a>
+<a class="destaque" href="http://www.vivaolinux.com.br/topico/GNOME/Problemas-apos-atualizacao-LMDE">Problemas após atualização LMDE  (12)</a>
+<a class="destaque" href="http://www.vivaolinux.com.br/topico/CUPS/MIGRACAO-DO-CUPS">MIGRAÇÃO DO CUPS  (0)</a>
+<a class="destaque" href="http://www.vivaolinux.com.br/topico/Modems/Modem-HSDPA">Modem HSDPA  (2)</a>
+<a class="destaque" href="http://www.vivaolinux.com.br/topico/Squid-Iptables/Erro-no-Iptables">Erro no Iptables  (1)</a>
+<a class="destaque" href="http://www.vivaolinux.com.br/topico/Shell-Script/Limitar-area-de-Edicao">Limitar área de Edição [RESOLVIDO]  (2)</a>
+</div>
+</div>
+
+<div class="box">
+<span class="titulo">» .Conf</span>
+<div id="boxconf" class="conteudo">
+<a class="destaque" href="http://www.vivaolinux.com.br/etc/.bashrc">[bash] .bashrc - Terminal usável para usuário comum, e com esqu...</a>
+<a class="destaque" href="http://www.vivaolinux.com.br/etc/squid.conf-30">[squid ] squid.conf - squid com diferentes niveis de acesso com autenticaç&amp;...</a>
+<a class="destaque" href="http://www.vivaolinux.com.br/etc/firewall-1">[iptables] firewall - ./firewall</a>
+<a class="destaque" href="http://www.vivaolinux.com.br/etc/.ideskrc">[Idesk] .ideskrc - Idesk</a>
+<a class="destaque" href="http://www.vivaolinux.com.br/etc/.conkyrc-20">[Conky] .conkyrc - Um .conkyrc para netbooks bastante simples e funcional</a>
+</div>
+</div>
+
+</div>
+<!-- fim do quadro da direita -->
+
+<!-- inicio do quadro central -->
+<div id="central">
+<!-- google_ad_section_start -->
+<script language="Javascript">
+function editar(codigo) {
+   top = window.open('/comentarios/formEditarComentario.php?codigo='+ codigo, 'edit', 'width=350, height=200');
+}
+
+function imagem(url,w,h) {
+   if (window.open('/imagens/artigos/comunidade/' + url, url, 'width='+w+',height='+h)) {};
+}
+</script>
+
+
+<div class="centro">
+<script type="text/javascript"><!--
+google_ad_client = "pub-3535276187000580";
+/* 468x15 artigo */
+google_ad_slot = "3038087199";
+google_ad_width = 468;
+google_ad_height = 15;
+//-->
+</script>
+<script type="text/javascript" src="./Java - Interbase + Firebird_files/show_ads.js">
+</script><ins style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:468px"><ins id="aswift_2_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:468px"><iframe allowtransparency="true" frameborder="0" height="15" hspace="0" marginwidth="0" marginheight="0" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){i+=&#39;.call&#39;;setTimeout(h,0)}else if(h.match){i+=&#39;.nav&#39;;w.location.replace(h)}s.log&amp;&amp;s.log.push(i)}" scrolling="no" vspace="0" width="468" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;"></iframe></ins></ins>
+</div>
+
+<br>
+
+<!-- inicio -->
+<div class="boxConteudo">
+<div class="titulo"><h3 class="destaquetitulo">Artigo</h3></div>
+
+<div class="breadcrumb"><h4 class="destaquenolink"><a href="http://www.vivaolinux.com.br/index.php" class="destaquemenu">Home</a> » <a class="destaquemenu" href="http://www.vivaolinux.com.br/artigos/index.php">Artigos</a> » <a class="destaquemenu" href="http://www.vivaolinux.com.br/artigos/categoriaIndex.php?codigo=5">Java</a> » <a class="destaquemenu" href="http://www.vivaolinux.com.br/artigos/verSubCategoria.php?codigo=48">Banco de Dados</a> » Visualização de artigo </h4></div>
+<div><h5>Conectando com Bco Interbase/Firebird em Java</h5></div>
+
+<div class="conteudo">
+<!-- tabela usuario -->
+<div style="float: left; padding: 3px; text-align: center; margin-right: 5px;">
+<a href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=cabelo" title="Perfil do usuário"><img src="./Java - Interbase + Firebird_files/pq-cabelo-to-tux.png" alt="Linux user" border="0" width="80" height="60"></a><br>
+<a class="destaquemenu" href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=cabelo" title="Perfil do usuário">cabelo</a> <br>
+05/09/2003 
+</div>
+<div class="padraodestaque" style="padding: 3px;">
+Este tutorial explica de maneira fácil, onde encontrar, instalar e conectar com banco de dados Firebird/Interbase via JDBC.<br>
+<br>
+<br>
+<br>
+
+<div style="margin-top: 5px;"><b>Por:</b> Alessandro de Oliveira Faria (A.K.A. CABELO) </div>
+<div class="direita" style="padding: 3px;">[ <b>Hits:</b> 18113 ]</div>
+
+<div style="margin-left: 100px;">
+<span style="float: left;">
+<b>Conceito: </b>8.7 &nbsp;&nbsp;<img src="./Java - Interbase + Firebird_files/conceito.jpg" height="13" border="0" alt="3 voto(s)" title="3 voto(s)"><img src="./Java - Interbase + Firebird_files/conceito.jpg" height="13" border="0" alt="3 voto(s)" title="3 voto(s)"><img src="./Java - Interbase + Firebird_files/conceito.jpg" height="13" border="0" alt="3 voto(s)" title="3 voto(s)"><img src="./Java - Interbase + Firebird_files/conceito.jpg" height="13" border="0" alt="3 voto(s)" title="3 voto(s)"><img src="./Java - Interbase + Firebird_files/conceito2.jpg" height="13" border="0" alt="3 voto(s)" title="3 voto(s)"> </span>
+<span style="float: right;">
++ <a href="http://www.vivaolinux.com.br/artigos/votar.php?codigo=362">quero dar nota ao artigo</a> </span>
+</div>
+
+</div>
+</div>
+</div>
+
+<div class="padrao" style="text-align: right;">
++ <a href="http://www.vivaolinux.com.br/addBookmark.php?tipo=artigo&codigo=362" title="Adicionar aos favoritos">Favoritos</a>&nbsp;&nbsp;
+ <a href="http://www.vivaolinux.com.br/artigos/impressora.php?codigo=362"><img src="./Java - Interbase + Firebird_files/print_ico.gif" width="20" height="18" alt="Artigo Linux tela cheia" border="0" align="absmiddle"> Versão para impressora</a>&nbsp;&nbsp;
+<a href="http://www.vivaolinux.com.br/formIndicar.php?tipo=artigo&codigo=362"><img src="./Java - Interbase + Firebird_files/friend.gif" width="20" height="14" border="0" align="absmiddle" alt="Indicar artigo Linux"> Indicar para um amigo</a>&nbsp;&nbsp;
+<a href="http://www.vivaolinux.com.br/contribuir/artigo/index.php"><img src="./Java - Interbase + Firebird_files/escrever.png" width="18" height="18" border="0" align="absmiddle" alt="Enviar artigo Linux"> Enviar artigo</a>&nbsp;&nbsp;
+</div>
+
+
+<div class="dezpx padrao">
+<p></p>
+
+<!-- hotwords -->
+<h1>Introdução</h1>
+
+
+<div class="floatright">
+<script type="text/javascript"><!--
+google_ad_client = "pub-3535276187000580";
+/* 336x280 artigo direita verde */
+google_ad_slot = "2913193654";
+google_ad_width = 336;
+google_ad_height = 280;
+//-->
+</script>
+<script type="text/javascript" src="./Java - Interbase + Firebird_files/show_ads.js">
+</script><ins style="display:inline-table;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px"><ins id="aswift_3_anchor" style="display:block;border:none;height:280px;margin:0;padding:0;position:relative;visibility:visible;width:336px"><iframe allowtransparency="true" frameborder="0" height="280" hspace="0" marginwidth="0" marginheight="0" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){i+=&#39;.call&#39;;setTimeout(h,0)}else if(h.match){i+=&#39;.nav&#39;;w.location.replace(h)}s.log&amp;&amp;s.log.push(i)}" scrolling="no" vspace="0" width="336" id="aswift_3" name="aswift_3" style="left:0;position:absolute;top:0;"></iframe></ins></ins>
+</div>
+
+
+<div id="HOTWordsTxt" name="HOTWordsTxt"> 
+<div>
+<div>
+Este tutorial explica de maneira fácil, onde encontrar, instalar e 
+conectar com Bco Firebird/Interbase via JDBC.
+<br><br>
+Em primeiro lugar, vou partir da premissa que o firebird/interbase e 
+java esteja instalado e configurado corretamente. Caso contrário, existe 
+em <i>www.vivaolinux.com.br</i> um artigo elaborado pelo Junior que 
+contempla toda a instalação do java 2 SE (<a href="http://www.vivaolinux.com.br/artigos/verArtigo.php?codigo=240">Instalando e Configurando o JAVA</a>). Portanto não entrarei em detalhes neste tópico.
+<br><br>
+Criaremos o diretório jdbc:
+<br><br>
+<b># cd /usr/java/j2sdk1.4.1_04/jre/<br>
+# mkdir jdbc<br>
+# cd jdbc</b>
+<br><br>
+Vamos efetuar o download do jdbc que é necessário para o funcionamento 
+do processo de conexão com qualquer bco de dados. No link abaixo, você 
+encontrará o arquivo JDBC2 (<i>jdbc2_0-stdext.jar</i>). Efetue o download 
+desde arquivo, e o salve na pasta que acabamos de criar.
+<ul>
+   <li> <a href="http://java.sun.com/products/jdbc/download.html">http://java.sun.com/products/jdbc/download.html</a>
+</li></ul>
+Agora efetue o download do jdbc tipo 4 (conexão direta como banco) do 
+Firebird/Interbase.
+<ul>
+   <li> <a href="http://prdownloads.sourceforge.net/firebird/FirebirdSQL-1.0.0.zip">http://prdownloads.sourceforge.net/firebird/FirebirdSQL-1.0.0.zip</a>
+</li></ul>
+Descompactando o arquivo:
+<br><br>
+<b># unzip FirebirdSQL-1.0.0.zip</b><br>
+Archive:  FirebirdSQL-1.0.0.zip<br>
+&nbsp;&nbsp;inflating: firebirdjmx.jar<br>
+&nbsp;&nbsp;inflating: firebirdsql-full.jar<br>
+&nbsp;&nbsp;inflating: firebirdsql-test.jar<br>
+&nbsp;&nbsp;inflating: firebirdsql.jar<br>
+&nbsp;&nbsp;inflating: firebirdsql.rar<br>
+&nbsp;&nbsp; creating: lib/<br>
+&nbsp;&nbsp;inflating: lib/mini-concurrent.jar<br>
+&nbsp;&nbsp;inflating: lib/mini-j2ee.jar<br>
+&nbsp;&nbsp;inflating: lib/jaas.jar<br>
+&nbsp;&nbsp;inflating: lib/log4j-core.jar<br>
+&nbsp;&nbsp;inflating: faq.html<br>
+&nbsp;&nbsp;inflating: FAQ.txt<br>
+&nbsp;&nbsp;inflating: JDBC20_conformance.html<br>
+&nbsp;&nbsp;inflating: release_notes.html
+<br><br>
+O conteúdo da pasta jdbc deverá ser semelhante a isto:
+<br><br>
+<b># ls</b>
+<pre>FAQ.txt                  firebirdjmx.jar       firebirdsql.rar
+FirebirdSQL-1.0.0.zip    firebirdsql-full.jar  jdbc2_0-stdext.jar
+JDBC20_conformance.html  firebirdsql-test.jar  lib
+faq.html                 firebirdsql.jar       release_notes.html
+</pre>
+
+Agora ao conteúdo da pasta lib:
+<br><br>
+<b># ls lib</b>
+<pre>jaas.jar  log4j-core.jar  mini-concurrent.jar  mini-j2ee.jar
+</pre>
+
+Apagaremos o arquivo compactado por não precisar mais dele:
+<br><br>
+<b># rm -f FirebirdSQL-1.0.0.zip</b>
+<br><br>
+inclua esta linha do arquivo <i>/etc/profile</i>:
+<br><br>
+</div> 
+
+<div class="codigo">
+CLASSPATH="$CLASSPATH:/usr/java/j2sdk1.4.1_04/jre/jdbc/jdbc2_0-stdext.jar: /usr/java/j2sdk1.4.1_04/jre/jdbc/firebirdsql.jar: /usr/java/j2sdk1.4.1_04/jre/jdbc/lib/jaas.jar: /usr/java/j2sdk1.4.1_04/jre/jdbc/lib/log4j-core.jar: /usr/java/j2sdk1.4.1_04/jre/jdbc/lib/mini-concurrent.jar: /usr/java/j2sdk1.4.1_04/jre/jdbc/lib/mini-j2ee.jar"
+</div>
+
+<div><br>
+Segue abaixo um exemplo de conexão com o Bco em Java:
+<br><br>
+</div>
+
+<div class="codigo">
+import java.sql.*;<br>
+<br>
+public class Bco<br>
+{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;public static void main(String args[])<br>
+&nbsp;&nbsp; {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("#testando acesso a banco de dado Interbase\n\n");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Connection conn = null;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String teste = "SELECT NOME FROM TAB_CLI_001;";<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Class.forName("org.firebirdsql.jdbc.FBDriver");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;conn = DriverManager.getConnection( "jdbc:firebirdsql:ip_do_servidor/3050:/caminho_do_bco_de_dados.gdb", "SYSDBA", "masterkey");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System.out.println("Sucesso na conexão! Massacre!\n");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Statement stm = conn.createStatement();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ResultSet rs = stm.executeQuery(teste);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; while (rs.next())<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String linha = rs.getString("NOME");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Cliente:" +linha);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System.out.println("select realizado\n");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;catch(ClassNotFoundException e)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("excessao ClassNotFound...");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.printStackTrace();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;catch(SQLException e)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("SQL Exception... Erro dos Bravos");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.printStackTrace();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;finally<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; try<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;conn.close();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; catch(SQLException onConClose)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("error on closing");<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;onConClose.printStackTrace();<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+&nbsp;&nbsp; }<br>
+}
+</div>
+
+<div><br>
+Compilando o programa:
+<br><br>
+<b># javac Bco.java</b>
+<br><br>
+Executando o programa:
+<br><br>
+<b># java Bco</b>
+<br><br>
+</div>
+</div>
+
+
+</div>
+
+<div>
+<span class="floatleft"></span>
+<span class="floatright"></span>
+</div>
+<br><br>
+
+<div class="cinza padrao"><b>Páginas do artigo</b></div>
+<div class="padrao">
+&nbsp;&nbsp;&nbsp;1. Introdução<br>
+
+</div>
+
+<br>
+<div class="cinza padrao"><b>Outros artigos deste autor</b></div>
+<div class="padrao">
+&nbsp;&nbsp;&nbsp;<img src="./Java - Interbase + Firebird_files/linux-arrow.gif" valign="absmiddle" alt="Artigo Linux recomendado"> <a href="http://www.vivaolinux.com.br/artigo/PEAGLE-Servico-Web-de-busca-indexada-em-seu-servidor-local" title="Leitura recomendada">PEAGLE: Serviço Web de busca indexada em seu servidor local</a><br>
+&nbsp;&nbsp;&nbsp;<img src="./Java - Interbase + Firebird_files/linux-arrow.gif" valign="absmiddle" alt="Artigo Linux recomendado"> <a href="http://www.vivaolinux.com.br/artigo/MrProject-O-gerenciador-de-projetos-(MSProject)-para-Linux" title="Leitura recomendada">MrProject: O gerenciador de projetos (MSProject) para Linux</a><br>
+&nbsp;&nbsp;&nbsp;<img src="./Java - Interbase + Firebird_files/linux-arrow.gif" valign="absmiddle" alt="Artigo Linux recomendado"> <a href="http://www.vivaolinux.com.br/artigo/Instalando-o-Android-SDK-na-plataforma-Linux" title="Leitura recomendada">Instalando o Android SDK na plataforma Linux</a><br>
+&nbsp;&nbsp;&nbsp;<img src="./Java - Interbase + Firebird_files/linux-arrow.gif" valign="absmiddle" alt="Artigo Linux recomendado"> <a href="http://www.vivaolinux.com.br/artigo/Criando-uma-aplicacao-em-shell-script-integrada-com-o-Interbase-Firebird" title="Leitura recomendada">Criando uma aplicação em shell script integrada com o Interbase/Firebird</a><br>
+&nbsp;&nbsp;&nbsp;<img src="./Java - Interbase + Firebird_files/linux-arrow.gif" valign="absmiddle" alt="Artigo Linux recomendado"> <a href="http://www.vivaolinux.com.br/artigo/Testamos-Visual-Basic-8-.NET-no-Linux.-Vejam-o-resultado" title="Leitura recomendada">Testamos: Visual Basic 8 .NET no Linux. Vejam o resultado!</a><br>
+
+</div>
+<br>
+<div class="cinza padrao"><b>Leitura recomendada</b></div>
+<div class="padrao">
+&nbsp;&nbsp;&nbsp;<img src="./Java - Interbase + Firebird_files/linux-arrow.gif" valign="absmiddle" alt="Artigo Linux recomendado"> <a href="http://www.vivaolinux.com.br/artigo/Hibernate-Persistindo-dados-como-se-fosse-objetos" title="Leitura recomendada">Hibernate - Persistindo dados como se fosse objetos</a><br>
+&nbsp;&nbsp;&nbsp;<img src="./Java - Interbase + Firebird_files/linux-arrow.gif" valign="absmiddle" alt="Artigo Linux recomendado"> <a href="http://www.vivaolinux.com.br/artigo/Imagens-e-audio-no-banco-de-dados-Oracle" title="Leitura recomendada">Imagens e áudio no banco de dados Oracle</a><br>
+&nbsp;&nbsp;&nbsp;<img src="./Java - Interbase + Firebird_files/linux-arrow.gif" valign="absmiddle" alt="Artigo Linux recomendado"> <a href="http://www.vivaolinux.com.br/artigo/Escrevendo-aplicacoes-com-MySQL-e-Java" title="Leitura recomendada">Escrevendo aplicações com MySQL e Java</a><br>
+&nbsp;&nbsp;&nbsp;<img src="./Java - Interbase + Firebird_files/linux-arrow.gif" valign="absmiddle" alt="Artigo Linux recomendado"> <a href="http://www.vivaolinux.com.br/artigo/Trabalhando-com-Java-e-SQL-(parte-1)" title="Leitura recomendada">Trabalhando com Java e SQL (parte 1)</a><br>
+&nbsp;&nbsp;&nbsp;<img src="./Java - Interbase + Firebird_files/linux-arrow.gif" valign="absmiddle" alt="Artigo Linux recomendado"> <a href="http://www.vivaolinux.com.br/artigo/Criando-classe-Java-para-conectar-e-manipular-dados-no-MySQL" title="Leitura recomendada">Criando classe Java para conectar e manipular dados no MySQL</a><br>
+
+</div>
+<br>
+
+<div class="cinza padrao"><b>Comentários</b></div>
+
+<!-- hotwords -->
+<div id="HOTWordsTxt" name="HOTWordsTxt"> 
+<div style="background-color: #ffffff">
+[1] Comentário enviado por <a href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=cezar">cezar</a> em 10/09/2003 - 15:17h:
+<br><br>
+como seria esta aplicação no ruindows? é possível?
+<br><br>
+ 
+</div>
+<div style="background-color: #eeeeee">
+[2] Comentário enviado por <a href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=cabelo">cabelo</a> em 10/09/2003 - 18:29h:
+<br><br>
+Rodei no windows sem problema nenhum.
+<br><br>
+ 
+</div>
+<div style="background-color: #ffffff">
+[3] Comentário enviado por <a href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=butters">butters</a> em 16/01/2004 - 11:39h:
+<br><br>
+Está de parabéns pela matéria
+<br><br>
+ 
+</div>
+<div style="background-color: #eeeeee">
+[4] Comentário enviado por <a href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=jose_maria">jose_maria</a> em 04/03/2004 - 19:02h:
+<br><br>
+Eu tô "pelejando" para fazer isto com o mysql no linux.
+<br><br>
+ 
+</div>
+<div style="background-color: #ffffff">
+[5] Comentário enviado por <a href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=alazzari">alazzari</a> em 19/04/2004 - 13:44h:
+<br><br>
+De duas uma... ou o java me odeia ou eu odeio o java....<br>
+To com o seguinte erro ao compilar o codigo no NetBeans:<br>
+<br>
+app/frmStart.java [64:1] unreported exception java.sql.SQLException; must be caught or declared to be thrown<br>
+                    Connection conn = DriverManager.getConnection("jdbc:firebirdsql:192.168.0.1/3050:/disco_02/dados/Sislote1.gdb", "sysdba", "masterkey");<br>
+<br>
+E não sei como e o que fazer ???
+<br><br>
+ 
+</div>
+<div style="background-color: #eeeeee">
+[6] Comentário enviado por <a href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=jfmartinatti">jfmartinatti</a> em 03/11/2005 - 08:43h:
+<br><br>
+to com o seguinte erro <br>
+<br>
+java.lang.ClassNotFoundException: org.firebirdsql.jdbc.FBDriver<br>
+<br>
+estou utilizando o NetBeans no Linux.<br>
+<br>
+Vc pode me ajudar ???
+<br><br>
+ 
+</div>
+<div style="background-color: #ffffff">
+[7] Comentário enviado por <a href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=michellucio">michellucio</a> em 10/11/2005 - 11:02h:
+<br><br>
+bom artigo. Parabéns
+<br><br>
+ 
+</div>
+<div style="background-color: #eeeeee">
+[8] Comentário enviado por <a href="http://www.vivaolinux.com.br/perfil/verPerfil.php?login=terelinesil">terelinesil</a> em 07/11/2007 - 09:35h:
+<br><br>
+Bom.
+<br><br>
+ 
+</div>
+
+</div>
+
+<!-- tabela comentario -->
+<br>
+<div class="padrao tabelaCinza">
+<form action="http://www.vivaolinux.com.br/comentarios/enviarComentario.php" method="post">
+<input type="hidden" name="tabela" value="artigo">
+<input type="hidden" name="codtabela" value="362">
+
+<b>Contribuir com comentário</b><br>
+
+<div class="centro">
+<div class="tresbt"><textarea name="comentario" readonly="" id="boxcomentario" style="width: 95%;" rows="18" class="padrao"></textarea></div>
+
+<img id="captcha" src="./Java - Interbase + Firebird_files/securimage_show.php" alt="CAPTCHA"><br>
+[ <a href="http://www.vivaolinux.com.br/artigo/Conectando-com-Bco-Interbase-Firebird-em-Java#" onclick="document.getElementById(&#39;captcha&#39;).src = &#39;/include/securimage_show.php?&#39; + Math.random(); return false">Recarregar imagem</a> ]
+<br><br>
+Digite o código acima: <input type="text" name="captcha_code" size="10" maxlength="20">
+<br><br>
+
+<input type="submit" value=" Enviar " class="botao">&nbsp;&nbsp;
+<input type="reset" value=" Limpar " class="botao">
+<br>
+<font color="#ff0000">Para executar esta ação você precisa estar logado no site, caso
+contrário, tudo o que for digitado será perdido.</font>
+</div>
+</form>
+</div>
+<!-- fim tabela comentario -->
+
+</div>
+
+<!-- google_ad_section_end -->
+</div>
+<!-- fim do quadro central -->
+</div>
+
+<!-- inicio do rodape -->
+<div id="rodape">
+	<div id="rodapeesquerda"></div>
+	<div id="rodapedireita"></div>
+	<div id="rodapecentral">
+		<div id="mapa" class="padrao">
+			Contribuir com: [ <a href="http://www.vivaolinux.com.br/contribuir/artigo/index.php">Artigo</a> | <a href="http://www.vivaolinux.com.br/contribuir/conf/index.php">Conf</a> | <a href="http://www.vivaolinux.com.br/contribuir/dicas/index.php">Dica</a> | <a href="http://www.vivaolinux.com.br/comunidades/formTopico.php?codigo=353">Evento</a> | <a href="http://www.vivaolinux.com.br/comunidades/formTopico.php?codigo=232">Oportunidade de trabalho</a> |<a href="http://www.vivaolinux.com.br/contribuir/perguntas/index.php">Pergunta</a> | <a href="http://www.vivaolinux.com.br/contribuir/scripts/index.php">Script</a> | <a href="http://www.vivaolinux.com.br/contribuir/screenshots/index.php">Screenshot</a> | <a href="http://www.vivaolinux.com.br/contribuir/simulado/index.php">Simulado</a> | <a href="http://www.vivaolinux.com.br/contribuir/wallpapers/index.php">Wallpaper</a> ] 
+		</div>
+		<div id="creditos">
+			Responsável pelo site: <a href="http://www.vivaolinux.com.br/~fabio" class="destaque" style="color: #ffffff !important; font-weight: bold;">Fábio Berbert de Paula</a> - Conteúdo distribuído sob <a href="http://pt.wikipedia.org/wiki/GNU_Free_Documentation_License" class="destaque" style="color: #ffffff !important; ">licença GNU FDL</a><br>
+
+<div class="floatright" style="text-align: left; margin-top: -20px;">
+Site hospedado por: 
+<div><a href="http://www.vivaolinux.com.br/verBanner.php?codigo=247" target="_blank"><img src="./Java - Interbase + Firebird_files/hostgator.jpg" width="200" height="95" border="0"></a></div>
+</div>
+
+		</div>
+
+	</div>
+</div>
+
+<div id="rodapecontainer">
+	<div id="rodapebox">
+
+	<div id="volrelease">
+	<h1>Viva o Linux</h1>
+	A maior comunidade Linux da América Latina! Artigos, dicas, tutoriais, fórum, scripts e muito mais. Ideal para quem busca auto-ajuda em Linux.
+	</div>
+
+	<div id="voloptions">
+	<a href="http://www.vivaolinux.com.br/estatisticas.php">Estatísticas do site</a>
+	<a href="http://www.vivaolinux.com.br/equipe/">Equipe de moderadores</a>
+	<a href="http://www.vivaolinux.com.br/faq.php">FAQ: Perguntas freqüentes</a>
+	<a href="http://www.vivaolinux.com.br/membros/">Membros da comunidade</a>
+	</div>
+
+	</div>
+<br><br>
+</div>
+
+<!-- fim do rodape -->
+
+<script language="Javascript" src="./Java - Interbase + Firebird_files/funcoes2-min.js"></script>
+<script language="Javascript">
+function altW(e) { if (document.body.clientWidth < 950) { e.style.width = '950px'; }}
+</script>
+<style>
+#conteudo { width: expression(altW(this)); }
+</style>
+
+
+
+<div class="SkipThisFixedPosition top-iframe-wrapper" style="width: 100%; height: 34px; position: fixed; top: 0px !important; left: 0px; z-index: 99997; "><iframe style="width:100%;height:34px;top:0px;left:0px;" src="./Java - Interbase + Firebird_files/container.htm" scrolling="no" class="toolbarContainer" frameborder="0px" id="CWTBiframe0"></iframe></div><div id="mainContainer_CTID"><div class="fixedDiv SkipThisFixedPosition UrlGadgetsDiv" style="position: fixed; left: 0px; top: 34px !important; z-index: 2147483640; "></div><div class="fixedDiv SkipThisFixedPosition GeneralGadgetsDiv" style="position: fixed; left: 0px; top: 34px !important; z-index: 2147483640; width: 100%; "></div></div></body><style type="text/css" id="CWToolbarStyle">html { padding-top: 34px !important;}</style></html>

@@ -1,0 +1,40 @@
+Roteiro Padrao do Sistema
+	1.0-Definir Regra de Negocios;
+		1.1-Verificar o Modelo de Regra de Negocios;
+		Ver exemplos de trabalhos da faculdade materiaS: CONTABILIDADE E CUSTOS,
+		MARKTING E NEGOCIOS,ADMINISTRACAO,ADMINISTRACAO DE SISTEMAS,DATAMINING.		
+		1.2-
+	2.0-Definir Engenharia de Software do Sistema;
+		2.1-Definir Casos de Uso
+		2.2-Fazer a Modelagem do Sistema usando UML;
+		Ver exemplos de trabalhos da faculdade materia ENGENHARIA DE SOFTWARE I E II.
+		2.3-Definir Requisitos Funcionais (RF) e Requisitos Nao Funcionais (RNF).
+		Ver exemplos de trabalhos da faculdade materia ENGENHARIA DE SOFTWARE I E II.
+	3.0-Definir Modelo do Banco de Dados (Usar Modelo de Campos e tabelas padroes);
+		3.1-Seguir Modelo do Sistema da Versao 1.1.
+	4.0-Apos ter o banco de dados Padrao,comecar a Programar;
+		4.1-Reprogramar Sistema com novo banco de dados e tabelas,e Usuario de Login do Sistema.
+	5.0-Iniciar a Programacao do sistema conforme abaixo:
+		5.1-Fazer Telas de cadastro:
+			5.1.1-Cadastro de Clientes/Pessoas;
+			5.1.2-Cadastro de Produtos;
+			5.1.3-Cadastro de Notas de Entrada;
+		5.2-Tela de faturamento (Financeiro);
+		5.3-Relatorios:
+			5.3.1-Relacao de Clientes;
+			5.3.2-Relacao de Produtos;
+			5.3.3-Relacao de Vendas de produtos;
+			5.3.4-Relacao de compras de produtos
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

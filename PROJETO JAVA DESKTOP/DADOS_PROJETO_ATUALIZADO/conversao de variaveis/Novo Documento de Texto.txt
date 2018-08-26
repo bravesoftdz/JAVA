@@ -1,0 +1,61 @@
+Coneversao de String em Int
+Metodo Um
+- Use o Integer.parseInt(); 
+
+
+
+- Ex.: 
+String a = "1" ; 
+String b = "2" ; 
+
+int soma = Integer.parseInt(a) + Integer.parseInr(b) ; 
+
+-#####################################################
+
+Conversao de Int em String
+Como faço a converssão de um valor de uma variável de inteiro para string!! 
+
+Ex. 
+
+Quero concatenar o valor "0" mais um valor de uma variável que é inteiro. 
+
+ex.: 
+int b = 3 
+string a = null; 
+a = "0" + b; 
+
+o valor de a vai ser, 
+a = 03!!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

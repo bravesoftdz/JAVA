@@ -1,0 +1,10 @@
+
+Metodo de pegar a data atual nos SQL
+Em vez dos parametrosa passar o update abaixo no Insert e nos update
+tando no DT_CAD qto no DT ALT   e HR_CAD  e HR_ALT  tb.
+
+COMMIT WORK;UPDATE
+    TAXA_IMPOSTOS
+SET
+    TAXA_IMPOSTOS.DT_ALT = CAST('NOW' AS DATE),
+    TAXA_IMPOSTOS.HR_ALT = CAST('NOW' AS TIME);

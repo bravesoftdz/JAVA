@@ -1,0 +1,50 @@
+
+package poo_ex;
+
+public class Produto
+{
+    public Produto( ){
+        //Construtor vazio
+    }
+    
+    private int cod;
+    private String desc;
+    private String grupo;
+    private float valor;
+    private boolean ativo;
+    
+    public void setCod(int cod){
+        this.cod=cod;
+    }
+    public void setDesc(String desc){
+        this.desc=desc;
+    }
+    public void setGrupo(String grupo){
+        this.grupo=grupo;
+    }
+    public void setValor(float valor){
+        this.valor=valor;
+    }
+
+    
+    public int getCod( ){
+        return this.cod;
+    }
+    public String getDesc( ){
+        return this.desc;
+    }
+    public String getGrupo( ){
+       return this.grupo;
+    }
+    public float getValor( ){
+        return this.valor;
+    }
+    
+    public String toString( ){
+        return "\nCódigo: " + getCod( ) +
+                "\nDescrição: " + getDesc( ) +
+                "\nGrupo: " + getGrupo( ) +
+                "\nValor: " + getValor( );
+    }
+    
+}

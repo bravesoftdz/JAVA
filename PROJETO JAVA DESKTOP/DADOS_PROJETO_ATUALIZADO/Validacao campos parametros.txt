@@ -1,0 +1,65 @@
+
+private void validaEstoqueFilial(int cd_filial){
+--ESTOQUE.CD_FILIAL = ?   )       
+
+}
+
+private void validaFilial(int cd_filial){
+	--            + "		(FILIAL.CD_FILIAL=?)   
+
+}
+
+
+
+private void validaFilial(int cd_filial){
+		//Fiscal Interno
+		(GRUPO_FISCAL.CD_GRUPO_FISCAL = ?            )   
+}
+
+private void validaGrupo_FiscalInterestadual(int cd_filial){
+		//Fiscal InterEstadual
+		(GRUPO_FISCAL.CD_GRUPO_FISCAL = ?            )   
+}
+
+
+	
+
+
+
+                                                                  --\n"
+            + "		AND                                                                                                --\n"
+            + "		(ESTOQUE.CD_REF = PRODUTO_SIMPLES.CD_REF)                                                          --\n"
+            + "	INNER JOIN FILIAL ON                                                                                   --\n"
+                                                                            --\n"
+            + "		AND                                                                                                --\n"
+            + "		(FILIAL.CD_FILIAL=PRODUTO_SIMPLES.CD_FILIAL)                                                       --\n"
+            + "	INNER JOIN SUB_TAB_PRECO ON                                                                            --\n"
+            + "		(SUB_TAB_PRECO.CD_REF = PRODUTO_SIMPLES.CD_REF)                                                    --\n"
+            + "	INNER JOIN GRUPO_FISCAL  ON                                                                            --\n"
+            + "		(GRUPO_FISCAL.CD_GRUPO_FISCAL = ?            )      
+
+			--\n"
+            + "	LEFT OUTER JOIN MARKUP GP_FISCAL_MARKUP_DESTINO ON                                                                              --\n"
+            + "		(GP_FISCAL_MARKUP_DESTINO.CD_GRUPO_FISCAL = ?           )                                                            --\n"
+            + "		AND                                                                                                --\n"
+            + "		(GP_FISCAL_MARKUP_DESTINO.CD_ESTADO = ?             )                                                                --\n"
+            + "	LEFT OUTER JOIN MARKUP GP_FISCAL_MARKUP_ORIGEM ON                                                      --\n"
+            + "		(GP_FISCAL_MARKUP_ORIGEM.CD_GRUPO_FISCAL = ? )                                                     --\n"
+            + "		AND                                                                                                --\n"
+            + "		(GP_FISCAL_MARKUP_ORIGEM.CD_ESTADO = ?  )                                                          --\n"
+            + "	LEFT OUTER JOIN TIPO_NOTA_FISCAL ON                                                                    --\n"
+            + "		(TIPO_NOTA_FISCAL.CD_TIPO = ? )                                                                    --\n"
+            + "		AND                                                                                                --\n"
+            + "		(TIPO_NOTA_FISCAL.CD_GP_FISCAL =?           )                                                      --\n"
+            + "		AND                                                                                                --\n"
+            + "		(TIPO_NOTA_FISCAL.TP_CONSUMO = ?        )                                                          --\n"
+            + "	LEFT OUTER JOIN SITUACAO_TRIBUTARIA CST ON                                                             --\n"
+            + "		(CST.CD_SITUACAO_TRIBUTARIA = TIPO_NOTA_FISCAL.CD_CST)                                             --\n"
+            + "	LEFT OUTER JOIN CST_PIS_COFINS ON                                                                      --\n"
+            + "		CST_PIS_COFINS.CD_CST_PIS_COFINS = TIPO_NOTA_FISCAL.CD_CST_PIS                                     --\n"
+            + "	LEFT OUTER JOIN NCMSH ON                                                                               --\n"
+            + "		NCMSH.CD_NCMSH = PRODUTO_SIMPLES.CD_NCM_SH                                                         --\n"
+            + "	LEFT OUTER JOIN UNIDADE_MEDIDA ON                                                                      --\n"
+            + "		UNIDADE_MEDIDA.CD_UNIDADE = PRODUTO_SIMPLES.CD_UNIDADE_MEDIDA                                      --\n"
+            + "	WHERE                                                                                                  --\n"
+            + "		(PRODUTO_SIMPLES.CD_REF = ?  )                                                                     ";

@@ -1,0 +1,45 @@
+Rateio de Desconto->OK
+Rateio de Frete      ->ok-Funciona qdo n tem acrescimo ou desconto-Se tiver precisa ver como deve ser feito
+
+sql de nusca dos dados
+select
+    i.cd_seq_ite_pro,
+    i.cd_refer_pro,
+    i.qt_ite_pro,
+    i.vl_ven_ite_pro,
+    (i.qt_ite_pro*i.vl_ven_ite_pro) as totalitem,
+    i.vl_frete,
+
+    cast((((o.vl_tot_frete * (i.qt_ite_pro*i.vl_ven_ite_pro))/o.vl_tot_pedido_nota)
+
+   )as numeric (16,4)) rateio_frete,
+   o.vl_tot_frete
+
+from
+    itens_orc i
+    inner join orcamento o
+    on o.cd_movimento=i.cd_movimento
+where
+    i.cd_movimento=1
+    order by 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

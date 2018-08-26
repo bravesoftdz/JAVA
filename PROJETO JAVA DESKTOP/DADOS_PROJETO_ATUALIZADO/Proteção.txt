@@ -1,0 +1,3 @@
+Caso seu software vá virar um
+produto de prateleira, é fundamental passar um obfuscador no seu código, que vai embaralhar
+classes, métodos e um monte de outros recursos. (veja http://proguard.sf.net).

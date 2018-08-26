@@ -1,0 +1,31 @@
+function OAS_RICH(position) {
+if (position == 'Top') {
+document.write ('<!-- begin ad tag -->\n');
+document.write ('<script type="text/javascript">\n');
+document.write ('//<![CDATA[\n');
+document.write ('ord=Math.random()*10000000000000000;\n');
+document.write ('document.write(');
+document.write ("'");
+document.write ('<script type="text/javascript" src="http://ad.doubleclick.net/adj/guj/;fiap=gujsuper;sz=728x90;click0=http://media.realmedia.com.br/RealMedia/ads/click_lx.ads/guj/internas/L12/887008063/Top/rmlanetwork/110602_fiapmba_guj/fiapmba_guj_home_int_super_110602.html/76556850786b3433424b5141416b3576?;ord=887008063');
+document.write ("'");
+document.write (' + ord + ');
+document.write ("'");
+document.write ('?"><\\');
+document.write ('/script>');
+document.write ("'");
+document.write (');\n');
+document.write ('//]]>\n');
+document.write ('</script>\n');
+document.write ('<noscript><a href="http://media.realmedia.com.br/RealMedia/ads/click_lx.ads/guj/internas/L12/887008063/Top/rmlanetwork/110602_fiapmba_guj/fiapmba_guj_home_int_super_110602.html/76556850786b3433424b5141416b3576?http://ad.doubleclick.net/jump/guj/;fiap=gujsuper;sz=728x90;ord=887008063?" target="_blank" ><img src="http://ad.doubleclick.net/ad/guj/;fiap=gujsuper;sz=728x90;ord=887008063?" border="0" alt="" /></a></noscript>\n');
+document.write ('<!-- end ad tag --> ');
+}
+if (position == 'Right') {
+document.write ('<A HREF="http://media.realmedia.com.br/RealMedia/ads/click_lx.ads/guj/internas/L12/1004102825/Right/rmlanetwork/110114_guj_caelum_arroba/banner_caelum_300x250_2.gif/76556850786b3433424b5141416b3576" target="_blank"><IMG SRC="http://static.realmedianetwork.net/710/RealMedia/ads/Creatives/rmlanetwork/110114_guj_caelum_arroba/banner_caelum_300x250_2.gif"  ALT=""  BORDER="0"></A>');
+}
+if (position == 'x01') {
+document.write ('<A HREF="http://media.realmedia.com.br/RealMedia/ads/click_lx.ads/guj/internas/2143696436/x01/default/empty.gif/76556850786b3433424b5141416b3576" target="_top"><IMG SRC="http://static.realmedianetwork.net/710/RealMedia/ads/Creatives/default/empty.gif"  WIDTH=1 HEIGHT=1 ALT="" BORDER=0 BORDER="0"></A>');
+}
+if (position == 'x04') {
+document.write ('<A HREF="http://media.realmedia.com.br/RealMedia/ads/click_lx.ads/guj/internas/L12/80469679/x04/rmlanetwork/110114_guj_institucional_sky/120X600_INSTITUCIONAL_GUJ.gif/76556850786b3433424b5141416b3576" target="_blank"><IMG SRC="http://static.realmedianetwork.net/710/RealMedia/ads/Creatives/rmlanetwork/110114_guj_institucional_sky/120X600_INSTITUCIONAL_GUJ.gif"  ALT=""  BORDER="0"></A>');
+}
+}

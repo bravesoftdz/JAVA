@@ -1,0 +1,2805 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0151)http://ormlite.svn.sourceforge.net/viewvc/ormlite/ormlite-jdbc/trunk/src/test/java/com/j256/ormlite/examples/simple/Main.java?revision=1860&view=markup -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SourceForge.net Repository - [ormlite] Contents of /ormlite-jdbc/trunk/src/test/java/com/j256/ormlite/examples/simple/Main.java</title>
+<meta name="generator" content="ViewVC 1.1.6">
+
+<meta name="description" content="The world&#39;s largest development and download repository of Open Source code and applications">
+<meta name="keywords" content="Open Source, Development, Developers, Projects, Downloads, OSTG, VA Software, SF.net, SourceForge">
+<title>SourceForge.net Repository - ormlite Index of /</title>
+<link rel="shortcut icon" href="http://a.fsdn.com/con/img/favicon.ico">
+<link rel="stylesheet" href="./[ormlite] exemplo java_files/sf.min.css" type="text/css">
+<link rel="stylesheet" href="./[ormlite] exemplo java_files/styles.css" type="text/css">
+<style type="text/css">
+#doc3 { max-width: 1000px; margin: 0 auto; }
+#hd .logo {
+background: url("http://a.fsdn.com/sf/images/phoneix/sf_phoneix.png") no-repeat;
+color: transparent;
+display: inline-block;
+height: 36px;
+}
+#hd .search { display: none; }
+#breadcrumbs { margin-bottom: 1em; }
+#fad83 { float: right; }
+#yui-main { min-height: 100px; }
+#ft .yui-u { display: inline-block; margin-right: 2em; }
+</style>
+
+<!-- BEGIN: AdSolution-Tag 4.2: Global-Code [PLACE IN HTML-HEAD-AREA!] -->
+<!-- DoubleClick Random Number -->
+<script language="JavaScript" type="text/javascript">
+dfp_ord=Math.random()*10000000000000000;
+dfp_tile = 1;
+</script>
+<!-- End DoubleClick Random Number -->
+<script type="text/javascript">
+var google_page_url = 'http://sourceforge.net/projects/ormlite/';
+var sourceforge_project_name = 'ormlite';
+var sourceforge_project_description = '';
+</script>
+<!-- END: AdSolution-Tag 4.2: Global-Code -->
+<!-- after META tags -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./[ormlite] exemplo java_files/ga.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="chrome-extension://knnjalkmmdbjmbnkdolelamkbnjoohbe/css/about.css"></head><style type="text/css" id="CWToolbarStyle">html { padding-top: 34px !important;}</style>
+<body class="short-head">
+<!--[if IE 7]><div id="ie7only"><![endif]-->
+<!--[if IE 6]><div id="ie6only"><![endif]-->
+<!--[if IE]><div id="ieonly"><![endif]-->
+<div id="doc3">
+<div id="hd">
+<div class="yui-b">
+<div class="yui-gc">
+<div class="yui-u first">
+<a href="http://sourceforge.net/" class="logo">Find and develop open source software</a>
+</div>
+<div class="yui-u">
+<div class="search">
+<form action="http://sourceforge.net/search/" method="get" name="searchform" id="searchform">
+<input type="hidden" name="type_of_search" value="soft">
+<input type="text" class="text clear hint" name="words" id="words" value="enter keyword">
+<span class="yui-button yui-push-button default"><span class="first-child"><button type="submit" value="Search">Search</button></span></span>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="bd" class="inner-bd">
+<div id="doc4" class="yui-t6">
+<div id="breadcrumbs">
+
+<a href="http://sourceforge.net/">SourceForge.net</a>
+&gt; <a href="http://sourceforge.net/softwaremap/">Find Software</a>
+&gt; <a href="http://sourceforge.net/projects/ormlite/">ormlite</a>
+&gt; SCM Repositories
+
+
+<a href="http://ormlite.svn.sourceforge.net/viewvc/ormlite/">
+
+
+&gt; ormlite
+
+
+</a>
+
+
+
+<a href="http://ormlite.svn.sourceforge.net/viewvc/ormlite/ormlite-jdbc/">
+
+
+&gt; ormlite-jdbc
+
+
+</a>
+
+
+
+<a href="http://ormlite.svn.sourceforge.net/viewvc/ormlite/ormlite-jdbc/trunk/">
+
+
+&gt; trunk
+
+
+</a>
+
+
+
+<a href="http://ormlite.svn.sourceforge.net/viewvc/ormlite/ormlite-jdbc/trunk/src/">
+
+
+&gt; src
+
+
+</a>
+
+
+
+<a href="http://ormlite.svn.sourceforge.net/viewvc/ormlite/ormlite-jdbc/trunk/src/test/">
+
+
+&gt; test
+
+
+</a>
+
+
+
+<a href="http://ormlite.svn.sourceforge.net/viewvc/ormlite/ormlite-jdbc/trunk/src/test/java/">
+
+
+&gt; java
+
+
+</a>
+
+
+
+<a href="http://ormlite.svn.sourceforge.net/viewvc/ormlite/ormlite-jdbc/trunk/src/test/java/com/">
+
+
+&gt; com
+
+
+</a>
+
+
+
+<a href="http://ormlite.svn.sourceforge.net/viewvc/ormlite/ormlite-jdbc/trunk/src/test/java/com/j256/">
+
+
+&gt; j256
+
+
+</a>
+
+
+
+<a href="http://ormlite.svn.sourceforge.net/viewvc/ormlite/ormlite-jdbc/trunk/src/test/java/com/j256/ormlite/">
+
+
+&gt; ormlite
+
+
+</a>
+
+
+
+<a href="http://ormlite.svn.sourceforge.net/viewvc/ormlite/ormlite-jdbc/trunk/src/test/java/com/j256/ormlite/examples/">
+
+
+&gt; examples
+
+
+</a>
+
+
+
+<a href="http://ormlite.svn.sourceforge.net/viewvc/ormlite/ormlite-jdbc/trunk/src/test/java/com/j256/ormlite/examples/simple/">
+
+
+&gt; simple
+
+
+</a>
+
+
+
+<a href="http://ormlite.svn.sourceforge.net/viewvc/ormlite/ormlite-jdbc/trunk/src/test/java/com/j256/ormlite/examples/simple/Main.java?view=log">
+
+
+&gt; Main.java
+
+
+</a>
+
+
+
+</div>
+
+
+
+
+
+ <div id="project_nav_container">
+<small><div>
+
+<a href="http://ormlite.svn.sourceforge.net/viewvc/ormlite/ormlite-jdbc/trunk/src/test/java/com/j256/ormlite/examples/simple/"><img src="./[ormlite] exemplo java_files/back_small.png" width="16" height="16" alt="Parent Directory"> Parent Directory</a>
+
+| <a href="http://ormlite.svn.sourceforge.net/viewvc/ormlite/ormlite-jdbc/trunk/src/test/java/com/j256/ormlite/examples/simple/Main.java?view=log"><img src="./[ormlite] exemplo java_files/log.png" width="16" height="16" alt="Revision Log"> Revision Log</a>
+
+
+
+
+</div>
+</small>
+<h1>SCM Repositories - <a href="http://sourceforge.net/projects/ormlite">ormlite</a></h1>
+</div>
+<hr class="clear">
+<div class="yui-b">
+<div id="fad83">
+<!-- DoubleClick Ad Tag -->
+<script type="text/javascript">
+//<![CDATA[
+document.write('<script src="http://ad.doubleclick.net/adj/ostg.sourceforge/pg_viewvc_p88_shortrec;pg=viewvc;tile='+dfp_tile+';tpc=ormlite;ord='+dfp_ord+';sz=1x1?" type="text/javascript"><\/script>');
+dfp_tile++;
+//]]>
+</script><script src="./[ormlite] exemplo java_files/pg_viewvc_p88_shortrec;pg=viewvc;tile=1;tpc=ormlite;ord=5345363502856344" type="text/javascript"></script><a target="_top" href="http://ad.doubleclick.net/click;h=v8/3b59/0/0/%2a/d;44306;0-0;0;30748661;31-1/1;0/0/0;;~okv=;pg=viewvc;tile=1;tpc=ormlite;sz=1x1;bsg=104624;bsg=109738;bsg=109741;;~sscs=%3f"><img src="./[ormlite] exemplo java_files/817-grey.gif" border="0" alt="Click here to find out more!"></a>
+<!-- End DoubleClick Ad Tag -->
+</div>
+</div>
+<div id="yui-main">
+<div class="yui-b sfBox">
+There are no available options for this view.
+</div>
+</div>
+<hr class="clear">
+<div>
+ 
+
+
+
+
+<div>
+
+<a href="http://ormlite.svn.sourceforge.net/viewvc/ormlite/ormlite-jdbc/trunk/src/test/java/com/j256/ormlite/examples/simple/"><img src="./[ormlite] exemplo java_files/back_small.png" width="16" height="16" alt="Parent Directory"> Parent Directory</a>
+
+| <a href="http://ormlite.svn.sourceforge.net/viewvc/ormlite/ormlite-jdbc/trunk/src/test/java/com/j256/ormlite/examples/simple/Main.java?view=log"><img src="./[ormlite] exemplo java_files/log.png" width="16" height="16" alt="Revision Log"> Revision Log</a>
+
+
+
+
+</div>
+
+<hr>
+<div class="vc_summary">
+Revision <a href="http://ormlite.svn.sourceforge.net/viewvc/ormlite?view=revision&revision=1649"><strong>1649</strong></a> -
+(<a href="http://ormlite.svn.sourceforge.net/viewvc/ormlite/ormlite-jdbc/trunk/src/test/java/com/j256/ormlite/examples/simple/Main.java?annotate=1649"><strong>show annotations</strong></a>)
+(<a href="http://ormlite.svn.sourceforge.net/viewvc/ormlite/ormlite-jdbc/trunk/src/test/java/com/j256/ormlite/examples/simple/Main.java?revision=1649"><strong>download</strong></a>)
+(<a href="http://ormlite.svn.sourceforge.net/viewvc/ormlite/ormlite-jdbc/trunk/src/test/java/com/j256/ormlite/examples/simple/Main.java?revision=1649&content-type=text%2Fplain"><strong>as text</strong></a>)
+
+<br><em>Tue Apr 12 13:22:12 2011 UTC</em>
+(3 months, 3 weeks ago)
+by <em>graywatson</em>
+
+
+
+
+
+
+<br>File MIME type: text/x-java
+
+
+<br>File size: 8779 byte(s)
+
+
+
+
+
+
+<pre class="vc_log">Brought up to date.</pre>
+
+</div>
+
+
+
+
+
+
+
+
+
+<div id="vc_file">
+<table cellspacing="0" cellpadding="0">
+
+
+
+
+
+
+
+
+<tbody><tr class="vc_row_odd" id="l1">
+<td class="vc_file_line_number">1</td>
+
+<td class="vc_file_line_text"><span class="pygments-kn">package</span><span class="pygments-"> </span><span class="pygments-n">com</span><span class="pygments-o">.</span><span class="pygments-na">j256</span><span class="pygments-o">.</span><span class="pygments-na">ormlite</span><span class="pygments-o">.</span><span class="pygments-na">examples</span><span class="pygments-o">.</span><span class="pygments-na">simple</span><span class="pygments-o">;</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l2">
+<td class="vc_file_line_number">2</td>
+
+<td class="vc_file_line_text">
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l3">
+<td class="vc_file_line_number">3</td>
+
+<td class="vc_file_line_text"><span class="pygments-kn">import</span><span class="pygments-"> </span><span class="pygments-nn">static</span><span class="pygments-"> </span><span class="pygments-n">org</span><span class="pygments-o">.</span><span class="pygments-na">junit</span><span class="pygments-o">.</span><span class="pygments-na">Assert</span><span class="pygments-o">.</span><span class="pygments-na">assertEquals</span><span class="pygments-o">;</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l4">
+<td class="vc_file_line_number">4</td>
+
+<td class="vc_file_line_text"><span class="pygments-kn">import</span><span class="pygments-"> </span><span class="pygments-nn">static</span><span class="pygments-"> </span><span class="pygments-n">org</span><span class="pygments-o">.</span><span class="pygments-na">junit</span><span class="pygments-o">.</span><span class="pygments-na">Assert</span><span class="pygments-o">.</span><span class="pygments-na">assertNotNull</span><span class="pygments-o">;</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l5">
+<td class="vc_file_line_number">5</td>
+
+<td class="vc_file_line_text"><span class="pygments-kn">import</span><span class="pygments-"> </span><span class="pygments-nn">static</span><span class="pygments-"> </span><span class="pygments-n">org</span><span class="pygments-o">.</span><span class="pygments-na">junit</span><span class="pygments-o">.</span><span class="pygments-na">Assert</span><span class="pygments-o">.</span><span class="pygments-na">assertNull</span><span class="pygments-o">;</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l6">
+<td class="vc_file_line_number">6</td>
+
+<td class="vc_file_line_text"><span class="pygments-kn">import</span><span class="pygments-"> </span><span class="pygments-nn">static</span><span class="pygments-"> </span><span class="pygments-n">org</span><span class="pygments-o">.</span><span class="pygments-na">junit</span><span class="pygments-o">.</span><span class="pygments-na">Assert</span><span class="pygments-o">.</span><span class="pygments-na">assertTrue</span><span class="pygments-o">;</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l7">
+<td class="vc_file_line_number">7</td>
+
+<td class="vc_file_line_text"><span class="pygments-kn">import</span><span class="pygments-"> </span><span class="pygments-nn">static</span><span class="pygments-"> </span><span class="pygments-n">org</span><span class="pygments-o">.</span><span class="pygments-na">junit</span><span class="pygments-o">.</span><span class="pygments-na">Assert</span><span class="pygments-o">.</span><span class="pygments-na">fail</span><span class="pygments-o">;</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l8">
+<td class="vc_file_line_number">8</td>
+
+<td class="vc_file_line_text">
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l9">
+<td class="vc_file_line_number">9</td>
+
+<td class="vc_file_line_text"><span class="pygments-kn">import</span><span class="pygments-"> </span><span class="pygments-nn">java.sql.SQLException</span><span class="pygments-o">;</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l10">
+<td class="vc_file_line_number">10</td>
+
+<td class="vc_file_line_text"><span class="pygments-kn">import</span><span class="pygments-"> </span><span class="pygments-nn">java.util.HashMap</span><span class="pygments-o">;</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l11">
+<td class="vc_file_line_number">11</td>
+
+<td class="vc_file_line_text"><span class="pygments-kn">import</span><span class="pygments-"> </span><span class="pygments-nn">java.util.List</span><span class="pygments-o">;</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l12">
+<td class="vc_file_line_number">12</td>
+
+<td class="vc_file_line_text"><span class="pygments-kn">import</span><span class="pygments-"> </span><span class="pygments-nn">java.util.Map</span><span class="pygments-o">;</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l13">
+<td class="vc_file_line_number">13</td>
+
+<td class="vc_file_line_text"><span class="pygments-kn">import</span><span class="pygments-"> </span><span class="pygments-nn">java.util.concurrent.Callable</span><span class="pygments-o">;</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l14">
+<td class="vc_file_line_number">14</td>
+
+<td class="vc_file_line_text">
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l15">
+<td class="vc_file_line_number">15</td>
+
+<td class="vc_file_line_text"><span class="pygments-kn">import</span><span class="pygments-"> </span><span class="pygments-nn">com.j256.ormlite.dao.Dao</span><span class="pygments-o">;</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l16">
+<td class="vc_file_line_number">16</td>
+
+<td class="vc_file_line_text"><span class="pygments-kn">import</span><span class="pygments-"> </span><span class="pygments-nn">com.j256.ormlite.dao.DaoManager</span><span class="pygments-o">;</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l17">
+<td class="vc_file_line_number">17</td>
+
+<td class="vc_file_line_text"><span class="pygments-kn">import</span><span class="pygments-"> </span><span class="pygments-nn">com.j256.ormlite.jdbc.JdbcConnectionSource</span><span class="pygments-o">;</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l18">
+<td class="vc_file_line_number">18</td>
+
+<td class="vc_file_line_text"><span class="pygments-kn">import</span><span class="pygments-"> </span><span class="pygments-nn">com.j256.ormlite.misc.TransactionManager</span><span class="pygments-o">;</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l19">
+<td class="vc_file_line_number">19</td>
+
+<td class="vc_file_line_text"><span class="pygments-kn">import</span><span class="pygments-"> </span><span class="pygments-nn">com.j256.ormlite.stmt.PreparedQuery</span><span class="pygments-o">;</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l20">
+<td class="vc_file_line_number">20</td>
+
+<td class="vc_file_line_text"><span class="pygments-kn">import</span><span class="pygments-"> </span><span class="pygments-nn">com.j256.ormlite.stmt.QueryBuilder</span><span class="pygments-o">;</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l21">
+<td class="vc_file_line_number">21</td>
+
+<td class="vc_file_line_text"><span class="pygments-kn">import</span><span class="pygments-"> </span><span class="pygments-nn">com.j256.ormlite.stmt.SelectArg</span><span class="pygments-o">;</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l22">
+<td class="vc_file_line_number">22</td>
+
+<td class="vc_file_line_text"><span class="pygments-kn">import</span><span class="pygments-"> </span><span class="pygments-nn">com.j256.ormlite.support.ConnectionSource</span><span class="pygments-o">;</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l23">
+<td class="vc_file_line_number">23</td>
+
+<td class="vc_file_line_text"><span class="pygments-kn">import</span><span class="pygments-"> </span><span class="pygments-nn">com.j256.ormlite.table.TableUtils</span><span class="pygments-o">;</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l24">
+<td class="vc_file_line_number">24</td>
+
+<td class="vc_file_line_text">
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l25">
+<td class="vc_file_line_number">25</td>
+
+<td class="vc_file_line_text"><span class="pygments-cm">/**</span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l26">
+<td class="vc_file_line_number">26</td>
+
+<td class="vc_file_line_text"><span class="pygments-cm"> * Main sample routine to show how to do basic operations with the package.</span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l27">
+<td class="vc_file_line_number">27</td>
+
+<td class="vc_file_line_text"><span class="pygments-cm"> * </span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l28">
+<td class="vc_file_line_number">28</td>
+
+<td class="vc_file_line_text"><span class="pygments-cm"> * &lt;p&gt;</span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l29">
+<td class="vc_file_line_number">29</td>
+
+<td class="vc_file_line_text"><span class="pygments-cm"> * &lt;b&gt;NOTE:&lt;/b&gt; We use asserts in a couple of places to verify the results but if this were actual production code, we</span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l30">
+<td class="vc_file_line_number">30</td>
+
+<td class="vc_file_line_text"><span class="pygments-cm"> * would have proper error handling.</span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l31">
+<td class="vc_file_line_number">31</td>
+
+<td class="vc_file_line_text"><span class="pygments-cm"> * &lt;/p&gt;</span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l32">
+<td class="vc_file_line_number">32</td>
+
+<td class="vc_file_line_text"><span class="pygments-cm"> */</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l33">
+<td class="vc_file_line_number">33</td>
+
+<td class="vc_file_line_text"><span class="pygments-kd">public</span><span class="pygments-"> </span><span class="pygments-kd">class</span><span class="pygments-"> </span><span class="pygments-nc">Main</span><span class="pygments-"> </span><span class="pygments-o">{</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l34">
+<td class="vc_file_line_number">34</td>
+
+<td class="vc_file_line_text">
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l35">
+<td class="vc_file_line_number">35</td>
+
+<td class="vc_file_line_text"><span class="pygments-">        </span><span class="pygments-c1">// we are using the in-memory H2 database</span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l36">
+<td class="vc_file_line_number">36</td>
+
+<td class="vc_file_line_text"><span class="pygments-">        </span><span class="pygments-kd">private</span><span class="pygments-"> </span><span class="pygments-kd">final</span><span class="pygments-"> </span><span class="pygments-kd">static</span><span class="pygments-"> </span><span class="pygments-n">String</span><span class="pygments-"> </span><span class="pygments-n">DATABASE_URL</span><span class="pygments-"> </span><span class="pygments-o">=</span><span class="pygments-"> </span><span class="pygments-s">"jdbc:h2:mem:account"</span><span class="pygments-o">;</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l37">
+<td class="vc_file_line_number">37</td>
+
+<td class="vc_file_line_text">
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l38">
+<td class="vc_file_line_number">38</td>
+
+<td class="vc_file_line_text"><span class="pygments-">        </span><span class="pygments-kd">private</span><span class="pygments-"> </span><span class="pygments-n">Dao</span><span class="pygments-o">&lt;</span><span class="pygments-n">Account</span><span class="pygments-o">,</span><span class="pygments-"> </span><span class="pygments-n">Integer</span><span class="pygments-o">&gt;</span><span class="pygments-"> </span><span class="pygments-n">accountDao</span><span class="pygments-o">;</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l39">
+<td class="vc_file_line_number">39</td>
+
+<td class="vc_file_line_text">
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l40">
+<td class="vc_file_line_number">40</td>
+
+<td class="vc_file_line_text"><span class="pygments-">        </span><span class="pygments-kd">public</span><span class="pygments-"> </span><span class="pygments-kd">static</span><span class="pygments-"> </span><span class="pygments-kt">void</span><span class="pygments-"> </span><span class="pygments-nf">main</span><span class="pygments-o">(</span><span class="pygments-n">String</span><span class="pygments-o">[]</span><span class="pygments-"> </span><span class="pygments-n">args</span><span class="pygments-o">)</span><span class="pygments-"> </span><span class="pygments-kd">throws</span><span class="pygments-"> </span><span class="pygments-n">Exception</span><span class="pygments-"> </span><span class="pygments-o">{</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l41">
+<td class="vc_file_line_number">41</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-c1">// turn our static method into an instance of Main</span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l42">
+<td class="vc_file_line_number">42</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-k">new</span><span class="pygments-"> </span><span class="pygments-nf">Main</span><span class="pygments-o">().</span><span class="pygments-na">doMain</span><span class="pygments-o">(</span><span class="pygments-n">args</span><span class="pygments-o">);</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l43">
+<td class="vc_file_line_number">43</td>
+
+<td class="vc_file_line_text"><span class="pygments-">        </span><span class="pygments-o">}</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l44">
+<td class="vc_file_line_number">44</td>
+
+<td class="vc_file_line_text">
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l45">
+<td class="vc_file_line_number">45</td>
+
+<td class="vc_file_line_text"><span class="pygments-">        </span><span class="pygments-kd">private</span><span class="pygments-"> </span><span class="pygments-kt">void</span><span class="pygments-"> </span><span class="pygments-nf">doMain</span><span class="pygments-o">(</span><span class="pygments-n">String</span><span class="pygments-o">[]</span><span class="pygments-"> </span><span class="pygments-n">args</span><span class="pygments-o">)</span><span class="pygments-"> </span><span class="pygments-kd">throws</span><span class="pygments-"> </span><span class="pygments-n">Exception</span><span class="pygments-"> </span><span class="pygments-o">{</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l46">
+<td class="vc_file_line_number">46</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">JdbcConnectionSource</span><span class="pygments-"> </span><span class="pygments-n">connectionSource</span><span class="pygments-"> </span><span class="pygments-o">=</span><span class="pygments-"> </span><span class="pygments-kc">null</span><span class="pygments-o">;</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l47">
+<td class="vc_file_line_number">47</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-k">try</span><span class="pygments-"> </span><span class="pygments-o">{</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l48">
+<td class="vc_file_line_number">48</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                        </span><span class="pygments-c1">// create our data-source for the database</span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l49">
+<td class="vc_file_line_number">49</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                        </span><span class="pygments-n">connectionSource</span><span class="pygments-"> </span><span class="pygments-o">=</span><span class="pygments-"> </span><span class="pygments-k">new</span><span class="pygments-"> </span><span class="pygments-n">JdbcConnectionSource</span><span class="pygments-o">(</span><span class="pygments-n">DATABASE_URL</span><span class="pygments-o">);</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l50">
+<td class="vc_file_line_number">50</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                        </span><span class="pygments-c1">// setup our database and DAOs</span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l51">
+<td class="vc_file_line_number">51</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                        </span><span class="pygments-n">setupDatabase</span><span class="pygments-o">(</span><span class="pygments-n">connectionSource</span><span class="pygments-o">);</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l52">
+<td class="vc_file_line_number">52</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                        </span><span class="pygments-c1">// read and write some data</span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l53">
+<td class="vc_file_line_number">53</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                        </span><span class="pygments-n">readWriteData</span><span class="pygments-o">();</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l54">
+<td class="vc_file_line_number">54</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                        </span><span class="pygments-c1">// do a bunch of bulk operations</span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l55">
+<td class="vc_file_line_number">55</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                        </span><span class="pygments-n">readWriteBunch</span><span class="pygments-o">();</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l56">
+<td class="vc_file_line_number">56</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                        </span><span class="pygments-c1">// show how to use the SelectArg object</span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l57">
+<td class="vc_file_line_number">57</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                        </span><span class="pygments-n">useSelectArgFeature</span><span class="pygments-o">();</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l58">
+<td class="vc_file_line_number">58</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                        </span><span class="pygments-c1">// show how to use the SelectArg object</span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l59">
+<td class="vc_file_line_number">59</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                        </span><span class="pygments-n">useTransactions</span><span class="pygments-o">(</span><span class="pygments-n">connectionSource</span><span class="pygments-o">);</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l60">
+<td class="vc_file_line_number">60</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                        </span><span class="pygments-n">System</span><span class="pygments-o">.</span><span class="pygments-na">out</span><span class="pygments-o">.</span><span class="pygments-na">println</span><span class="pygments-o">(</span><span class="pygments-s">"\n\nIt seems to have worked\n\n"</span><span class="pygments-o">);</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l61">
+<td class="vc_file_line_number">61</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-o">}</span><span class="pygments-"> </span><span class="pygments-k">finally</span><span class="pygments-"> </span><span class="pygments-o">{</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l62">
+<td class="vc_file_line_number">62</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                        </span><span class="pygments-c1">// destroy the data source which should close underlying connections</span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l63">
+<td class="vc_file_line_number">63</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                        </span><span class="pygments-k">if</span><span class="pygments-"> </span><span class="pygments-o">(</span><span class="pygments-n">connectionSource</span><span class="pygments-"> </span><span class="pygments-o">!=</span><span class="pygments-"> </span><span class="pygments-kc">null</span><span class="pygments-o">)</span><span class="pygments-"> </span><span class="pygments-o">{</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l64">
+<td class="vc_file_line_number">64</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                                </span><span class="pygments-n">connectionSource</span><span class="pygments-o">.</span><span class="pygments-na">close</span><span class="pygments-o">();</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l65">
+<td class="vc_file_line_number">65</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                        </span><span class="pygments-o">}</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l66">
+<td class="vc_file_line_number">66</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-o">}</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l67">
+<td class="vc_file_line_number">67</td>
+
+<td class="vc_file_line_text"><span class="pygments-">        </span><span class="pygments-o">}</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l68">
+<td class="vc_file_line_number">68</td>
+
+<td class="vc_file_line_text">
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l69">
+<td class="vc_file_line_number">69</td>
+
+<td class="vc_file_line_text"><span class="pygments-">        </span><span class="pygments-cm">/**</span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l70">
+<td class="vc_file_line_number">70</td>
+
+<td class="vc_file_line_text"><span class="pygments-cm">         * Setup our database and DAOs</span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l71">
+<td class="vc_file_line_number">71</td>
+
+<td class="vc_file_line_text"><span class="pygments-cm">         */</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l72">
+<td class="vc_file_line_number">72</td>
+
+<td class="vc_file_line_text"><span class="pygments-">        </span><span class="pygments-kd">private</span><span class="pygments-"> </span><span class="pygments-kt">void</span><span class="pygments-"> </span><span class="pygments-nf">setupDatabase</span><span class="pygments-o">(</span><span class="pygments-n">ConnectionSource</span><span class="pygments-"> </span><span class="pygments-n">connectionSource</span><span class="pygments-o">)</span><span class="pygments-"> </span><span class="pygments-kd">throws</span><span class="pygments-"> </span><span class="pygments-n">Exception</span><span class="pygments-"> </span><span class="pygments-o">{</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l73">
+<td class="vc_file_line_number">73</td>
+
+<td class="vc_file_line_text">
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l74">
+<td class="vc_file_line_number">74</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">accountDao</span><span class="pygments-"> </span><span class="pygments-o">=</span><span class="pygments-"> </span><span class="pygments-n">DaoManager</span><span class="pygments-o">.</span><span class="pygments-na">createDao</span><span class="pygments-o">(</span><span class="pygments-n">connectionSource</span><span class="pygments-o">,</span><span class="pygments-"> </span><span class="pygments-n">Account</span><span class="pygments-o">.</span><span class="pygments-na">class</span><span class="pygments-o">);</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l75">
+<td class="vc_file_line_number">75</td>
+
+<td class="vc_file_line_text">
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l76">
+<td class="vc_file_line_number">76</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-c1">// if you need to create the table</span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l77">
+<td class="vc_file_line_number">77</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">TableUtils</span><span class="pygments-o">.</span><span class="pygments-na">createTable</span><span class="pygments-o">(</span><span class="pygments-n">connectionSource</span><span class="pygments-o">,</span><span class="pygments-"> </span><span class="pygments-n">Account</span><span class="pygments-o">.</span><span class="pygments-na">class</span><span class="pygments-o">);</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l78">
+<td class="vc_file_line_number">78</td>
+
+<td class="vc_file_line_text"><span class="pygments-">        </span><span class="pygments-o">}</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l79">
+<td class="vc_file_line_number">79</td>
+
+<td class="vc_file_line_text">
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l80">
+<td class="vc_file_line_number">80</td>
+
+<td class="vc_file_line_text"><span class="pygments-">        </span><span class="pygments-cm">/**</span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l81">
+<td class="vc_file_line_number">81</td>
+
+<td class="vc_file_line_text"><span class="pygments-cm">         * Read and write some example data.</span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l82">
+<td class="vc_file_line_number">82</td>
+
+<td class="vc_file_line_text"><span class="pygments-cm">         */</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l83">
+<td class="vc_file_line_number">83</td>
+
+<td class="vc_file_line_text"><span class="pygments-">        </span><span class="pygments-kd">private</span><span class="pygments-"> </span><span class="pygments-kt">void</span><span class="pygments-"> </span><span class="pygments-nf">readWriteData</span><span class="pygments-o">()</span><span class="pygments-"> </span><span class="pygments-kd">throws</span><span class="pygments-"> </span><span class="pygments-n">Exception</span><span class="pygments-"> </span><span class="pygments-o">{</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l84">
+<td class="vc_file_line_number">84</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-c1">// create an instance of Account</span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l85">
+<td class="vc_file_line_number">85</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">String</span><span class="pygments-"> </span><span class="pygments-n">name</span><span class="pygments-"> </span><span class="pygments-o">=</span><span class="pygments-"> </span><span class="pygments-s">"Jim Coakley"</span><span class="pygments-o">;</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l86">
+<td class="vc_file_line_number">86</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">Account</span><span class="pygments-"> </span><span class="pygments-n">account</span><span class="pygments-"> </span><span class="pygments-o">=</span><span class="pygments-"> </span><span class="pygments-k">new</span><span class="pygments-"> </span><span class="pygments-n">Account</span><span class="pygments-o">(</span><span class="pygments-n">name</span><span class="pygments-o">);</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l87">
+<td class="vc_file_line_number">87</td>
+
+<td class="vc_file_line_text">
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l88">
+<td class="vc_file_line_number">88</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-c1">// persist the account object to the database</span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l89">
+<td class="vc_file_line_number">89</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">accountDao</span><span class="pygments-o">.</span><span class="pygments-na">create</span><span class="pygments-o">(</span><span class="pygments-n">account</span><span class="pygments-o">);</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l90">
+<td class="vc_file_line_number">90</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-kt">int</span><span class="pygments-"> </span><span class="pygments-n">id</span><span class="pygments-"> </span><span class="pygments-o">=</span><span class="pygments-"> </span><span class="pygments-n">account</span><span class="pygments-o">.</span><span class="pygments-na">getId</span><span class="pygments-o">();</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l91">
+<td class="vc_file_line_number">91</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">verifyDb</span><span class="pygments-o">(</span><span class="pygments-n">id</span><span class="pygments-o">,</span><span class="pygments-"> </span><span class="pygments-n">account</span><span class="pygments-o">);</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l92">
+<td class="vc_file_line_number">92</td>
+
+<td class="vc_file_line_text">
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l93">
+<td class="vc_file_line_number">93</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-c1">// assign a password</span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l94">
+<td class="vc_file_line_number">94</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">account</span><span class="pygments-o">.</span><span class="pygments-na">setPassword</span><span class="pygments-o">(</span><span class="pygments-s">"_secret"</span><span class="pygments-o">);</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l95">
+<td class="vc_file_line_number">95</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-c1">// update the database after changing the object</span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l96">
+<td class="vc_file_line_number">96</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">accountDao</span><span class="pygments-o">.</span><span class="pygments-na">update</span><span class="pygments-o">(</span><span class="pygments-n">account</span><span class="pygments-o">);</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l97">
+<td class="vc_file_line_number">97</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">verifyDb</span><span class="pygments-o">(</span><span class="pygments-n">id</span><span class="pygments-o">,</span><span class="pygments-"> </span><span class="pygments-n">account</span><span class="pygments-o">);</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l98">
+<td class="vc_file_line_number">98</td>
+
+<td class="vc_file_line_text">
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l99">
+<td class="vc_file_line_number">99</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-c1">// query for all items in the database</span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l100">
+<td class="vc_file_line_number">100</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">List</span><span class="pygments-o">&lt;</span><span class="pygments-n">Account</span><span class="pygments-o">&gt;</span><span class="pygments-"> </span><span class="pygments-n">accounts</span><span class="pygments-"> </span><span class="pygments-o">=</span><span class="pygments-"> </span><span class="pygments-n">accountDao</span><span class="pygments-o">.</span><span class="pygments-na">queryForAll</span><span class="pygments-o">();</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l101">
+<td class="vc_file_line_number">101</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">assertEquals</span><span class="pygments-o">(</span><span class="pygments-s">"Should have found 1 account matching our query"</span><span class="pygments-o">,</span><span class="pygments-"> </span><span class="pygments-mi">1</span><span class="pygments-o">,</span><span class="pygments-"> </span><span class="pygments-n">accounts</span><span class="pygments-o">.</span><span class="pygments-na">size</span><span class="pygments-o">());</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l102">
+<td class="vc_file_line_number">102</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">verifyAccount</span><span class="pygments-o">(</span><span class="pygments-n">account</span><span class="pygments-o">,</span><span class="pygments-"> </span><span class="pygments-n">accounts</span><span class="pygments-o">.</span><span class="pygments-na">get</span><span class="pygments-o">(</span><span class="pygments-mi">0</span><span class="pygments-o">));</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l103">
+<td class="vc_file_line_number">103</td>
+
+<td class="vc_file_line_text">
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l104">
+<td class="vc_file_line_number">104</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-c1">// loop through items in the database</span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l105">
+<td class="vc_file_line_number">105</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-kt">int</span><span class="pygments-"> </span><span class="pygments-n">accountC</span><span class="pygments-"> </span><span class="pygments-o">=</span><span class="pygments-"> </span><span class="pygments-mi">0</span><span class="pygments-o">;</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l106">
+<td class="vc_file_line_number">106</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-k">for</span><span class="pygments-"> </span><span class="pygments-o">(</span><span class="pygments-n">Account</span><span class="pygments-"> </span><span class="pygments-n">account2</span><span class="pygments-"> </span><span class="pygments-o">:</span><span class="pygments-"> </span><span class="pygments-n">accountDao</span><span class="pygments-o">)</span><span class="pygments-"> </span><span class="pygments-o">{</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l107">
+<td class="vc_file_line_number">107</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                        </span><span class="pygments-n">verifyAccount</span><span class="pygments-o">(</span><span class="pygments-n">account</span><span class="pygments-o">,</span><span class="pygments-"> </span><span class="pygments-n">account2</span><span class="pygments-o">);</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l108">
+<td class="vc_file_line_number">108</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                        </span><span class="pygments-n">accountC</span><span class="pygments-o">++;</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l109">
+<td class="vc_file_line_number">109</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-o">}</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l110">
+<td class="vc_file_line_number">110</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">assertEquals</span><span class="pygments-o">(</span><span class="pygments-s">"Should have found 1 account in for loop"</span><span class="pygments-o">,</span><span class="pygments-"> </span><span class="pygments-mi">1</span><span class="pygments-o">,</span><span class="pygments-"> </span><span class="pygments-n">accountC</span><span class="pygments-o">);</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l111">
+<td class="vc_file_line_number">111</td>
+
+<td class="vc_file_line_text">
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l112">
+<td class="vc_file_line_number">112</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-c1">// construct a query using the QueryBuilder</span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l113">
+<td class="vc_file_line_number">113</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">QueryBuilder</span><span class="pygments-o">&lt;</span><span class="pygments-n">Account</span><span class="pygments-o">,</span><span class="pygments-"> </span><span class="pygments-n">Integer</span><span class="pygments-o">&gt;</span><span class="pygments-"> </span><span class="pygments-n">statementBuilder</span><span class="pygments-"> </span><span class="pygments-o">=</span><span class="pygments-"> </span><span class="pygments-n">accountDao</span><span class="pygments-o">.</span><span class="pygments-na">queryBuilder</span><span class="pygments-o">();</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l114">
+<td class="vc_file_line_number">114</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-c1">// shouldn't find anything: name LIKE 'hello" does not match our account</span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l115">
+<td class="vc_file_line_number">115</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">statementBuilder</span><span class="pygments-o">.</span><span class="pygments-na">where</span><span class="pygments-o">().</span><span class="pygments-na">like</span><span class="pygments-o">(</span><span class="pygments-n">Account</span><span class="pygments-o">.</span><span class="pygments-na">NAME_FIELD_NAME</span><span class="pygments-o">,</span><span class="pygments-"> </span><span class="pygments-s">"hello"</span><span class="pygments-o">);</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l116">
+<td class="vc_file_line_number">116</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">accounts</span><span class="pygments-"> </span><span class="pygments-o">=</span><span class="pygments-"> </span><span class="pygments-n">accountDao</span><span class="pygments-o">.</span><span class="pygments-na">query</span><span class="pygments-o">(</span><span class="pygments-n">statementBuilder</span><span class="pygments-o">.</span><span class="pygments-na">prepare</span><span class="pygments-o">());</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l117">
+<td class="vc_file_line_number">117</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">assertEquals</span><span class="pygments-o">(</span><span class="pygments-s">"Should not have found any accounts matching our query"</span><span class="pygments-o">,</span><span class="pygments-"> </span><span class="pygments-mi">0</span><span class="pygments-o">,</span><span class="pygments-"> </span><span class="pygments-n">accounts</span><span class="pygments-o">.</span><span class="pygments-na">size</span><span class="pygments-o">());</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l118">
+<td class="vc_file_line_number">118</td>
+
+<td class="vc_file_line_text">
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l119">
+<td class="vc_file_line_number">119</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-c1">// should find our account: name LIKE 'Jim%' should match our account</span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l120">
+<td class="vc_file_line_number">120</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">statementBuilder</span><span class="pygments-o">.</span><span class="pygments-na">where</span><span class="pygments-o">().</span><span class="pygments-na">like</span><span class="pygments-o">(</span><span class="pygments-n">Account</span><span class="pygments-o">.</span><span class="pygments-na">NAME_FIELD_NAME</span><span class="pygments-o">,</span><span class="pygments-"> </span><span class="pygments-n">name</span><span class="pygments-o">.</span><span class="pygments-na">substring</span><span class="pygments-o">(</span><span class="pygments-mi">0</span><span class="pygments-o">,</span><span class="pygments-"> </span><span class="pygments-mi">3</span><span class="pygments-o">)</span><span class="pygments-"> </span><span class="pygments-o">+</span><span class="pygments-"> </span><span class="pygments-s">"%"</span><span class="pygments-o">);</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l121">
+<td class="vc_file_line_number">121</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">accounts</span><span class="pygments-"> </span><span class="pygments-o">=</span><span class="pygments-"> </span><span class="pygments-n">accountDao</span><span class="pygments-o">.</span><span class="pygments-na">query</span><span class="pygments-o">(</span><span class="pygments-n">statementBuilder</span><span class="pygments-o">.</span><span class="pygments-na">prepare</span><span class="pygments-o">());</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l122">
+<td class="vc_file_line_number">122</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">assertEquals</span><span class="pygments-o">(</span><span class="pygments-s">"Should have found 1 account matching our query"</span><span class="pygments-o">,</span><span class="pygments-"> </span><span class="pygments-mi">1</span><span class="pygments-o">,</span><span class="pygments-"> </span><span class="pygments-n">accounts</span><span class="pygments-o">.</span><span class="pygments-na">size</span><span class="pygments-o">());</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l123">
+<td class="vc_file_line_number">123</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">verifyAccount</span><span class="pygments-o">(</span><span class="pygments-n">account</span><span class="pygments-o">,</span><span class="pygments-"> </span><span class="pygments-n">accounts</span><span class="pygments-o">.</span><span class="pygments-na">get</span><span class="pygments-o">(</span><span class="pygments-mi">0</span><span class="pygments-o">));</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l124">
+<td class="vc_file_line_number">124</td>
+
+<td class="vc_file_line_text">
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l125">
+<td class="vc_file_line_number">125</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-c1">// delete the account since we are done with it</span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l126">
+<td class="vc_file_line_number">126</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">accountDao</span><span class="pygments-o">.</span><span class="pygments-na">delete</span><span class="pygments-o">(</span><span class="pygments-n">account</span><span class="pygments-o">);</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l127">
+<td class="vc_file_line_number">127</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-c1">// we shouldn't find it now</span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l128">
+<td class="vc_file_line_number">128</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">assertNull</span><span class="pygments-o">(</span><span class="pygments-s">"account was deleted, shouldn't find any"</span><span class="pygments-o">,</span><span class="pygments-"> </span><span class="pygments-n">accountDao</span><span class="pygments-o">.</span><span class="pygments-na">queryForId</span><span class="pygments-o">(</span><span class="pygments-n">id</span><span class="pygments-o">));</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l129">
+<td class="vc_file_line_number">129</td>
+
+<td class="vc_file_line_text"><span class="pygments-">        </span><span class="pygments-o">}</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l130">
+<td class="vc_file_line_number">130</td>
+
+<td class="vc_file_line_text">
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l131">
+<td class="vc_file_line_number">131</td>
+
+<td class="vc_file_line_text"><span class="pygments-">        </span><span class="pygments-cm">/**</span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l132">
+<td class="vc_file_line_number">132</td>
+
+<td class="vc_file_line_text"><span class="pygments-cm">         * Example of reading and writing a large(r) number of objects.</span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l133">
+<td class="vc_file_line_number">133</td>
+
+<td class="vc_file_line_text"><span class="pygments-cm">         */</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l134">
+<td class="vc_file_line_number">134</td>
+
+<td class="vc_file_line_text"><span class="pygments-">        </span><span class="pygments-kd">private</span><span class="pygments-"> </span><span class="pygments-kt">void</span><span class="pygments-"> </span><span class="pygments-nf">readWriteBunch</span><span class="pygments-o">()</span><span class="pygments-"> </span><span class="pygments-kd">throws</span><span class="pygments-"> </span><span class="pygments-n">Exception</span><span class="pygments-"> </span><span class="pygments-o">{</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l135">
+<td class="vc_file_line_number">135</td>
+
+<td class="vc_file_line_text">
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l136">
+<td class="vc_file_line_number">136</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">Map</span><span class="pygments-o">&lt;</span><span class="pygments-n">String</span><span class="pygments-o">,</span><span class="pygments-"> </span><span class="pygments-n">Account</span><span class="pygments-o">&gt;</span><span class="pygments-"> </span><span class="pygments-n">accounts</span><span class="pygments-"> </span><span class="pygments-o">=</span><span class="pygments-"> </span><span class="pygments-k">new</span><span class="pygments-"> </span><span class="pygments-n">HashMap</span><span class="pygments-o">&lt;</span><span class="pygments-n">String</span><span class="pygments-o">,</span><span class="pygments-"> </span><span class="pygments-n">Account</span><span class="pygments-o">&gt;();</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l137">
+<td class="vc_file_line_number">137</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-k">for</span><span class="pygments-"> </span><span class="pygments-o">(</span><span class="pygments-kt">int</span><span class="pygments-"> </span><span class="pygments-n">i</span><span class="pygments-"> </span><span class="pygments-o">=</span><span class="pygments-"> </span><span class="pygments-mi">1</span><span class="pygments-o">;</span><span class="pygments-"> </span><span class="pygments-n">i</span><span class="pygments-"> </span><span class="pygments-o">&lt;=</span><span class="pygments-"> </span><span class="pygments-mi">100</span><span class="pygments-o">;</span><span class="pygments-"> </span><span class="pygments-n">i</span><span class="pygments-o">++)</span><span class="pygments-"> </span><span class="pygments-o">{</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l138">
+<td class="vc_file_line_number">138</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                        </span><span class="pygments-n">String</span><span class="pygments-"> </span><span class="pygments-n">name</span><span class="pygments-"> </span><span class="pygments-o">=</span><span class="pygments-"> </span><span class="pygments-n">Integer</span><span class="pygments-o">.</span><span class="pygments-na">toString</span><span class="pygments-o">(</span><span class="pygments-n">i</span><span class="pygments-o">);</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l139">
+<td class="vc_file_line_number">139</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                        </span><span class="pygments-n">Account</span><span class="pygments-"> </span><span class="pygments-n">account</span><span class="pygments-"> </span><span class="pygments-o">=</span><span class="pygments-"> </span><span class="pygments-k">new</span><span class="pygments-"> </span><span class="pygments-n">Account</span><span class="pygments-o">(</span><span class="pygments-n">name</span><span class="pygments-o">);</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l140">
+<td class="vc_file_line_number">140</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                        </span><span class="pygments-c1">// persist the account object to the database, it should return 1</span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l141">
+<td class="vc_file_line_number">141</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                        </span><span class="pygments-n">accountDao</span><span class="pygments-o">.</span><span class="pygments-na">create</span><span class="pygments-o">(</span><span class="pygments-n">account</span><span class="pygments-o">);</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l142">
+<td class="vc_file_line_number">142</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                        </span><span class="pygments-n">accounts</span><span class="pygments-o">.</span><span class="pygments-na">put</span><span class="pygments-o">(</span><span class="pygments-n">name</span><span class="pygments-o">,</span><span class="pygments-"> </span><span class="pygments-n">account</span><span class="pygments-o">);</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l143">
+<td class="vc_file_line_number">143</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-o">}</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l144">
+<td class="vc_file_line_number">144</td>
+
+<td class="vc_file_line_text">
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l145">
+<td class="vc_file_line_number">145</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-c1">// query for all items in the database</span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l146">
+<td class="vc_file_line_number">146</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">List</span><span class="pygments-o">&lt;</span><span class="pygments-n">Account</span><span class="pygments-o">&gt;</span><span class="pygments-"> </span><span class="pygments-n">all</span><span class="pygments-"> </span><span class="pygments-o">=</span><span class="pygments-"> </span><span class="pygments-n">accountDao</span><span class="pygments-o">.</span><span class="pygments-na">queryForAll</span><span class="pygments-o">();</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l147">
+<td class="vc_file_line_number">147</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">assertEquals</span><span class="pygments-o">(</span><span class="pygments-s">"Should have found same number of accounts in map"</span><span class="pygments-o">,</span><span class="pygments-"> </span><span class="pygments-n">accounts</span><span class="pygments-o">.</span><span class="pygments-na">size</span><span class="pygments-o">(),</span><span class="pygments-"> </span><span class="pygments-n">all</span><span class="pygments-o">.</span><span class="pygments-na">size</span><span class="pygments-o">());</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l148">
+<td class="vc_file_line_number">148</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-k">for</span><span class="pygments-"> </span><span class="pygments-o">(</span><span class="pygments-n">Account</span><span class="pygments-"> </span><span class="pygments-n">account</span><span class="pygments-"> </span><span class="pygments-o">:</span><span class="pygments-"> </span><span class="pygments-n">all</span><span class="pygments-o">)</span><span class="pygments-"> </span><span class="pygments-o">{</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l149">
+<td class="vc_file_line_number">149</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                        </span><span class="pygments-n">assertTrue</span><span class="pygments-o">(</span><span class="pygments-s">"Should have found account in map"</span><span class="pygments-o">,</span><span class="pygments-"> </span><span class="pygments-n">accounts</span><span class="pygments-o">.</span><span class="pygments-na">containsValue</span><span class="pygments-o">(</span><span class="pygments-n">account</span><span class="pygments-o">));</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l150">
+<td class="vc_file_line_number">150</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                        </span><span class="pygments-n">verifyAccount</span><span class="pygments-o">(</span><span class="pygments-n">accounts</span><span class="pygments-o">.</span><span class="pygments-na">get</span><span class="pygments-o">(</span><span class="pygments-n">account</span><span class="pygments-o">.</span><span class="pygments-na">getName</span><span class="pygments-o">()),</span><span class="pygments-"> </span><span class="pygments-n">account</span><span class="pygments-o">);</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l151">
+<td class="vc_file_line_number">151</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-o">}</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l152">
+<td class="vc_file_line_number">152</td>
+
+<td class="vc_file_line_text">
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l153">
+<td class="vc_file_line_number">153</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-c1">// loop through items in the database</span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l154">
+<td class="vc_file_line_number">154</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-kt">int</span><span class="pygments-"> </span><span class="pygments-n">accountC</span><span class="pygments-"> </span><span class="pygments-o">=</span><span class="pygments-"> </span><span class="pygments-mi">0</span><span class="pygments-o">;</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l155">
+<td class="vc_file_line_number">155</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-k">for</span><span class="pygments-"> </span><span class="pygments-o">(</span><span class="pygments-n">Account</span><span class="pygments-"> </span><span class="pygments-n">account</span><span class="pygments-"> </span><span class="pygments-o">:</span><span class="pygments-"> </span><span class="pygments-n">accountDao</span><span class="pygments-o">)</span><span class="pygments-"> </span><span class="pygments-o">{</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l156">
+<td class="vc_file_line_number">156</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                        </span><span class="pygments-n">assertTrue</span><span class="pygments-o">(</span><span class="pygments-s">"Should have found account in map"</span><span class="pygments-o">,</span><span class="pygments-"> </span><span class="pygments-n">accounts</span><span class="pygments-o">.</span><span class="pygments-na">containsValue</span><span class="pygments-o">(</span><span class="pygments-n">account</span><span class="pygments-o">));</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l157">
+<td class="vc_file_line_number">157</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                        </span><span class="pygments-n">verifyAccount</span><span class="pygments-o">(</span><span class="pygments-n">accounts</span><span class="pygments-o">.</span><span class="pygments-na">get</span><span class="pygments-o">(</span><span class="pygments-n">account</span><span class="pygments-o">.</span><span class="pygments-na">getName</span><span class="pygments-o">()),</span><span class="pygments-"> </span><span class="pygments-n">account</span><span class="pygments-o">);</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l158">
+<td class="vc_file_line_number">158</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                        </span><span class="pygments-n">accountC</span><span class="pygments-o">++;</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l159">
+<td class="vc_file_line_number">159</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-o">}</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l160">
+<td class="vc_file_line_number">160</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">assertEquals</span><span class="pygments-o">(</span><span class="pygments-s">"Should have found the right number of accounts in for loop"</span><span class="pygments-o">,</span><span class="pygments-"> </span><span class="pygments-n">accounts</span><span class="pygments-o">.</span><span class="pygments-na">size</span><span class="pygments-o">(),</span><span class="pygments-"> </span><span class="pygments-n">accountC</span><span class="pygments-o">);</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l161">
+<td class="vc_file_line_number">161</td>
+
+<td class="vc_file_line_text"><span class="pygments-">        </span><span class="pygments-o">}</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l162">
+<td class="vc_file_line_number">162</td>
+
+<td class="vc_file_line_text">
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l163">
+<td class="vc_file_line_number">163</td>
+
+<td class="vc_file_line_text"><span class="pygments-">        </span><span class="pygments-cm">/**</span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l164">
+<td class="vc_file_line_number">164</td>
+
+<td class="vc_file_line_text"><span class="pygments-cm">         * Example of created a query with a ? argument using the {@link SelectArg} object. You then can set the value of</span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l165">
+<td class="vc_file_line_number">165</td>
+
+<td class="vc_file_line_text"><span class="pygments-cm">         * this object at a later time.</span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l166">
+<td class="vc_file_line_number">166</td>
+
+<td class="vc_file_line_text"><span class="pygments-cm">         */</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l167">
+<td class="vc_file_line_number">167</td>
+
+<td class="vc_file_line_text"><span class="pygments-">        </span><span class="pygments-kd">private</span><span class="pygments-"> </span><span class="pygments-kt">void</span><span class="pygments-"> </span><span class="pygments-nf">useSelectArgFeature</span><span class="pygments-o">()</span><span class="pygments-"> </span><span class="pygments-kd">throws</span><span class="pygments-"> </span><span class="pygments-n">Exception</span><span class="pygments-"> </span><span class="pygments-o">{</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l168">
+<td class="vc_file_line_number">168</td>
+
+<td class="vc_file_line_text">
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l169">
+<td class="vc_file_line_number">169</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">String</span><span class="pygments-"> </span><span class="pygments-n">name1</span><span class="pygments-"> </span><span class="pygments-o">=</span><span class="pygments-"> </span><span class="pygments-s">"foo"</span><span class="pygments-o">;</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l170">
+<td class="vc_file_line_number">170</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">String</span><span class="pygments-"> </span><span class="pygments-n">name2</span><span class="pygments-"> </span><span class="pygments-o">=</span><span class="pygments-"> </span><span class="pygments-s">"bar"</span><span class="pygments-o">;</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l171">
+<td class="vc_file_line_number">171</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">String</span><span class="pygments-"> </span><span class="pygments-n">name3</span><span class="pygments-"> </span><span class="pygments-o">=</span><span class="pygments-"> </span><span class="pygments-s">"baz"</span><span class="pygments-o">;</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l172">
+<td class="vc_file_line_number">172</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">assertEquals</span><span class="pygments-o">(</span><span class="pygments-mi">1</span><span class="pygments-o">,</span><span class="pygments-"> </span><span class="pygments-n">accountDao</span><span class="pygments-o">.</span><span class="pygments-na">create</span><span class="pygments-o">(</span><span class="pygments-k">new</span><span class="pygments-"> </span><span class="pygments-n">Account</span><span class="pygments-o">(</span><span class="pygments-n">name1</span><span class="pygments-o">)));</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l173">
+<td class="vc_file_line_number">173</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">assertEquals</span><span class="pygments-o">(</span><span class="pygments-mi">1</span><span class="pygments-o">,</span><span class="pygments-"> </span><span class="pygments-n">accountDao</span><span class="pygments-o">.</span><span class="pygments-na">create</span><span class="pygments-o">(</span><span class="pygments-k">new</span><span class="pygments-"> </span><span class="pygments-n">Account</span><span class="pygments-o">(</span><span class="pygments-n">name2</span><span class="pygments-o">)));</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l174">
+<td class="vc_file_line_number">174</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">assertEquals</span><span class="pygments-o">(</span><span class="pygments-mi">1</span><span class="pygments-o">,</span><span class="pygments-"> </span><span class="pygments-n">accountDao</span><span class="pygments-o">.</span><span class="pygments-na">create</span><span class="pygments-o">(</span><span class="pygments-k">new</span><span class="pygments-"> </span><span class="pygments-n">Account</span><span class="pygments-o">(</span><span class="pygments-n">name3</span><span class="pygments-o">)));</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l175">
+<td class="vc_file_line_number">175</td>
+
+<td class="vc_file_line_text">
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l176">
+<td class="vc_file_line_number">176</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">QueryBuilder</span><span class="pygments-o">&lt;</span><span class="pygments-n">Account</span><span class="pygments-o">,</span><span class="pygments-"> </span><span class="pygments-n">Integer</span><span class="pygments-o">&gt;</span><span class="pygments-"> </span><span class="pygments-n">statementBuilder</span><span class="pygments-"> </span><span class="pygments-o">=</span><span class="pygments-"> </span><span class="pygments-n">accountDao</span><span class="pygments-o">.</span><span class="pygments-na">queryBuilder</span><span class="pygments-o">();</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l177">
+<td class="vc_file_line_number">177</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">SelectArg</span><span class="pygments-"> </span><span class="pygments-n">selectArg</span><span class="pygments-"> </span><span class="pygments-o">=</span><span class="pygments-"> </span><span class="pygments-k">new</span><span class="pygments-"> </span><span class="pygments-n">SelectArg</span><span class="pygments-o">();</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l178">
+<td class="vc_file_line_number">178</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-c1">// build a query with the WHERE clause set to 'name = ?'</span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l179">
+<td class="vc_file_line_number">179</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">statementBuilder</span><span class="pygments-o">.</span><span class="pygments-na">where</span><span class="pygments-o">().</span><span class="pygments-na">like</span><span class="pygments-o">(</span><span class="pygments-n">Account</span><span class="pygments-o">.</span><span class="pygments-na">NAME_FIELD_NAME</span><span class="pygments-o">,</span><span class="pygments-"> </span><span class="pygments-n">selectArg</span><span class="pygments-o">);</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l180">
+<td class="vc_file_line_number">180</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">PreparedQuery</span><span class="pygments-o">&lt;</span><span class="pygments-n">Account</span><span class="pygments-o">&gt;</span><span class="pygments-"> </span><span class="pygments-n">preparedQuery</span><span class="pygments-"> </span><span class="pygments-o">=</span><span class="pygments-"> </span><span class="pygments-n">statementBuilder</span><span class="pygments-o">.</span><span class="pygments-na">prepare</span><span class="pygments-o">();</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l181">
+<td class="vc_file_line_number">181</td>
+
+<td class="vc_file_line_text">
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l182">
+<td class="vc_file_line_number">182</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-c1">// now we can set the select arg (?) and run the query</span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l183">
+<td class="vc_file_line_number">183</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">selectArg</span><span class="pygments-o">.</span><span class="pygments-na">setValue</span><span class="pygments-o">(</span><span class="pygments-n">name1</span><span class="pygments-o">);</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l184">
+<td class="vc_file_line_number">184</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">List</span><span class="pygments-o">&lt;</span><span class="pygments-n">Account</span><span class="pygments-o">&gt;</span><span class="pygments-"> </span><span class="pygments-n">results</span><span class="pygments-"> </span><span class="pygments-o">=</span><span class="pygments-"> </span><span class="pygments-n">accountDao</span><span class="pygments-o">.</span><span class="pygments-na">query</span><span class="pygments-o">(</span><span class="pygments-n">preparedQuery</span><span class="pygments-o">);</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l185">
+<td class="vc_file_line_number">185</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">assertEquals</span><span class="pygments-o">(</span><span class="pygments-s">"Should have found 1 account matching our query"</span><span class="pygments-o">,</span><span class="pygments-"> </span><span class="pygments-mi">1</span><span class="pygments-o">,</span><span class="pygments-"> </span><span class="pygments-n">results</span><span class="pygments-o">.</span><span class="pygments-na">size</span><span class="pygments-o">());</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l186">
+<td class="vc_file_line_number">186</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">assertEquals</span><span class="pygments-o">(</span><span class="pygments-n">name1</span><span class="pygments-o">,</span><span class="pygments-"> </span><span class="pygments-n">results</span><span class="pygments-o">.</span><span class="pygments-na">get</span><span class="pygments-o">(</span><span class="pygments-mi">0</span><span class="pygments-o">).</span><span class="pygments-na">getName</span><span class="pygments-o">());</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l187">
+<td class="vc_file_line_number">187</td>
+
+<td class="vc_file_line_text">
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l188">
+<td class="vc_file_line_number">188</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">selectArg</span><span class="pygments-o">.</span><span class="pygments-na">setValue</span><span class="pygments-o">(</span><span class="pygments-n">name2</span><span class="pygments-o">);</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l189">
+<td class="vc_file_line_number">189</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">results</span><span class="pygments-"> </span><span class="pygments-o">=</span><span class="pygments-"> </span><span class="pygments-n">accountDao</span><span class="pygments-o">.</span><span class="pygments-na">query</span><span class="pygments-o">(</span><span class="pygments-n">preparedQuery</span><span class="pygments-o">);</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l190">
+<td class="vc_file_line_number">190</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">assertEquals</span><span class="pygments-o">(</span><span class="pygments-s">"Should have found 1 account matching our query"</span><span class="pygments-o">,</span><span class="pygments-"> </span><span class="pygments-mi">1</span><span class="pygments-o">,</span><span class="pygments-"> </span><span class="pygments-n">results</span><span class="pygments-o">.</span><span class="pygments-na">size</span><span class="pygments-o">());</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l191">
+<td class="vc_file_line_number">191</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">assertEquals</span><span class="pygments-o">(</span><span class="pygments-n">name2</span><span class="pygments-o">,</span><span class="pygments-"> </span><span class="pygments-n">results</span><span class="pygments-o">.</span><span class="pygments-na">get</span><span class="pygments-o">(</span><span class="pygments-mi">0</span><span class="pygments-o">).</span><span class="pygments-na">getName</span><span class="pygments-o">());</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l192">
+<td class="vc_file_line_number">192</td>
+
+<td class="vc_file_line_text">
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l193">
+<td class="vc_file_line_number">193</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">selectArg</span><span class="pygments-o">.</span><span class="pygments-na">setValue</span><span class="pygments-o">(</span><span class="pygments-n">name3</span><span class="pygments-o">);</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l194">
+<td class="vc_file_line_number">194</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">results</span><span class="pygments-"> </span><span class="pygments-o">=</span><span class="pygments-"> </span><span class="pygments-n">accountDao</span><span class="pygments-o">.</span><span class="pygments-na">query</span><span class="pygments-o">(</span><span class="pygments-n">preparedQuery</span><span class="pygments-o">);</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l195">
+<td class="vc_file_line_number">195</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">assertEquals</span><span class="pygments-o">(</span><span class="pygments-s">"Should have found 1 account matching our query"</span><span class="pygments-o">,</span><span class="pygments-"> </span><span class="pygments-mi">1</span><span class="pygments-o">,</span><span class="pygments-"> </span><span class="pygments-n">results</span><span class="pygments-o">.</span><span class="pygments-na">size</span><span class="pygments-o">());</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l196">
+<td class="vc_file_line_number">196</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">assertEquals</span><span class="pygments-o">(</span><span class="pygments-n">name3</span><span class="pygments-o">,</span><span class="pygments-"> </span><span class="pygments-n">results</span><span class="pygments-o">.</span><span class="pygments-na">get</span><span class="pygments-o">(</span><span class="pygments-mi">0</span><span class="pygments-o">).</span><span class="pygments-na">getName</span><span class="pygments-o">());</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l197">
+<td class="vc_file_line_number">197</td>
+
+<td class="vc_file_line_text"><span class="pygments-">        </span><span class="pygments-o">}</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l198">
+<td class="vc_file_line_number">198</td>
+
+<td class="vc_file_line_text">
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l199">
+<td class="vc_file_line_number">199</td>
+
+<td class="vc_file_line_text"><span class="pygments-">        </span><span class="pygments-cm">/**</span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l200">
+<td class="vc_file_line_number">200</td>
+
+<td class="vc_file_line_text"><span class="pygments-cm">         * Example of created a query with a ? argument using the {@link SelectArg} object. You then can set the value of</span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l201">
+<td class="vc_file_line_number">201</td>
+
+<td class="vc_file_line_text"><span class="pygments-cm">         * this object at a later time.</span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l202">
+<td class="vc_file_line_number">202</td>
+
+<td class="vc_file_line_text"><span class="pygments-cm">         */</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l203">
+<td class="vc_file_line_number">203</td>
+
+<td class="vc_file_line_text"><span class="pygments-">        </span><span class="pygments-kd">private</span><span class="pygments-"> </span><span class="pygments-kt">void</span><span class="pygments-"> </span><span class="pygments-nf">useTransactions</span><span class="pygments-o">(</span><span class="pygments-n">ConnectionSource</span><span class="pygments-"> </span><span class="pygments-n">connectionSource</span><span class="pygments-o">)</span><span class="pygments-"> </span><span class="pygments-kd">throws</span><span class="pygments-"> </span><span class="pygments-n">Exception</span><span class="pygments-"> </span><span class="pygments-o">{</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l204">
+<td class="vc_file_line_number">204</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">String</span><span class="pygments-"> </span><span class="pygments-n">name</span><span class="pygments-"> </span><span class="pygments-o">=</span><span class="pygments-"> </span><span class="pygments-s">"trans1"</span><span class="pygments-o">;</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l205">
+<td class="vc_file_line_number">205</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-kd">final</span><span class="pygments-"> </span><span class="pygments-n">Account</span><span class="pygments-"> </span><span class="pygments-n">account</span><span class="pygments-"> </span><span class="pygments-o">=</span><span class="pygments-"> </span><span class="pygments-k">new</span><span class="pygments-"> </span><span class="pygments-n">Account</span><span class="pygments-o">(</span><span class="pygments-n">name</span><span class="pygments-o">);</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l206">
+<td class="vc_file_line_number">206</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">assertEquals</span><span class="pygments-o">(</span><span class="pygments-mi">1</span><span class="pygments-o">,</span><span class="pygments-"> </span><span class="pygments-n">accountDao</span><span class="pygments-o">.</span><span class="pygments-na">create</span><span class="pygments-o">(</span><span class="pygments-n">account</span><span class="pygments-o">));</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l207">
+<td class="vc_file_line_number">207</td>
+
+<td class="vc_file_line_text">
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l208">
+<td class="vc_file_line_number">208</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">TransactionManager</span><span class="pygments-"> </span><span class="pygments-n">transactionManager</span><span class="pygments-"> </span><span class="pygments-o">=</span><span class="pygments-"> </span><span class="pygments-k">new</span><span class="pygments-"> </span><span class="pygments-n">TransactionManager</span><span class="pygments-o">(</span><span class="pygments-n">connectionSource</span><span class="pygments-o">);</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l209">
+<td class="vc_file_line_number">209</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-k">try</span><span class="pygments-"> </span><span class="pygments-o">{</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l210">
+<td class="vc_file_line_number">210</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                        </span><span class="pygments-c1">// try something in a transaction</span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l211">
+<td class="vc_file_line_number">211</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                        </span><span class="pygments-n">transactionManager</span><span class="pygments-o">.</span><span class="pygments-na">callInTransaction</span><span class="pygments-o">(</span><span class="pygments-k">new</span><span class="pygments-"> </span><span class="pygments-n">Callable</span><span class="pygments-o">&lt;</span><span class="pygments-n">Void</span><span class="pygments-o">&gt;()</span><span class="pygments-"> </span><span class="pygments-o">{</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l212">
+<td class="vc_file_line_number">212</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                                </span><span class="pygments-kd">public</span><span class="pygments-"> </span><span class="pygments-n">Void</span><span class="pygments-"> </span><span class="pygments-nf">call</span><span class="pygments-o">()</span><span class="pygments-"> </span><span class="pygments-kd">throws</span><span class="pygments-"> </span><span class="pygments-n">Exception</span><span class="pygments-"> </span><span class="pygments-o">{</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l213">
+<td class="vc_file_line_number">213</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                                        </span><span class="pygments-c1">// we do the delete</span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l214">
+<td class="vc_file_line_number">214</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                                        </span><span class="pygments-n">assertEquals</span><span class="pygments-o">(</span><span class="pygments-mi">1</span><span class="pygments-o">,</span><span class="pygments-"> </span><span class="pygments-n">accountDao</span><span class="pygments-o">.</span><span class="pygments-na">delete</span><span class="pygments-o">(</span><span class="pygments-n">account</span><span class="pygments-o">));</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l215">
+<td class="vc_file_line_number">215</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                                        </span><span class="pygments-n">assertNull</span><span class="pygments-o">(</span><span class="pygments-n">accountDao</span><span class="pygments-o">.</span><span class="pygments-na">queryForId</span><span class="pygments-o">(</span><span class="pygments-n">account</span><span class="pygments-o">.</span><span class="pygments-na">getId</span><span class="pygments-o">()));</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l216">
+<td class="vc_file_line_number">216</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                                        </span><span class="pygments-c1">// but then (as an example) we throw an exception which rolls back the delete</span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l217">
+<td class="vc_file_line_number">217</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                                        </span><span class="pygments-k">throw</span><span class="pygments-"> </span><span class="pygments-k">new</span><span class="pygments-"> </span><span class="pygments-nf">Exception</span><span class="pygments-o">(</span><span class="pygments-s">"We throw to roll back!!"</span><span class="pygments-o">);</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l218">
+<td class="vc_file_line_number">218</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                                </span><span class="pygments-o">}</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l219">
+<td class="vc_file_line_number">219</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                        </span><span class="pygments-o">});</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l220">
+<td class="vc_file_line_number">220</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                        </span><span class="pygments-n">fail</span><span class="pygments-o">(</span><span class="pygments-s">"This should have thrown"</span><span class="pygments-o">);</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l221">
+<td class="vc_file_line_number">221</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-o">}</span><span class="pygments-"> </span><span class="pygments-k">catch</span><span class="pygments-"> </span><span class="pygments-o">(</span><span class="pygments-n">SQLException</span><span class="pygments-"> </span><span class="pygments-n">e</span><span class="pygments-o">)</span><span class="pygments-"> </span><span class="pygments-o">{</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l222">
+<td class="vc_file_line_number">222</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                        </span><span class="pygments-c1">// expected</span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l223">
+<td class="vc_file_line_number">223</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-o">}</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l224">
+<td class="vc_file_line_number">224</td>
+
+<td class="vc_file_line_text">
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l225">
+<td class="vc_file_line_number">225</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">assertNotNull</span><span class="pygments-o">(</span><span class="pygments-n">accountDao</span><span class="pygments-o">.</span><span class="pygments-na">queryForId</span><span class="pygments-o">(</span><span class="pygments-n">account</span><span class="pygments-o">.</span><span class="pygments-na">getId</span><span class="pygments-o">()));</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l226">
+<td class="vc_file_line_number">226</td>
+
+<td class="vc_file_line_text"><span class="pygments-">        </span><span class="pygments-o">}</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l227">
+<td class="vc_file_line_number">227</td>
+
+<td class="vc_file_line_text">
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l228">
+<td class="vc_file_line_number">228</td>
+
+<td class="vc_file_line_text"><span class="pygments-">        </span><span class="pygments-cm">/**</span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l229">
+<td class="vc_file_line_number">229</td>
+
+<td class="vc_file_line_text"><span class="pygments-cm">         * Verify that the account stored in the database was the same as the expected object.</span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l230">
+<td class="vc_file_line_number">230</td>
+
+<td class="vc_file_line_text"><span class="pygments-cm">         */</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l231">
+<td class="vc_file_line_number">231</td>
+
+<td class="vc_file_line_text"><span class="pygments-">        </span><span class="pygments-kd">private</span><span class="pygments-"> </span><span class="pygments-kt">void</span><span class="pygments-"> </span><span class="pygments-nf">verifyDb</span><span class="pygments-o">(</span><span class="pygments-kt">int</span><span class="pygments-"> </span><span class="pygments-n">id</span><span class="pygments-o">,</span><span class="pygments-"> </span><span class="pygments-n">Account</span><span class="pygments-"> </span><span class="pygments-n">expected</span><span class="pygments-o">)</span><span class="pygments-"> </span><span class="pygments-kd">throws</span><span class="pygments-"> </span><span class="pygments-n">SQLException</span><span class="pygments-o">,</span><span class="pygments-"> </span><span class="pygments-n">Exception</span><span class="pygments-"> </span><span class="pygments-o">{</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l232">
+<td class="vc_file_line_number">232</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-c1">// make sure we can read it back</span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l233">
+<td class="vc_file_line_number">233</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">Account</span><span class="pygments-"> </span><span class="pygments-n">account2</span><span class="pygments-"> </span><span class="pygments-o">=</span><span class="pygments-"> </span><span class="pygments-n">accountDao</span><span class="pygments-o">.</span><span class="pygments-na">queryForId</span><span class="pygments-o">(</span><span class="pygments-n">id</span><span class="pygments-o">);</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l234">
+<td class="vc_file_line_number">234</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-k">if</span><span class="pygments-"> </span><span class="pygments-o">(</span><span class="pygments-n">account2</span><span class="pygments-"> </span><span class="pygments-o">==</span><span class="pygments-"> </span><span class="pygments-kc">null</span><span class="pygments-o">)</span><span class="pygments-"> </span><span class="pygments-o">{</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l235">
+<td class="vc_file_line_number">235</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                        </span><span class="pygments-k">throw</span><span class="pygments-"> </span><span class="pygments-k">new</span><span class="pygments-"> </span><span class="pygments-nf">Exception</span><span class="pygments-o">(</span><span class="pygments-s">"Should have found id '"</span><span class="pygments-"> </span><span class="pygments-o">+</span><span class="pygments-"> </span><span class="pygments-n">id</span><span class="pygments-"> </span><span class="pygments-o">+</span><span class="pygments-"> </span><span class="pygments-s">"' in the database"</span><span class="pygments-o">);</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l236">
+<td class="vc_file_line_number">236</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-o">}</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l237">
+<td class="vc_file_line_number">237</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">verifyAccount</span><span class="pygments-o">(</span><span class="pygments-n">expected</span><span class="pygments-o">,</span><span class="pygments-"> </span><span class="pygments-n">account2</span><span class="pygments-o">);</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l238">
+<td class="vc_file_line_number">238</td>
+
+<td class="vc_file_line_text"><span class="pygments-">        </span><span class="pygments-o">}</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l239">
+<td class="vc_file_line_number">239</td>
+
+<td class="vc_file_line_text">
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l240">
+<td class="vc_file_line_number">240</td>
+
+<td class="vc_file_line_text"><span class="pygments-">        </span><span class="pygments-cm">/**</span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l241">
+<td class="vc_file_line_number">241</td>
+
+<td class="vc_file_line_text"><span class="pygments-cm">         * Verify that the account is the same as expected.</span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l242">
+<td class="vc_file_line_number">242</td>
+
+<td class="vc_file_line_text"><span class="pygments-cm">         */</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l243">
+<td class="vc_file_line_number">243</td>
+
+<td class="vc_file_line_text"><span class="pygments-">        </span><span class="pygments-kd">private</span><span class="pygments-"> </span><span class="pygments-kd">static</span><span class="pygments-"> </span><span class="pygments-kt">void</span><span class="pygments-"> </span><span class="pygments-nf">verifyAccount</span><span class="pygments-o">(</span><span class="pygments-n">Account</span><span class="pygments-"> </span><span class="pygments-n">expected</span><span class="pygments-o">,</span><span class="pygments-"> </span><span class="pygments-n">Account</span><span class="pygments-"> </span><span class="pygments-n">account2</span><span class="pygments-o">)</span><span class="pygments-"> </span><span class="pygments-o">{</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l244">
+<td class="vc_file_line_number">244</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">assertEquals</span><span class="pygments-o">(</span><span class="pygments-s">"expected name does not equal account name"</span><span class="pygments-o">,</span><span class="pygments-"> </span><span class="pygments-n">expected</span><span class="pygments-o">,</span><span class="pygments-"> </span><span class="pygments-n">account2</span><span class="pygments-o">);</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l245">
+<td class="vc_file_line_number">245</td>
+
+<td class="vc_file_line_text"><span class="pygments-">                </span><span class="pygments-n">assertEquals</span><span class="pygments-o">(</span><span class="pygments-s">"expected password does not equal account name"</span><span class="pygments-o">,</span><span class="pygments-"> </span><span class="pygments-n">expected</span><span class="pygments-o">.</span><span class="pygments-na">getPassword</span><span class="pygments-o">(),</span><span class="pygments-"> </span><span class="pygments-n">account2</span><span class="pygments-o">.</span><span class="pygments-na">getPassword</span><span class="pygments-o">());</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l246">
+<td class="vc_file_line_number">246</td>
+
+<td class="vc_file_line_text"><span class="pygments-">        </span><span class="pygments-o">}</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+
+
+<tr class="vc_row_odd" id="l247">
+<td class="vc_file_line_number">247</td>
+
+<td class="vc_file_line_text"><span class="pygments-o">}</span><span class="pygments-"></span>
+</td>
+</tr>
+
+
+</tbody></table>
+</div>
+
+
+
+
+
+<br>
+</div>
+</div>
+</div>
+<div id="ft">
+<div class="yui-b">
+<div class="yui-gb">
+<div class="yui-u first" style="text-align: center;"> <a href="http://p.sf.net/sourceforge/support">SourceForge Help</a><a> </a></div><a>
+</a><div class="yui-u" style="text-align: center;"><a> <strong></strong></a><strong><a href="http://ormlite.svn.sourceforge.net/viewvc-static/help_rootview.html">ViewVC Help</a></strong> </div>
+<div class="yui-u" style="text-align: center;"> <a href="http://viewvc.tigris.org/">Powered by ViewVC 1.1.6</a> </div>
+</div>
+<p class="copyright">Copyright © 2010 <a title="Network which provides and promotes Open Source software downloads, development, discussion and news." href="http://geek.net/">Geeknet, Inc.</a> All rights reserved. <a href="http://p.sf.net/sourceforge/terms">Terms of Use</a></p>
+</div>
+</div>
+</div>
+<!--[if IE]></div><![endif]-->
+<!--[if IE 6]></div><![endif]-->
+<!--[if IE 7]></div><![endif]-->
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-32013-37");
+pageTracker._setDomainName(".sourceforge.net");
+pageTracker._trackPageview();
+</script>
+
+
+
+<div class="SkipThisFixedPosition top-iframe-wrapper" style="width: 100%; height: 34px; position: fixed; top: 0px !important; left: 0px; z-index: 99997; "><iframe style="width:100%;height:34px;top:0px;left:0px;" src="./[ormlite] exemplo java_files/container.htm" scrolling="no" class="toolbarContainer" frameborder="0px" id="CWTBiframe0"></iframe></div><div id="mainContainer_CTID"><div class="fixedDiv SkipThisFixedPosition UrlGadgetsDiv" style="position: fixed; left: 0px; top: 34px !important; z-index: 2147483640; "></div><div class="fixedDiv SkipThisFixedPosition GeneralGadgetsDiv" style="position: fixed; left: 0px; top: 34px !important; z-index: 2147483640; width: 100%; "></div></div></body></html>

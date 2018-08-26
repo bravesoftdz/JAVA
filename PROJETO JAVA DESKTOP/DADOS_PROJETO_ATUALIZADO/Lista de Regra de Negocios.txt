@@ -1,0 +1,34 @@
+Consulta de Cheque
+	Tele-Cheque->Se responsabiliza pelo cheque.
+	Ou seja, caso a pessoa não pagar o sistema do Site que paga.
+	
+	Site do Tele-Cheque.
+http://wwwj1.telecheque.com.br/
+
+############################################################################
+
+
+
+
+
+
+
+
+
+############################################################################
+
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+

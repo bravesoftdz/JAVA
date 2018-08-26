@@ -1,0 +1,19 @@
+     --LISTA DE TABELAS CRIADAS PARA A EXECUÇÃO DESTE SQL DE ITENS DA NOTA 
+     --CST_PIS_COFINS -FAZER TELA DE CADASTRO
+     --CST_IPI        -FAZER TELA DE CADASTRO
+     --SITUACAO_TRIBUTARIA-FAZER TELA DE CADASTRO
+	 --FILIAL
+	 
+	 --PARTE DAS PARCELAS DA NOTA.
+	 --LANCAMENTOS A RECEBER E PAGAR 
+	 --BAIXA LANCAMENTOS
+	 --Cadastro de SErvicos 
+	 --Cadastro de CNAE 
+	 
+Correçoes
+		Campos abaixo inserir na programacao como double
+		tela ncmsh vl_mva
+		tela produto campos de 
+			tx_iss
+			tx_ipi
+			

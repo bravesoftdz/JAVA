@@ -1,0 +1,116 @@
+Programar todos os tipos d loteria da caixa e mais a Trimania tb
+Observar qual o melhor caso e jogar o maximo do minimo pra ganhar
+ou seja , gastar algo nao significante, mas com probabilidade de ganhar.
+
+Para todos os jogos calcular todas as probabilidades de ganho
+
+
+Pesquisar a Estatistica da Faculdade e as Teorias da faculdade tambem.
+
+Usar a Logica de Fuzzy para obter resultados.
+
+
+Utilizar Sistemas LIneares e Algebra Linear nos calculos.
+
+Para a programacao na base de dados , por o sorteio todo 
+como sendo 1 numero apenas , exemplo
+02  25 35 38 42  56
+
+NUmero=>022535384256
+Este e o numero do sorteio e o que tera no banco de dados
+
+Para obter o numero do sorteio usar divisao de numero inteiro
+Exemplo
+Dezena Um     =NumeroSorteado/10 000 000 000= Parte Inteira somente=>2
+Dezena Dois   =NumeroSorteado/ 100 000 000
+Dezena Tres   =NumeroSorteado/    1 000 000
+Dezena Quatro =NumeroSorteado/   100 000
+Dezena Cinco  =NumeroSorteado/  10 000
+Dezena Seis   =NumeroSorteado/ 100
+
+
+
+
+
+
+Abaixo esta relacionado os algoritmos que devem ser programados
+####################################################
+Para a Mega Sena calcular as probabilidades de ganhar na quadra e na quina tb
+
+
+
+Algoritmo_01-Probabilidade do Erro Comun
+
+Conforme pensado,  logico afirmar que ninguem vai jogar uma sequencia de numeros na mega sena
+maior que 2´.
+Logo todas as probabilidades com estas sequencias devem ser descartadas, pois nete caso e provavel
+que haja acumulacao do premio quando sair tal combinacao.
+
+Exemplo de sequencia
+Sequencia de 3 (Tres)  ==>1,2,3,25,34,56
+Sequencia de 4 (Quatro)==>1,2,3, 4,24,46
+Sequencia de 5 (Cinco) ==>1,2,3, 4, 5,67
+Sequencia de 6 (Seis)  ==>1,2,3, 4, 5, 6
+###################################################
+Algoritmo_02
+Probabilidade do ultimo Sorteio repetir
+E a mesma probabilidade de todas as outras
+#############################################
+Probabilidade da quantidade de numero jogada em relacao as probabilidades
+ja descartado as sequencias
+
+Algoritmo_03	Probabilidade Com Dezenas Igual a 6	
+Algoritmo_04	Probabilidade Com Dezenas Igual a 7	
+Algoritmo_05	Probabilidade Com Dezenas Igual a 8	
+Algoritmo_06	Probabilidade Com Dezenas Igual a 9	
+Algoritmo_07	Probabilidade Com Dezenas Igual a 10	
+Algoritmo_08	Probabilidade Com Dezenas Igual a 11	
+Algoritmo_09	Probabilidade Com Dezenas Igual a 12	
+Algoritmo_10	Probabilidade Com Dezenas Igual a 13	
+Algoritmo_11	Probabilidade Com Dezenas Igual a 14
+
+##################################################
+Probabilidade de ganhar considerando a quantidade de pessoas que vao jogar
+Premios de ate 10 milhoes  jogam em media 10 milhoes
+Premios de ate 100 milhoes  jogam em media 100 milhoes de pessoas
+
+
+Pesquisar pra ver se tem como saber quais as dezenas as pessoas jogaram na mega sena
+Com esses dados e possivel fazer um BI e repassar as probabilidades
+#################################################
+Algoritmo de comparacao com tempo ,valor de aposta e qtde de vezes apostadas
+Para trazer qual a possibilidade de a pessoa ganhar na Mega_Sena apos jogar 
+toda semana por 2 vezes durante um periodo x com determinada aposta.
+
+Este valor us a seguinte formula
+
+Quantidade de Vezes Jogadas/Probabilidade de cada caso
+
+Exemplo
+A pessoa joga 7 numeros que tem probabilidade de 1 em 100 mil por exemplo.
+Se ela jogar 20 vezes a probabilidade sera 20 em 100 mil.
+multiplicar pelo tempo e pelos anos e ver qual a possibilidade.
+
+Fazer mesmo calculo para todas as loterias da caixa
+
+
+
+
+
+
+
+
+
+
+
+	
+
+	
+
+
+
+
+
+
+
+

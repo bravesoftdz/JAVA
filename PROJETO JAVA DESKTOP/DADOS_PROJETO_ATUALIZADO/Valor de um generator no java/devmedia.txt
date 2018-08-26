@@ -1,0 +1,40 @@
+
+Tecnologias Revistas Cursos Pocket videosFórumServiços PublicarCompre CréditosLoja VirtualAssine
+Bem vindo a DevMedia!
+LOGIN:     SENHA:  Esqueci minha senha      Cadastre-se   
+   Novidade: DevMedia lança o DevWare - Saiba mais! 
+
+post favorito     comentários
+Obter o valor de um generator no InterBase/FireBird
+Veja como obter o valor de um generator no InterBase/FireBird
+ Gostei (0)  (0)
+ 0    
+Para obter o valor de um generator devemos usar a função GEN_ID do InterBase/FireBird. A sintaxe é:
+
+GEN_ID(NomeDoGenerator, Incremento);
+Exemplos:
+
+GEN_ID(Gen_Cliente_Codigo, 1); GEN_ID(Gen_Cliente_Codigo, 0);
+No primeiro exemplo o generator será incrementado e o novo valor será retornado. 
+Já no segundo exemplo o generator não será incrementado e seu valor atual será retornado.
+
+Dentro de um trigger podemos atribuir o valor de um generator a um campo da tabela, como mostra o exemplo a seguir:
+
+CREATE TRIGGER TRIG_Cliente_Inclusao 
+	FOR Cliente 
+		BEFORE INSERT AS BEGIN NEW.Codigo = GEN_ID(Gen_Cliente_Codigo, 1); 
+		
+		END^
+
+
+Para obter o valor de um generator através de uma aplicação, podemos executar o 
+comando SELECT mostrado a seguir sobre uma tabela que possua apenas um registro:
+
+SELECT GEN_ID(NomeDoGenerator, 1) FROM NomeTabela 
+Onde NomeTabela é o nome de uma tabela do banco de dados que precisa ter um,
+ e somente um, registro. Geralmente usamos a tabela de sistema RDB$DATABASE para este propósito. 
+ Eis um exemplo: SELECT GEN_ID(Gen_Cliente_Codigo, 1) FROM RDB$DATABASE;
+Autor: Daniel P. Guimarães
+Home-page: www.tecnobyte.com.br
+
+  

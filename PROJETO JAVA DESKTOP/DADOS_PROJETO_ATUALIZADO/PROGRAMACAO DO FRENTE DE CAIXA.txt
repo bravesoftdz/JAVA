@@ -1,0 +1,45 @@
+
+Contato :Armazem do Rosa-Caixa so pegas as vendas apos a hora de abertura do mesmo
+Espelhos pegos so analisar e ver o que ocorreu.
+TESTES ARMAZEM DO ROSA
+######################
+Valor do Caixa FRENTE DE CAIXA e a soma dos valores do campo VL_CAIXA  da tabela SUB_FECHA_CAIXA2.
+######################
+
+######################
+Tabela SUB_FECHA_CAIXA2 so e gravada apos o caixa ser fechado.
+Esta Tabela sera alimentada com os dados que estiverem SOMENTE  no horario de abertura 
+e fechamento da tabela FECHA_CAIXA2,que e explicado abaixo.
+######################
+
+ABERTURA E FECHAMENTO DO CAIXA
+HORA DE ABERTURA =Esta hora de abertura do caixa fica armazenada no campo HR_CAD =da tabela FECHA_CAIXA2.
+HORA DE FECHAMENTO DO CAIXA=Esta hora de fechamento do caixa fica guardada no campo HR_ALT da tabela FECHA_CAIXA2.
+OBS:Caso seja feita alguma venda com o caixa fechado sem abrir, esta venda nao estara entrando no caixa.
+Desta forma o caixa do fim do dia ja estaria errado.
+
+#############################
+Falta Verificar sobre os pagamentos de contas 
+para onde vai no fechamento de caixa
+qual o campo que recebe estes valores
+############################# 
+ 
+--SQL DE FECHAMENTIO E ABERTURA DO CAIXA
+select f.hr_caixa,F.hr_alt,F.hr_cad ,f.*
+from fecha_caixa2 f
+where  f.cd_ecf=1
+and f.dt_fecha='08.01.2013'
+ 
+VERIFICACAO DE ABERTURA E FECHAMENTO DOS CAIXAS
+29-12-    -CORRETO
+05-01     -CORRETO
+08-01     -CORRETO
+12-01     -CORRETO
+#####################################################
+
+--SQL DE FECHAMENTIO E ABERTURA DO CAIXA
+select f.hr_caixa,F.hr_alt,F.hr_cad ,f.*
+from fecha_caixa2 f
+where  f.cd_ecf=1
+and f.dt_fecha='08.01.2013'
+

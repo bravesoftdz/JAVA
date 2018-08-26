@@ -1,0 +1,26 @@
+Produto-fazendo
+grupo-fazer
+sub-grupo
+cor-feito
+Marca
+NCMSH
+
+Faturamento
+Grupo fiscal
+Condicao pagamento
+
+
+CREATE TABLE GRUPO (
+    CD_GRUPO               INTEGER NOT NULL,
+    DS_GRUPO               VARCHAR(50) NOT NULL,
+    CD_USUARIO             SMALLINT NOT NULL,
+    DT_ALT                 DATE NOT NULL,
+    HR_ALT                 TIME NOT NULL,
+    DT_CAD                 DATE NOT NULL,
+    HR_CAD                 TIME NOT NULL,
+    CD_GP_FISCAL_DEFAULT   INTEGER,
+    CD_NCM_SH_DEFAULT      VARCHAR(20),
+    VL_COMISSAO_GRUPO      NUMERIC(16,4),
+    CD_FILIAL              INTEGER NOT NULL
+);
+

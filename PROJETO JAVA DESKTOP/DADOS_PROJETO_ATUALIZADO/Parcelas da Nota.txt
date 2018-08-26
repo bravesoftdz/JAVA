@@ -1,0 +1,75 @@
+	6-Programar as Parcelas
+		6.1-Inserir campo na parcela de :
+			6.1.2-Conta Receita
+			6.1.3-Conta Despesa
+			6.1.4-Juros rateados-VL_JUROS 
+			6.1.5-Valor de acordo-Empresa faz acordo e paga parcial a parcela
+			e quita a divida,mas nas contas financeiras entra apenas valor real.
+			6.1.6-Codigo de Conta Financeira
+			6.1.7-Dados de Boleto-Nosso numero e outros,ver num boleto.
+			6.1.8-Desenhar as telas de boletos,conta receita despesa,conta financeiras
+Tabelas das Parcelas
+-Documento
+6.1.2-Conta Receita
+	6.1.3-Conta Despesa
+	6.1.4-Juros rateados-VL_JUROS 
+	6.1.5-Valor de acordo-Empresa faz acordo e paga parcial a parcela
+	e quita a divida,mas nas contas financeiras entra apenas valor real.
+	6.1.6-Codigo de Conta Financeira
+	6.1.7-Dados de Boleto-Nosso numero e outros,ver num boleto.
+	6.1.8-Desenhar as telas de boletos,conta receita despesa,conta financeiras
+
+Campos da Tabela
+	CREATE TABLE DOCUMENTO (
+    CD_FILIAL              SMALLINT NOT NULL,
+    CD_MOVIMENTO           INTEGER NOT NULL,
+    CD_DOCUMENTO           INTEGER NOT NULL,
+    CD_PESSOA              BIGINT NOT NULL,
+    CD_CONTA_FINANCEIRA    BIGINT NOT NULL,
+    CD_CONTA_DESPESA       BIGINT NOT NULL,
+    CD_CONTA_RECEITA       BIGINT NOT NULL,
+    FG_SITUACAO            INTEGER NOT NULL,
+    VL_DOCUMENTO           NUMERIC(16,4),
+    CD_CONDICAO_PAGAMENTO  INTEGER NOT NULL,
+    DT_EMISSAO             DATE NOT NULL,
+    CD_USUARIO             SMALLINT NOT NULL,
+    DT_ALT                 DATE NOT NULL,
+    HR_ALT                 TIME NOT NULL,
+    DT_CAD                 DATE NOT NULL,
+    HR_CAD                 TIME NOT NULL
+);
+
+ALTER TABLE DOCUMENTO ADD CONSTRAINT PK_DOCUMENTO PRIMARY KEY (CD_MOVIMENTO, CD_DOCUMENTO, CD_PESSOA);
+
+ALTER TABLE DOCUMENTO ADD CONSTRAINT FK_DOCUMENTO_DOC_FATURA FOREIGN KEY (CD_MOVIMENTO, CD_FILIAL) REFERENCES DOC_FATURA (CD_FILIAL, CD_MOVIMENTO);
+
+	
+
+
+
+-Parcelas 
+
+CREATE TABLE PARCELAS (
+    CD_FILIAL              SMALLINT NOT NULL,
+    CD_MOVIMENTO           INTEGER NOT NULL,
+    CD_DOCUMENTO           INTEGER NOT NULL,
+    NR_PARCELA             INTEGER NOT NULL,
+    FG_SITUACAO            INTEGER NOT NULL,
+    VL_PARCELA             NUMERIC(16,4),
+    VL_JUROS               NUMERIC(16,4),
+    CD_CONDICAO_PAGAMENTO  INTEGER NOT NULL,
+    SEQUENCIA_PARCELA      SMALLINT NOT NULL,
+    VL_ACRESCIMO           NUMERIC(16,4),
+    VL_DESCONTO            NUMERIC(16,4),
+    DT_VENCTO_PAR          DATE NOT NULL,
+    CD_TIPO_COBRANCA       NUMERIC(3,0),
+    CD_USUARIO             SMALLINT NOT NULL,
+    DT_ALT                 DATE NOT NULL,
+    HR_ALT                 TIME NOT NULL,
+    DT_CAD                 DATE NOT NULL,
+    HR_CAD                 TIME NOT NULL,
+    DT_PAG_PAR             DATE,
+    VL_PAGO                NUMERIC(16,4),
+    CD_PESSOA              BIGINT NOT NULL
+);
+	

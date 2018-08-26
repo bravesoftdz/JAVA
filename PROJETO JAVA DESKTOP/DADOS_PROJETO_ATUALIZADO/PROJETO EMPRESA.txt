@@ -1,0 +1,9 @@
+
+	->Corrigir problemas de totalizadores e de acrescimo,desconto e Frete
+	->Gravar parcelas no banco de dados com os dados dos documentos
+	
+	->Gerar XML dos dados da Nota
+	->Gerar DANFE com ferramente que gera Danfe em Java (Jasper Reports)
+	
+	
+	

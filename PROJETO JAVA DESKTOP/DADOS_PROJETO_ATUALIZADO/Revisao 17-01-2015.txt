@@ -1,0 +1,101 @@
+Telas
+	Módulo Licença
+		->Definir Licença do sistema sendo Livre ou Privado.
+		->Consultar Sites sobre registro e validades de licenças.
+	Módulo Principal
+		->Menu Principal
+			->Inserir campo pra codigo das telas
+		->Login
+			->Revisar Funções gerais
+	Módulo Cadastros
+		->Cadastro de Cor-ok
+			->Consulta
+		->Cadastro de Estado-ok
+			->Consulta Estado
+		->Cadastro de Grupo Fiscal-ok
+			->Consulta Grupo Fiscal
+		->Cadastro de Grupo / SubGrupo-ok
+			->Consulta Grupo / SubGrupo
+		->Cadastro de Marca-ok
+			->Consulta Marca
+		->Cadastro de Municipio-ok
+			->Consulta Municipio
+		->Cadastro de NCMSH-ok
+			->Consulta NCMSH 
+		->Cadastro de Paises-OK
+			->Consulta Paises
+		->Cadastro de Produto-ok
+			->Consulta Produto
+			
+		->Cadastro de Pessoa-ok
+			->Consulta Pessoa
+		->Cadastro de Vendedores-ok		
+			->Consulta Vendedores
+		->Cadastro de Transportadora-ok
+			->Consulta Transportadora
+		->Cadastro de Fornecedor-ok
+			->Consulta Fornecedor			
+			
+		->Cadastro de Unidade de Medida-ok
+			->Consulta Unidade de Medida
+		->Cadastro de Usuario-ok
+			->Consulta Usuario
+
+	Módulo Faturamento
+		->Condição de Pagamento
+			->Consulta Condição Pagamento
+		->Nota de Entrada
+			->Consulta Nota de Entrada
+		->Tipo de Cobrança
+			->Consulta Tipo de Cobrança
+		->Tipo de Nota
+			->Consulta Tipo de Nota
+		->Pedido / Nota Completo
+			->Consulta Pedido / Nota Completo
+###################################FUNÇÕES DAS TELAS#######################################	
+Lista das funções 
+	->Inserir
+	->Alterar
+	->Excluir 
+	->Listar (Carregar os dados na tela)
+	
+	->Generator
+	->Função de Habilita Deshabilita botoes das telas.
+
+Rotinas Acima revisadas em 17-01-2015	
+
+----------------	
+	->Desenho das telas-Revisar e padronizar
+		->Desenho-Tamanho dos botões de gravar/alterar -padronizar.
+		Tamanhos padrão do sistema:
+		Layout->Absoluto->Todas a telas devem estar no Layout Absoluto.
+		Tamanho Botão Gravar,Excluir,sair  ->Largura-120  Altura -40
+		
+		->Inserir Titulo em todos os formularios
+		->Inserir panel em todos os formularios e inserir borda nos panels.
+		
+		Exemplo de Design de Telas:
+			Gerenciador de Layout do Livro da IBS "Use a cabeça Java"				
+			Paginas 281 ate pagina 300
+			Mostra como criar e gerenciar layouts em Java.
+		
+		
+################################PADRÃO PROGRAMAÇÃO#############################
+
+	->Padrao de Nome de variavel->Não deve ter _   underline
+	
+	->Padrao de nome de Classe deve iniciar em maiusculo e cada nome iniciar
+	em maiusculo,exemplo->UsuarioTeste
+	
+	->Padrao de nome de método, comeca minusculo e na definicao é maiusculo.
+	Exemplos:
+				getTodos
+				inserirUsuario
+	->Implementar MSG de erro personalizada pelo método MetodosGlobais
+	->Inserir private em todos os metodos e classe que assim necessitarem
+###############################################################################	
+	->REVISÃO FINAL:
+		->Tirar todos os SQLs  dos formularios e chamar direto os métodos
+		do pacote de controle.
+###############################################################################					
+		

@@ -1,0 +1,62 @@
+SET TERM ^ ;
+
+create or alter procedure CORRIGIPRECO (
+    CD_FILIAL integer)
+returns (
+    CD_REF_OUT bigint)
+as
+declare variable CD_REF_01 bigint;
+declare variable CD_REF_02 bigint;
+begin
+  for
+  select
+      produto.cd_ref
+  from
+      produto
+  order by
+      produto.cd_ref
+  --Nesta parte é atribuido o Codigo resultante do sql acima
+  into :cd_ref_01 do
+  begin
+       select
+          produto.cd_ref
+       from
+          produto
+       inner join filial on
+        filial.cd_fil =1   --:cd_filial
+       left outer join sub_tab_preco on
+          sub_tab_preco.cd_tabela = filial.cd_tb_preco_ativ
+          and
+          sub_tab_preco.cd_ref = produto.cd_ref
+       where
+          produto.cd_ref = :cd_ref_01
+          and
+          sub_tab_preco.vl_custo is null
+       --Nesta parte é atribuido o Codigo resultante do sql acima
+       into cd_ref_02;
+       if (cd_ref_02 is not null) then
+       begin
+       ----Nesta parte é feito o insert padrao na tabela SUB_TAB_PRECO
+
+INSERT INTO SUB_TAB_PRECO (CD_TABELA, CD_REF, VL_CUSTO, VL_VENDA, VL_PROMOCAO, VL_REVENDA, VL_TABELA, VL_CUSTO_MED, CD_USUARIO, DT_ALT, HR_ALT, DT_CAD, HR_CAD, VL_FABRICA, VL_ESPECIAL, VL_VAREJO, DT_ENTRADA, DS_LOG, TX_MARGEM_LUCRO_VENDA, TX_MARGEM_LUCRO_REVENDA, TX_MARGEM_LUCRO_ESPECIAL)
+                   VALUES (1, :cd_ref_02, 0.0,0.0, 0.0, 0.0, 0, 0, 11, cast('now' as date),cast('now' as time), cast('now' as date), cast('now' as time), 0, 0, 0, NULL, NULL, 0.0, 0.0, 0);
+       end
+       CD_REF_OUT = :cd_ref_01;
+       --O comando Suspend mostra na Tela os registros que vieram e foram alterados
+       suspend;
+  end
+       CD_REF_OUT = :cd_ref_01;
+  suspend;
+end^
+
+SET TERM ; ^
+
+/* Following GRANT statetements are generated automatically */
+
+GRANT SELECT ON PRODUTO TO PROCEDURE CORRIGIPRECO;
+GRANT SELECT ON FILIAL TO PROCEDURE CORRIGIPRECO;
+GRANT SELECT,INSERT ON SUB_TAB_PRECO TO PROCEDURE CORRIGIPRECO;
+
+/* Existing privileges on this procedure */
+
+GRANT EXECUTE ON PROCEDURE CORRIGIPRECO TO SYSDBA;

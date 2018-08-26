@@ -1,0 +1,34 @@
+String auxTexto = edtCodigo.getText();
+        String auxNome = edtNome.getText();
+        String auxCPF = edtCPF.getText();
+
+        PessoaDB pessoadb = new PessoaDB();
+
+        int auxCodigo = 0;
+        // String auxiliaCodigoString;
+
+        if (auxTexto.equals("")) {
+            //Variavel recebe o valor do resultado do sql do banco
+            //de dados
+            auxCodigo = pessoadb.getUltimo();
+            auxCodigo = auxCodigo + 1;
+
+
+            //E passado por parametro o valor da variavel
+            //para a variavel que recebeu o valor do campo String
+            auxCodigo = Integer.parseInt(auxTexto);
+            // Pessoa pessoa = new Pessoa(auxCodigo, auxNome, auxCPF);
+
+            String a = null;
+            a = "0" + auxCodigo;
+            // auxiliaCodigoString = auxCodigo;
+            //edtCodigo.setText(auxCodigo.toString());
+            edtCodigo.setText(a);
+            //edtNome.setText(auxNome.toString());
+            edtNome.grabFocus();
+        } else {
+            //Este metodo devera ser um sql que recebera or parametro
+            //o valor do campo edtCodigo
+            atualizarTelaPersonalizado();
+
+        }

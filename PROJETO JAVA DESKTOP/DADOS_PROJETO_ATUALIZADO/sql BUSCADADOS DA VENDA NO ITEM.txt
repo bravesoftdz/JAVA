@@ -1,0 +1,218 @@
+select
+    produto.cd_prod,
+    produto.cd_ref,
+    produto.ds_prod,
+    produto.tx_ipi,
+    produto.fg_tip_cad_pro,
+    produto.ab_unidade,
+    produto.qt_min,
+    produto.qt_max,
+    produto.vl_peso_liq,
+    produto.vl_peso_bru,
+    produto.fg_ativo,
+    produto.cd_gp_fiscal,
+    produto.fg_usa_balanca,
+    produto.cd_ncm_sh,
+    produto.tx_limite_desconto,
+    produto.cd_tab_desc_comissao,
+    produto.cd_tabela_desc_por_margem_lucro,
+    produto.fg_ippt,
+    produto.fg_retem_pis_cofins_cssl,
+    produto.fg_retem_inss,
+    produto.fg_servico_fora_estabelecimento,
+    produto.tx_op_custo,
+    produto.fg_usa_grade_na_venda,
+    produto.ds_codigo_fci,
+    produto.cd_fabrica,
+    produto.cd_anp_produto,
+    produto.cd_indicador_exigibilidade,
+    produto.fg_incentivo_fiscal,
+    produto.nr_processo_susp_exigibilidade,
+    produto.cd_grupo,
+
+    produto_mva.vl_mva tx_mva_cad_prod,
+    produto_mva.fg_desconto_mva fg_desconto_mva_cad_prod,
+
+    cor.ds_cor,
+
+    estoque.qt_prod ,
+    estoque.qt_prod qtde,
+
+    cst.fg_substituicao,
+    cst.fg_nao_incidencia,
+    cst.fg_isento,
+    cst.fg_csosn,
+
+    cst_uf.fg_substituicao fg_substituicao_uf,
+    cst_uf.fg_nao_incidencia fg_nao_incidencia_uf,
+    cst_uf.fg_isento fg_isento_uf,
+    cst_uf.fg_csosn fg_csosn_uf,
+    cst_uf.cd_sit_tri cd_cst_uf,
+    
+    gp_fiscal.vl_reducao_bc,
+    gp_fiscal.tx_markup,
+    gp_fiscal.cd_gp_fiscal cd_gp_fiscal1, /* campo p/ validacao */
+    gp_fiscal.ds_formula_mva_ajustado,
+    gp_fiscal.tx_pis_gp_fiscal,
+    gp_fiscal.tx_cofins_gp_fiscal,
+    gp_fiscal.cd_cst_pis_diferenciado,
+    gp_fiscal.cd_cst_cofins_diferenciado,
+    gp_fiscal.tx_diferenciada_ttd,
+
+    gp_fiscal_markup.tx_icms_interno tx_icms_interno_destino,
+    gp_fiscal_markup.tx_icms_interestadual tx_icms_interestadual_destino,
+    gp_fiscal_markup.cd_estado cd_estado_destino, /* campo p/ validacao */
+
+    gp_fiscal_markup_origem.tx_icms_interno tx_icms_interno_origem,
+    gp_fiscal_markup_origem.tx_icms_interestadual tx_icms_interestadual_origem,
+    gp_fiscal_markup_origem.cd_estado cd_estado_origem, /* campo p/ validacao */
+
+    itens_mva_por_ncmsh.vl_mva vl_mva_uf,
+    itens_mva_por_ncmsh.fg_desconto_mva fg_desconto_mva_uf,
+
+    sub_tab_preco.vl_custo,
+    sub_tab_preco.vl_venda,
+    sub_tab_preco.vl_revenda,
+    sub_tab_preco.vl_especial,
+    sub_tab_preco.vl_tabela,
+
+    coalesce(promocao.vl_venda, 0) vl_promocao,
+
+    tipo_nota_fiscal.cd_cst,
+    tipo_nota_fiscal.cd_cfop_estadual,
+    tipo_nota_fiscal.cd_cfop_interestadual,
+    tipo_nota_fiscal.tp_calculo_base,
+    tipo_nota_fiscal.tp_calculo_icms,
+    tipo_nota_fiscal.tp_calculo_base_i,
+    tipo_nota_fiscal.tp_calculo_icms_i,
+    tipo_nota_fiscal.cd_tipo cd_tipo1, /* campo p/ validacao */
+    tipo_nota_fiscal.cd_cst_cofins,
+    tipo_nota_fiscal.tp_calculo_base_st,
+    tipo_nota_fiscal.tp_calculo_icms_st,
+    tipo_nota_fiscal.tp_calculo_base_i_st,
+    tipo_nota_fiscal.tp_calculo_icms_i_st,
+    tipo_nota_fiscal.cd_cst_ipi,
+    tipo_nota_fiscal.cd_cst_pis,
+    tipo_nota_fiscal.tx_icms_diferido,
+    tipo_nota_fiscal.tx_icms_org_desonerado,
+    tipo_nota_fiscal.cd_motivo_desoneracao,
+    tipo_nota_fiscal_uf.cd_cst cd_cst_estado,
+    tipo_nota_fiscal_uf.cd_cfop cd_cfop_estado,
+    tipo_nota_fiscal_uf.bl_obs bl_obs_estado,
+    produto_composicao.cd_ref_composicao,
+    produto.vl_volume,
+    produto.ds_marca,
+    gp_fiscal.tx_base_pis_cofins,
+    cst_pis_cofins.fg_substituicao fg_substituicao_pis,
+    cst_pis_cofins.fg_isento fg_isento_pis,
+    cst_pis_cofins.fg_nao_incidencia fg_nao_incidencia_pis,
+    mva_por_ncmsh.vl_mva,
+    mva_por_ncmsh.fg_desconto_mva,
+    unidade_medida.fg_venda_fracionaria,
+    produto.nr_pontos,
+    lista_servicos_nfem.cd_cnae,
+    lista_servicos_nfem.cd_servico,
+    lista_servicos_nfem.vl_aliquota,
+    taxa_impostos.tx_alicota_nacional,
+    taxa_impostos.tx_alicota_internacional,
+
+    produto_pauta_preco.vl_pauta,
+
+    grupo.cd_conta_receita,
+    grupo.cd_conta_despesa,
+
+    tam.ds_tam,
+
+    grupo_pis_cofins.cd_tributado cd_tributado_pis_cofins_grupo,
+    grupo_pis_cofins.cd_st cd_st_pis_cofins_grupo,
+    grupo_pis_cofins.cd_cst_pis cd_cst_pis_grupo,
+    grupo_pis_cofins.tx_pis tx_pis_grupo,
+    grupo_pis_cofins.tx_reducao_bc_pis tx_reducao_bc_pis_grupo,
+    grupo_pis_cofins.cd_cst_cofins cd_cst_cofins_grupo,
+    grupo_pis_cofins.tx_cofins tx_cofins_grupo,
+    grupo_pis_cofins.tx_reducao_bc_cofins tx_reducao_bc_cofins_grupo,
+    grupo_pis_cofins.cd_info_complementar cd_info_complementar_pis_cofins_grupo
+from
+    produto
+left outer join estoque on
+    (estoque.cd_filial = ?         )
+    and
+    (estoque.cd_ref = produto.cd_ref)
+inner join sub_tab_preco on
+    (sub_tab_preco.cd_tabela = ?            )
+    and
+    (sub_tab_preco.cd_ref = produto.cd_ref)
+inner join gp_fiscal on
+    (gp_fiscal.cd_gp_fiscal = ?            )
+left outer join gp_fiscal_markup on
+    (gp_fiscal_markup.cd_gp_fiscal = ?            )
+    and
+    (gp_fiscal_markup.cd_estado = ?             )
+left outer join gp_fiscal_markup gp_fiscal_markup_origem on
+    (gp_fiscal_markup_origem.cd_gp_fiscal = ?            )
+    and
+    (gp_fiscal_markup_origem.cd_estado = ?                )
+left outer join tipo_nota_fiscal on
+    (tipo_nota_fiscal.cd_tipo = ?            )
+    and
+    (tipo_nota_fiscal.cd_gp_fiscal = ?            )
+    and
+    (tipo_nota_fiscal.tp_consumo = ?          )
+left outer join tipo_nota_fiscal_uf on
+    (tipo_nota_fiscal_uf.cd_tipo = ?            )
+    and
+    (tipo_nota_fiscal_uf.cd_gp_fiscal = ?            )
+    and
+    (tipo_nota_fiscal_uf.tp_consumo = ?          )
+    and
+    (tipo_nota_fiscal_uf.cd_estado = ?             )
+left outer join sit_trib cst on
+    (cst.cd_sit_tri = tipo_nota_fiscal.cd_cst)
+left outer join sit_trib cst_uf on
+    (cst_uf.cd_sit_tri = tipo_nota_fiscal_uf.cd_cst)
+left outer join cst_pis_cofins on
+    cst_pis_cofins.cd_cst_pis_cofins = tipo_nota_fiscal.cd_cst_pis
+left outer join mva_por_ncmsh on
+    mva_por_ncmsh.cd_ncm_sh = produto.cd_ncm_sh
+left outer join produto_composicao on
+    produto_composicao.cd_ref = produto.cd_ref
+    and
+    produto_composicao.sq_item = 1
+left outer join unidade_medida on
+    unidade_medida.cd_unidade = produto.cd_unidade
+left outer join lista_servicos_nfem on
+    produto.cd_servico = lista_servicos_nfem.cd_cnae
+left outer join itens_mva_por_ncmsh on
+    ((itens_mva_por_ncmsh.cd_ncm_sh = produto.cd_ncm_sh)
+    and
+    (itens_mva_por_ncmsh.cd_estado = ?             ))
+left outer join cor on
+    cor.cd_cor = produto.cd_cor
+left outer join promocao on
+    (promocao.cd_filial = ?         )
+    and
+    (promocao.cd_ref = produto.cd_ref)
+    and
+    ((cast('now' as date) >= promocao.dt_inicial) and (cast('now' as date) <= promocao.dt_final))
+left outer join taxa_impostos on
+    taxa_impostos.cd_excecao = produto.cd_excecao_fiscal
+    and
+    taxa_impostos.cd_ncm_nbs = produto.cd_ncm_sh
+    and
+    taxa_impostos.cd_tabela = produto.fg_tip_cad_pro
+left outer join produto_pauta_preco on
+    (produto_pauta_preco.cd_referencia = produto.cd_ref)
+    and
+    (produto_pauta_preco.ds_estado = ?             )
+left outer join grupo on
+    grupo.cd_grupo = produto.cd_grupo
+left outer join tam on
+    tam.cd_tam = produto.cd_tam
+left outer join produto_mva on
+    produto_mva.cd_referencia = produto.cd_ref
+    and
+    produto_mva.cd_estado = ?             
+left outer join grupo_pis_cofins on
+    grupo_pis_cofins.cd_grupo_pis_cofins = produto.cd_grupo_pis_cofins
+where
+    (produto.cd_ref = ?   )

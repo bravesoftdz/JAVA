@@ -1,0 +1,61 @@
+1	Valor do Produto	 R$  100,00 
+2	Aliquota do ICMS operação própria=	12,00%//Pega do Grupo Fiscal
+3	Aliquota do IPI	10%=Pega do Cadastro do Produto
+4	Valor do IPI (1x3)=	 R$  10,00 
+5	Valor do Frete	 =Pega do Rateio de Frete  
+6	Valor das Despesas Acessórias	 =Nao tera no caso,fica sempre zero  
+7	Valor do Seguro	 =Nao tera no caso,fica sempre zero   
+8	Valor de Desconto	=Pega do Rateio do Desconto 
+9	% de redução de ICMS na operação própria	=Nao tera no caso,fica sempre zero 
+10	% de redução de ICMS na UF Destinatária	=Nao tera no caso,fica sempre zero 
+
+11	Valor da Operação Própria  ((1+5+6+7)-8)-(((1+5+6+7)-8)*9)
+12	Valor da Operação ST ((1+4+5+6+7)-8)-(((1+4+5+6+7)-8)*10)
+13	Valor do ICMS Operação Própria (11x2)	
+14	MVA Original	40,00%
+15	MVA Utilizado	40,00%->So nao usa se a pessoa for consumo,dai é zero
+16	Valor Agregado (12x15)	 
+17	Base ST (12+16)	 
+18	Aliquota do ICMS ST	-Se Estado Destinatario for igual origem,Aliquota =Origem,senao aliquota é igual do Destinatario
+19	Valor ICMS ST (17 x 18) - 13	
+
+
+BAse de ST=
+(
+
+	(vl produto+vl_ipi+vl_frete+
+	despesa_acessoria+seguro-desconto)
+	
+	-
+	(
+	(vl produto+vl_ipi+vl_frete+
+	despesa_acessoria+seguro-desconto)
+	*  %de reducao de ICMS Destinataria 
+	)
+	
+)
++
+//Valor Agregado
+(
+
+	(vl produto+vl_ipi+vl_frete+
+	despesa_acessoria+seguro-desconto)
+	
+	-
+	(
+	(vl produto+vl_ipi+vl_frete+
+	despesa_acessoria+seguro-desconto)
+	*  %de reducao de ICMS Destinataria 
+	)
+	
+)*MVA Utilizado
+
+//VL ICMS Proprio
+
+
+
+//Valor de ST
+	(Base de ST * Alicota de ICMS ST)-(VL ICMS Proprio)
+
+	
+	

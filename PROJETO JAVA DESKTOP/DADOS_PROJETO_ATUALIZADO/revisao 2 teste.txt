@@ -1,0 +1,50 @@
+Lista das funções 
+	->Inserir
+	->Alterar
+	->Excluir 
+	->Listar (Carregar os dados na tela)
+	
+	->Generator
+	->Função de Habilita Deshabilita botoes das telas.
+	
+		->Cadastro de Cor-
+			->Consulta
+		->Cadastro de Estado-
+			->Consulta Estado
+		->Cadastro de Fornecedor-
+			->Consulta Fornecedor
+		->Cadastro de Grupo Fiscal-
+			->Consulta Grupo Fiscal
+		->Cadastro de Grupo / SubGrupo-
+			->Consulta Grupo / SubGrupo
+		->Cadastro de Marca-
+			->Consulta Marca
+		->Cadastro de Municipio-
+			->Consulta Municipio
+		->Cadastro de NCMSH-
+			->Consulta NCMSH 
+		->Cadastro de Paises-
+			->Consulta Paises
+		->Cadastro de Pessoa-
+			->Consulta Pessoa
+		->Cadastro de Produto-
+			->Consulta Produto
+		->Cadastro de Transportadora-
+			->Consulta Transportadora
+		->Cadastro de Unidade de Medida-
+			->Consulta Unidade de Medida
+		->Cadastro de Usuario-
+			->Consulta Usuario
+		->Cadastro de Vendedores-		
+			->Consulta Vendedores
+	Módulo Faturamento
+		->Condição de Pagamento
+			->Consulta Condição Pagamento
+		->Nota de Entrada
+			->Consulta Nota de Entrada
+		->Tipo de Cobrança
+			->Consulta Tipo de Cobrança
+		->Tipo de Nota
+			->Consulta Tipo de Nota
+		->Pedido / Nota Completo
+			->Consulta Pedido / Nota Completo	

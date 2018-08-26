@@ -1,0 +1,6 @@
+private Connection conn;  
+private Statement st;  
+st = conn.createStatement();  
+CallableStatement stm = conn.prepareCall("{call atualiza_status(?)}");  
+stm.setInt(codigo, 1);  
+stm.execute();  

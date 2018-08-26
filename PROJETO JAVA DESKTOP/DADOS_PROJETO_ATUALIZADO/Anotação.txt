@@ -1,0 +1,36 @@
+Programacao do enter no cadastro de Produto,Pessoa,Vendas, no campo Movimento
+
+Se( Campo.Text=("")){
+	//Pega a Programacao do Codigo do generator com o SQL
+	Funcaogenerator();
+	Campo.setText(CodigoGenerator.Get);
+	//Nesta Parte a Funcao deve ser de campos Nulos,mas deve ser a mesma talvez
+	FuncaoCarregacamposnaTela();
+	FuncaoInserirPessoa();
+	}
+else if (Campo.Text <> "") E (Evento.KeyPressed == VK_ENTER){
+	//Pega a Programação do UPdate
+	Se Pessoa Ja existe a Pessoa pega do SQL, Senao chama a funcao Inserir de cima
+	Para Carregar os Dados.
+	FuncaoUpdatePessoa();
+	FuncaoCarregacamposnaTela();
+}
+elseE (Evento.KeyPressed == VK_ENTER){
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

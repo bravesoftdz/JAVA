@@ -1,0 +1,13 @@
+SELECT  GEN_ID(cd_pessoa, 1) from pessoa
+
+usar o sql acima
+
+Neste resultado abaixo vem somente 1 registro
+SELECT  GEN_ID(cd_mov_ent, 1) from notasentrada
+
+Ja no de cima veio varios ver por que
+
+Abaixo retorna o valor de somente o registro atual
+
+SELECT  GEN_ID(cd_pessoa, 0) from pessoa
+group by 1
