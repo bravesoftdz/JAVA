@@ -1,0 +1,13 @@
+﻿teste#dica
+windows#Tela azul
+lesma#Lento pra caramba
+casa#Moradia
+mesa#usado para por coisas em cima
+ventilador#Faz vento
+guardaRoupa#Local para guardar roupas
+cama#Local para dormir
+salame#carne seca
+terra#Usado para obter-mos alimento
+fogo#Queima as pessoas
+computacao#Responsavel pela tecnologia atual
+mercado#Onde compramos comida
