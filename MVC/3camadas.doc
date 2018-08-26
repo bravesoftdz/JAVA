@@ -1,0 +1,121 @@
+{\rtf1\ansi\ansicpg1252\uc1 \deff0\deflang1033\deflangfe1046{\fonttbl{\f0\froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}{\f1\fswiss\fcharset0\fprq2{\*\panose 020b0604020202020204}Arial;}
+{\f3\froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}{\f14\fnil\fcharset2\fprq2{\*\panose 05000000000000000000}Wingdings;}}{\colortbl;\red0\green0\blue0;\red0\green0\blue255;\red0\green255\blue255;\red0\green255\blue0;\red255\green0\blue255;
+\red255\green0\blue0;\red255\green255\blue0;\red255\green255\blue255;\red0\green0\blue128;\red0\green128\blue128;\red0\green128\blue0;\red128\green0\blue128;\red128\green0\blue0;\red128\green128\blue0;\red128\green128\blue128;\red192\green192\blue192;}
+{\stylesheet{\nowidctlpar\widctlpar\adjustright \fs20\lang1046\cgrid \snext0 Normal;}{\s1\sa240\keepn\nowidctlpar\widctlpar\adjustright \b\lang1046\cgrid \sbasedon0 \snext0 heading 1;}{\s2\sb240\sa60\keepn\nowidctlpar\widctlpar\adjustright 
+\b\i\f1\lang1046\cgrid \sbasedon0 \snext0 heading 2;}{\*\cs10 \additive Default Paragraph Font;}{\s15\sa240\nowidctlpar\widctlpar\adjustright \lang1046\cgrid \sbasedon0 \snext15 Body Text;}{\s16\sa240\keepn\nowidctlpar\widctlpar\outlinelevel0\adjustright 
+\b\fs36\ul\lang1046\cgrid \sbasedon1 \snext16 T\'edtulo 0;}{\s17\sa240\nowidctlpar\widctlpar\adjustright \i\lang1046\cgrid \sbasedon0 \snext17 Body Text 2;}{\s18\qc\nowidctlpar\widctlpar\adjustright \fs20\lang1046\cgrid \sbasedon0 \snext18 Body Text 3;}}
+{\*\listtable{\list\listtemplateid68550659\listsimple{\listlevel\levelnfc23\leveljc0\levelfollow0\levelstartat1\levelspace0\levelindent0{\leveltext\'01\u-3928 ?;}{\levelnumbers;}\f3\fbias0 \fi-360\li360\jclisttab\tx360 }{\listname ;}\listid5258460}
+{\list\listtemplateid68550673\listsimple{\listlevel\levelnfc0\leveljc0\levelfollow0\levelstartat1\levelspace0\levelindent0{\leveltext\'02\'00);}{\levelnumbers\'01;}\fbias0 \fi-360\li360\jclisttab\tx360 }{\listname ;}\listid1791784080}
+{\list\listtemplateid68550661\listsimple{\listlevel\levelnfc23\leveljc0\levelfollow0\levelstartat1\levelspace0\levelindent0{\leveltext\'01\u-3929 ?;}{\levelnumbers;}\f14\fbias0 \fi-360\li360\jclisttab\tx360 }{\listname ;}\listid1990792012}}
+{\*\listoverridetable{\listoverride\listid1791784080\listoverridecount0\ls1}{\listoverride\listid1990792012\listoverridecount0\ls2}{\listoverride\listid5258460\listoverridecount0\ls3}}{\info{\title Desenvolvendo em 3 Camadas com Delphi 4}
+{\author Walter Itamar Mour\'e3o}{\operator Walter}{\creatim\yr1999\mo1\dy7\hr17\min56}{\revtim\yr1999\mo1\dy7\hr18\min2}{\version3}{\edmins1}{\nofpages4}{\nofwords1273}{\nofchars7261}{\*\company  }{\nofcharsws0}{\vern73}}
+\margl1701\margr1701\margt1417\margb1417 \deftab708\widowctrl\ftnbj\aenddoc\hyphhotz425\hyphcaps0\formshade\viewkind1\viewscale100\pgbrdrhead\pgbrdrfoot \fet0\sectd \linex0\headery709\footery709\colsx709\endnhere\sectdefaultcl {\*\pnseclvl1
+\pnucrm\pnstart1\pnindent720\pnhang{\pntxta .}}{\*\pnseclvl2\pnucltr\pnstart1\pnindent720\pnhang{\pntxta .}}{\*\pnseclvl3\pndec\pnstart1\pnindent720\pnhang{\pntxta .}}{\*\pnseclvl4\pnlcltr\pnstart1\pnindent720\pnhang{\pntxta )}}{\*\pnseclvl5
+\pndec\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}{\*\pnseclvl6\pnlcltr\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}{\*\pnseclvl7\pnlcrm\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}{\*\pnseclvl8\pnlcltr\pnstart1\pnindent720\pnhang
+{\pntxtb (}{\pntxta )}}{\*\pnseclvl9\pnlcrm\pnstart1\pnindent720\pnhang{\pntxtb (}{\pntxta )}}\pard\plain \s16\keepn\nowidctlpar\widctlpar\outlinelevel0\adjustright \b\fs36\ul\lang1046\cgrid {Falando em Camadas
+\par }\pard\plain \s15\qr\sa240\nowidctlpar\widctlpar\adjustright \lang1046\cgrid {(Walter Itamar Mour\'e3o \endash  10/98)
+\par }\pard \s15\sa240\nowidctlpar\widctlpar\adjustright {Nos sistemas cliente/servidor tradicionais (ou duas camadas) temos tr\'eas op\'e7\'f5es com rela\'e7\'e3o \'e0s regras de neg\'f3cio: colocamos junto da interface do usu\'e1
+rio, junto do banco de dados ou mesclamos as duas op\'e7\'f5es. Nenhuma dessas op\'e7\'f5es \'e9 100 % boa.
+\par }\pard\plain \s1\sa240\keepn\nowidctlpar\widctlpar\outlinelevel0\adjustright \b\lang1046\cgrid {Regras junto da interface
+\par }\pard\plain \s15\sa240\nowidctlpar\widctlpar\adjustright \lang1046\cgrid {Esse caso \'e9
+ o mais comum e somos praticamente induzidos a trabalhar assim pelas ferramentas RAD atuais, inclusive o Delphi. A possibilidade de se ligar um componente visual (TDBEdit) diretamente a um campo de uma tabela em um banco de dados (TTable), \'e9
+ excelente no que diz respeito \'e0 velocidade de programa\'e7\'e3o e apresenta\'e7\'e3o de resultados. Essa \'e9 uma t\'e9cnica muito boa para prototipa\'e7\'e3
+o e desenvolvimento de pequenos sistemas, mas traz incomodos enormes quando de trata de sistemas de grande porte.
+\par }\pard\plain \sa240\nowidctlpar\widctlpar\adjustright \fs20\lang1046\cgrid {\fs24 Entre os maiores problemas que essa forma de programar acarreta est\'e3o:
+\par {\pntext\pard\plain\f14\cgrid \loch\af14\dbch\af0\hich\f14 \'a7\tab}}\pard \fi-360\li360\sa240\nowidctlpar\widctlpar\jclisttab\tx360{\*\pn \pnlvlblt\ilvl0\ls2\pnrnot0\pnf14\pnstart1\pnindent360\pnhang{\pntxtb \'a7}}\ls2\adjustright {\fs24 
+Dificuldades de manuten\'e7\'e3o \endash  quando trabalhamos com os eventos de componentes visuais \'e9 f\'e1cil dispersarmos as regras, tais como associarmos consist\'eancia de campo ao evento OnExit do 
+TDBEdit em um momento e ao OnValidate do TField em outro momento. Obviamente isso causa dores de cabe\'e7a no momento da manuten\'e7\'e3o, e compuls\'e3o ao suic\'eddio caso a manuten\'e7\'e3o seja feita por outro programador.
+\par {\pntext\pard\plain\f14\cgrid \loch\af14\dbch\af0\hich\f14 \'a7\tab}}\pard \fi-360\li360\sa240\nowidctlpar\widctlpar\jclisttab\tx360{\*\pn \pnlvlblt\ilvl0\ls2\pnrnot0\pnf14\pnstart1\pnindent360\pnhang{\pntxtb \'a7}}\ls2\adjustright {\fs24 
+Problemas de performance (aplica\'e7\'e3o, banco e rede) \endash  \'e9 p\'fablico e not\'f3rio que a vis\'e3o das tabelas de um banco de dados relacional de forma }{\i\fs24 flat}{\fs24 , mimetizando um banco n\'e3o relacional causa, por si s\'f3
+, um impacto consider\'e1vel no banco de dados e na rede como um todo, devido ao grande n\'famero de comandos executados e dados retornados. De fato, basta montarmos uma pequena aplica\'e7\'e3
+o, com um TDBGrid ligado a uma tabela no InterBase, por exemplo, e observarmos o log gerado pelo SQL Monitor ap\'f3s algumas inser\'e7\'f5es e edi\'e7\'f5es, \'e9 assustador !
+\par {\pntext\pard\plain\f14\cgrid \loch\af14\dbch\af0\hich\f14 \'a7\tab}}\pard \fi-360\li360\sa240\nowidctlpar\widctlpar\jclisttab\tx360{\*\pn \pnlvlblt\ilvl0\ls2\pnrnot0\pnf14\pnstart1\pnindent360\pnhang{\pntxtb \'a7}}\ls2\adjustright {\fs24 Replica\'e7\'e3
+o das regras \endash  todas as aplica\'e7\'f5es que atualizam os dados de uma determinada tabela ter\'e3o que replicar as mesmas regras e restri\'e7\'f5es que se aplicam a esta tabela.
+\par {\pntext\pard\plain\f14\cgrid \loch\af14\dbch\af0\hich\f14 \'a7\tab}}\pard \fi-360\li360\sa240\nowidctlpar\widctlpar\jclisttab\tx360{\*\pn \pnlvlblt\ilvl0\ls2\pnrnot0\pnf14\pnstart1\pnindent360\pnhang{\pntxtb \'a7}}\ls2\adjustright {\fs24 
+Dificuldade de distribui\'e7\'e3o \endash  sempre que uma regra \'e9 alterada o programa tem que ser redistribu\'eddo , trazendo problemas de controle de vers\'e3o e distribui\'e7\'e3o f\'edsica do aplicativo e seus complementos.
+\par }\pard\plain \s17\sa240\nowidctlpar\widctlpar\adjustright \i\lang1046\cgrid {Como exemplo desse \'faltimo item, imagine um ambiente com 300 usu\'e1rios. Acabamos de desenvolver uma aplica\'e7\'e3o que vai ser distribu\'edda para esses 300 usu\'e1rios (com
+ BDE e etc.). Ap\'f3s uma 2 semanas de instala\'e7\'f5es descobrimos um erro grave no c\'f3digo que nos obriga a redistribuir tudo. Mais duas semanas e \'e9 lan\'e7ada uma nova vers\'e3
+o do BDE ou do transporte nativo do banco que melhora a performance de nossa aplica\'e7\'e3o consideravelmente... Enfim, podemos cair em situa\'e7\'f5es t\'e3o inadimiss\'edveis quanto inevit\'e1veis.
+\par }\pard\plain \s1\sa240\keepn\nowidctlpar\widctlpar\outlinelevel0\adjustright \b\lang1046\cgrid {Regras junto dos dados
+\par }\pard\plain \s15\sa240\nowidctlpar\widctlpar\adjustright \lang1046\cgrid {Ao colocarmos as regras dentro do banco de dados, usando os recursos nativos do banco de dados (triggers, stored procedures e constraints), estam
+os automaticamente ligando nossa aplica\'e7\'e3o ao banco de dados que estiver sendo usado, aumentando muito o retrabalho caso a aplica\'e7\'e3o venha a ser convertida para ser usada com outro banco de dados.
+\par Tipicamente isso n\'e3o \'e9 um problema consider\'e1vel para a maioria das empresas, uma vez que a mudan\'e7a de um banco de dados \'e9 um opera\'e7\'e3o complexa por si s\'f3, e que n\'e3
+o pode ocorrer frequentemente. No entanto, praticamente toda software house que desenvolve em ambiente cliente/servidor enfrenta esse problema em maior ou menor grau, dependendo da complexidade e da forma de projetar os programas.
+\par Ainda em rela\'e7\'e3o a essa forma de programar, pesa o estigma das restri\'e7\'f5es impostas pelas linguagens nativas dos bancos, que geralmente s\'e3o direcionadas e otimizadas para a manipula\'e7\'e3o de dados, e n\'e3o para situa\'e7\'f5es gen\'e9
+ricas e algoritmos complexos, obrigando o programador a \ldblquote costurar\rdblquote  para superar as defici\'eancias, em particular no que se refere \'e0 depura\'e7\'e3o do c\'f3digo e tratamento de exce\'e7\'f5es.
+\par Como pontos positivos restam as quest\'f5es relativas ao ganho de performance na manipula\'e7\'e3o dos dados e a centraliza\'e7\'e3o do c\'f3digo que facilita a atualiza\'e7\'e3o ap\'f3s a manuten\'e7\'e3o, e garante a seguran\'e7a do modelo de dados.
+
+\par }\pard\plain \s1\sa240\keepn\nowidctlpar\widctlpar\outlinelevel0\adjustright \b\lang1046\cgrid {Parte das regras na interface e parte junto dos dados
+\par }\pard\plain \s15\sa240\nowidctlpar\widctlpar\adjustright \lang1046\cgrid {Este o modelo mais facilmente encontrado atualmente e \'e9 uma tend\'eancia natural. Quando bem aplicado \'e9 um modelo eficaz e pode atender a v\'e1rias situa\'e7\'f5
+es e ambientes. No entanto carrega os estigmas da dificuldade de manuten\'e7\'e3o, dificuldade de distribui\'e7\'e3o e falta de portabilidade.
+\par }\pard\plain \s16\sa240\keepn\nowidctlpar\widctlpar\outlinelevel0\adjustright \b\fs36\ul\lang1046\cgrid {3 camadas
+\par }\pard\plain \s15\sa240\nowidctlpar\widctlpar\adjustright \lang1046\cgrid {Quando falamos em desenvolvimento em 3 camadas, estamos nos referindo a um modelo de programa\'e7\'e3o que prev\'ea a divis\'e3
+o do programa em 3 partes bem definidas e distintas: interface, regras de neg\'f3cio e banco dos dados.
+\par Nossa primeira preocupa\'e7\'e3o quando estamos desenvolvendo com essa vis\'e3o deve ser uma preocupa\'e7\'e3o constante com a express\'e3o \ldblquote bem definidas e distintas\rdblquote . A divis\'e3o e n\'e3o intromiss\'e3o de uma camada na outra \'e9
+ a pedra fundamental desse modelo.
+\par }{\i Apesar de v\'e1rios autores usarem outras express\'f5es tais como \ldblquote n-camadas\rdblquote  e \ldblquote multi-camadas\rdblquote , prefiro a express\'e3o 3 camadas, por estarmos nos referindo \'e0s camadas l\'f3gicas da aplica\'e7\'e3
+o. Podemos de fato subdividir as camadas l\'f3gicas em n camadas f\'edsicas, no entanto considero isso quase sempre irrelevante a n\'edvel de  projeto de programa.
+\par }\pard\plain \s1\sa240\keepn\nowidctlpar\widctlpar\outlinelevel0\adjustright \b\lang1046\cgrid {A interface com o usu\'e1rio
+\par }\pard\plain \s15\sa240\nowidctlpar\widctlpar\adjustright \lang1046\cgrid {A primeira regra na constru\'e7\'e3o da interface deve ser a economia e simplicidade de c\'f3digo. A necessidade de manuten\'e7\'e3o de um programa \'e9 diretamente proporcional 
+\'e0 sua complexidade, portanto devemos sempre nos preocupar em desenvolver interfaces simples e est\'e1veis, j\'e1 que essa \'e9 a parte do programa que deve ser distribu\'edda para os usu\'e1rios. Essa camada tamb\'e9m \'e9 conhecida como camada }{\b 
+cliente}{.
+\par }{\i S\'f3 para lembrar: essa camada n\'e3o necessita do BDE/SQL Links, facilitando muito o processo de instala\'e7\'e3o.
+\par }\pard\plain \s1\sa240\keepn\nowidctlpar\widctlpar\outlinelevel0\adjustright \b\lang1046\cgrid {Regras de neg\'f3cio
+\par }\pard\plain \s15\sa240\nowidctlpar\widctlpar\adjustright \lang1046\cgrid {Essa camda tem a fun\'e7\'e3o de }{\b servir}{ a camada cliente, executando processos em fun\'e7\'e3o de suas requisi\'e7\'f5es. A \ldblquote intelig\'eancia\rdblquote 
+ do sistema deve se concentrar nessa camada, sendo que todo e qualquer acesso aos dados deve ser feito por essa camada. 
+\par }\pard\plain \s1\sa240\keepn\nowidctlpar\widctlpar\outlinelevel0\adjustright \b\lang1046\cgrid {Banco de dados
+\par }\pard\plain \s15\sa240\nowidctlpar\widctlpar\adjustright \lang1046\cgrid {Dentro da filosofia de desenvolvimento 3 camadas, deve-se utilizar o banco de dados como um reposit\'f3rio, evitando-se a utiliza\'e7\'e3o de }{\i triggers}{ e }{\i 
+stored procedures}{ com o objetivo de evitar a dispers\'e3o do c\'f3digo das regras e aumentar a portabilidade. Alguns projetistas chegam a evitar completamente a utiliza\'e7\'e3o de constraints no banco, conseguindo um alto grau de portabilidade.
+\par }\pard\plain \s1\sa240\keepn\nowidctlpar\widctlpar\outlinelevel0\adjustright \b\lang1046\cgrid {MIDAS
+\par }\pard\plain \s15\sa240\nowidctlpar\widctlpar\adjustright \lang1046\cgrid {No ambiente do Delphi, o MIDAS ( ? ) \'e9 o que \ldblquote cola\rdblquote  as partes, possibilitando a comunica\'e7\'e3
+o entre elas. Assim como tudo no Delphi, o MIDAS foi feito com o cuidado de encapsular os detalhes, deixando o programador se preocupar com quest\'f5es mais relevantes para o desenvolvimento da aplica\'e7\'e3o. O MIDAS est\'e1 pr
+esente no lado cliente (interface) nos componentes de conex\'e3o (TDCOMConnection, TsocketConnection, etc), e no lado servidor (regras de neg\'f3cio)  exercendo o papel de mediador entre a aplica\'e7\'e3
+o e o meio de transporte dos dados. Uma das grandes vantagens do MIDAS \'e9 que o desenvolvimento da aplica\'e7\'e3o \'e9 totalmente independente do tranporte, podendo inclusive mudar de transporte sem (ou quase sem) altera\'e7\'f5es no c\'f3digo fonte.
+
+\par }\pard\plain \s1\sa240\keepn\nowidctlpar\widctlpar\outlinelevel0\adjustright \b\lang1046\cgrid {Transporte dos dados
+\par }\pard\plain \s15\sa240\nowidctlpar\widctlpar\adjustright \lang1046\cgrid {O transporte dos dados entre as camadas pode ser feito por um entre v\'e1
+rios mecanismos, cada um com suas vantagens e desvantagens. O MIDAS pode ser usado com os seguintes mecanismos: COM/DCOM, CORBA, OleEnterprise e Socket.
+\par {\pntext\pard\plain\s15 \f3\cgrid \loch\af3\dbch\af0\hich\f3 \'a8\tab}}\pard \s15\fi-360\li360\sa240\nowidctlpar\widctlpar\jclisttab\tx360{\*\pn \pnlvlblt\ilvl0\ls3\pnrnot0\pnf3\pnstart1\pnindent360\pnhang{\pntxtb \'a8}}\ls3\adjustright {COM/DCOM \endash 
+ O COM (Component Object Model) e o DCOM (Distributed COM) s\'e3o os mecanismos desenvolvidos pela Microsoft para o ambiente Windows. A diferen\'e7a entre eles \'e9 que o COM \'e9 o padr\'e3o de comunica\'e7\'e3o entre processos rodando na mesma m\'e1
+quina, enquanto que o DCOM permite a comunica\'e7\'e3o entre programas que est\'e3o sendo executados em m\'e1quinas distintas. De fato o MIDAS faz uso de v\'e1rias caracter\'edsticas do COM, mesmo quando usando outros m\'e9todos. O DCOM \'e9
+ nativo no ambientes Windows NT/98, enquanto que alguns arquivos adicionais s\'e3o necess\'e1rios para sua utiliza\'e7\'e3o no Windows 95.
+\par }\pard \s15\sa240\nowidctlpar\widctlpar{\*\pn \pnlvlcont\ilvl0\ls0\pnrnot0\pndec }\adjustright {\i O COM \'e9 base de toda a implementa\'e7\'e3o de ActiveX encontrada no ambiente Windows, e \'e9 basicamente o mesmo do OLE 1, presente no Windows 3.1.
+
+\par {\pntext\pard\plain\s15 \f3\cgrid \loch\af3\dbch\af0\hich\f3 \'a8\tab}}\pard \s15\fi-360\li360\sa240\nowidctlpar\widctlpar\jclisttab\tx360{\*\pn \pnlvlblt\ilvl0\ls3\pnrnot0\pnf3\pnstart1\pnindent360\pnhang{\pntxtb \'a8}}\ls3\adjustright {CORBA \endash 
+ Mais que um mecanismo o CORBA (Common Object Request Broker Arquiteture) \'e9 um padr\'e3o desenvolvido pelo (?????) para comunica\'e7\'e3o entre processos. Atualmente \'e9 o mecanismo mais maduro e completo, e sua principal implementa\'e7\'e3o \'e9
+ o Visibroker, que acompanha o Delphi nas vers\'f5es Client/Server e Enterprise. \'c9 um mecanismo altamente escal\'e1vel, indicado para ambientes de m\'e9dio e grande porte.
+\par {\pntext\pard\plain\s15 \f3\cgrid \loch\af3\dbch\af0\hich\f3 \'a8\tab}}\pard \s15\fi-360\li360\sa240\nowidctlpar\widctlpar\jclisttab\tx360{\*\pn \pnlvlblt\ilvl0\ls3\pnrnot0\pnf3\pnstart1\pnindent360\pnhang{\pntxtb \'a8}}\ls3\adjustright {OleEnterprise 
+\endash  Apesar de ainda ser suportado, aparentemente o OleEnterprise est\'e1 fadado a n\'e3o ser usado. Foi desenvolvido pela (???) e \'e9 baseado no COM.
+\par {\pntext\pard\plain\s15 \f3\lang1024\cgrid \loch\af3\dbch\af0\hich\f3 \'a8\tab}}\pard \s15\fi-360\li360\sa240\nowidctlpar\widctlpar\jclisttab\tx360{\*\pn \pnlvlblt\ilvl0\ls3\pnrnot0\pnf3\pnstart1\pnindent360\pnhang{\pntxtb \'a8}}\ls3\adjustright {
+\lang1024 {\shpgrp{\*\shpinst\shpleft287\shptop1249\shpright8097\shpbottom2669\shpfhdr0\shpbxcolumn\shpbypara\shpwr1\shpwrk0\shpfblwtxt0\shpz0\shplid1026{\sp{\sn groupLeft}{\sv 1988}}{\sp{\sn groupTop}{\sv 5112}}{\sp{\sn groupRight}{\sv 9798}}
+{\sp{\sn groupBottom}{\sv 6532}}{\sp{\sn fFlipH}{\sv 0}}{\sp{\sn fFlipV}{\sv 0}}{\sp{\sn lidRegroup}{\sv 0}}{\shp{\*\shpinst\shplid1027{\sp{\sn relLeft}{\sv 1988}}{\sp{\sn relTop}{\sv 5112}}{\sp{\sn relRight}{\sv 3428}}{\sp{\sn relBottom}{\sv 5680}}
+{\sp{\sn fRelFlipH}{\sv 0}}{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 1}}{\sp{\sn lTxid}{\sv 65536}}{\shptxt \pard\plain \s18\qc\nowidctlpar\widctlpar\adjustright \fs20\lang1046\cgrid {Interface com o Usu\'e1rio
+\par }}}}{\shp{\*\shpinst\shplid1028{\sp{\sn relLeft}{\sv 1988}}{\sp{\sn relTop}{\sv 5680}}{\sp{\sn relRight}{\sv 3428}}{\sp{\sn relBottom}{\sv 6106}}{\sp{\sn fRelFlipH}{\sv 0}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 1}}{\sp{\sn lTxid}{\sv 131072}}{\shptxt \pard\plain \qc\nowidctlpar\widctlpar\adjustright \fs20\lang1046\cgrid {MIDAS
+\par }}}}{\shp{\*\shpinst\shplid1029{\sp{\sn relLeft}{\sv 1988}}{\sp{\sn relTop}{\sv 6106}}{\sp{\sn relRight}{\sv 3428}}{\sp{\sn relBottom}{\sv 6532}}{\sp{\sn fRelFlipH}{\sv 0}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 1}}{\sp{\sn lTxid}{\sv 196608}}{\shptxt \pard\plain \qc\nowidctlpar\widctlpar\adjustright \fs20\lang1046\cgrid {Transporte
+\par }}}}{\shp{\*\shpinst\shplid1030{\sp{\sn relLeft}{\sv 4686}}{\sp{\sn relTop}{\sv 5112}}{\sp{\sn relRight}{\sv 7526}}{\sp{\sn relBottom}{\sv 5680}}{\sp{\sn fRelFlipH}{\sv 0}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 1}}{\sp{\sn lTxid}{\sv 262144}}{\shptxt \pard\plain \qc\nowidctlpar\widctlpar\adjustright \fs20\lang1046\cgrid {Regras de Neg\'f3cio
+\par }}}}{\shp{\*\shpinst\shplid1031{\sp{\sn relLeft}{\sv 4686}}{\sp{\sn relTop}{\sv 5680}}{\sp{\sn relRight}{\sv 5964}}{\sp{\sn relBottom}{\sv 6106}}{\sp{\sn fRelFlipH}{\sv 0}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 1}}{\sp{\sn lTxid}{\sv 327680}}{\shptxt \pard\plain \qc\nowidctlpar\widctlpar\adjustright \fs20\lang1046\cgrid {MIDAS
+\par }}}}{\shp{\*\shpinst\shplid1032{\sp{\sn relLeft}{\sv 4686}}{\sp{\sn relTop}{\sv 6106}}{\sp{\sn relRight}{\sv 5964}}{\sp{\sn relBottom}{\sv 6532}}{\sp{\sn fRelFlipH}{\sv 0}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 1}}{\sp{\sn lTxid}{\sv 393216}}{\shptxt \pard\plain \qc\nowidctlpar\widctlpar\adjustright \fs20\lang1046\cgrid {Transporte
+\par }}}}{\shp{\*\shpinst\shplid1033{\sp{\sn relLeft}{\sv 6248}}{\sp{\sn relTop}{\sv 5680}}{\sp{\sn relRight}{\sv 7526}}{\sp{\sn relBottom}{\sv 6106}}{\sp{\sn fRelFlipH}{\sv 0}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 1}}{\sp{\sn lTxid}{\sv 458752}}{\shptxt \pard\plain \qc\nowidctlpar\widctlpar\adjustright \fs20\lang1046\cgrid {BDE
+\par }}}}{\shp{\*\shpinst\shplid1034{\sp{\sn relLeft}{\sv 6248}}{\sp{\sn relTop}{\sv 6106}}{\sp{\sn relRight}{\sv 7526}}{\sp{\sn relBottom}{\sv 6532}}{\sp{\sn fRelFlipH}{\sv 0}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 1}}{\sp{\sn lTxid}{\sv 524288}}{\shptxt \pard\plain \qc\nowidctlpar\widctlpar\adjustright \fs20\lang1046\cgrid {Driver BD
+\par }}}}{\shp{\*\shpinst\shplid1035{\sp{\sn relLeft}{\sv 8520}}{\sp{\sn relTop}{\sv 5538}}{\sp{\sn relRight}{\sv 9798}}{\sp{\sn relBottom}{\sv 6498}}{\sp{\sn fRelFlipH}{\sv 0}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 132}}{\sp{\sn lTxid}{\sv 589824}}{\shptxt \pard\plain \s18\qc\nowidctlpar\widctlpar\adjustright \fs20\lang1046\cgrid {Banco de Dados
+\par }}}}{\shp{\*\shpinst\shplid1036{\sp{\sn relLeft}{\sv 3550}}{\sp{\sn relTop}{\sv 6248}}{\sp{\sn relRight}{\sv 4686}}{\sp{\sn relBottom}{\sv 6248}}{\sp{\sn fRelFlipH}{\sv 0}}{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 20}}{\sp{\sn shapePath}{\sv 4}}
+{\sp{\sn fFillOK}{\sv 0}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn lineEndArrowhead}{\sv 1}}{\sp{\sn fArrowheadsOK}{\sv 1}}}}{\shp{\*\shpinst\shplid1037{\sp{\sn relLeft}{\sv 3408}}{\sp{\sn relTop}{\sv 6390}}
+{\sp{\sn relRight}{\sv 4544}}{\sp{\sn relBottom}{\sv 6390}}{\sp{\sn fRelFlipH}{\sv 1}}{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 20}}{\sp{\sn shapePath}{\sv 4}}{\sp{\sn fFillOK}{\sv 0}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn lineEndArrowhead}{\sv 1}}
+{\sp{\sn fArrowheadsOK}{\sv 1}}}}{\shp{\*\shpinst\shplid1038{\sp{\sn relLeft}{\sv 7810}}{\sp{\sn relTop}{\sv 6106}}{\sp{\sn relRight}{\sv 8378}}{\sp{\sn relBottom}{\sv 6106}}{\sp{\sn fRelFlipH}{\sv 0}}
+{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 20}}{\sp{\sn shapePath}{\sv 4}}{\sp{\sn fFillOK}{\sv 0}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn lineEndArrowhead}{\sv 1}}{\sp{\sn fArrowheadsOK}{\sv 1}}}}
+{\shp{\*\shpinst\shplid1039{\sp{\sn relLeft}{\sv 7668}}{\sp{\sn relTop}{\sv 6248}}{\sp{\sn relRight}{\sv 8236}}{\sp{\sn relBottom}{\sv 6248}}{\sp{\sn fRelFlipH}{\sv 1}}{\sp{\sn fRelFlipV}{\sv 0}}{\sp{\sn shapeType}{\sv 20}}{\sp{\sn shapePath}{\sv 4}}
+{\sp{\sn fFillOK}{\sv 0}}{\sp{\sn fFilled}{\sv 0}}{\sp{\sn lineEndArrowhead}{\sv 1}}{\sp{\sn fArrowheadsOK}{\sv 1}}}}}{\shprslt{\*\do\dobxcolumn\dobypara\dodhgt8192\dppolygon\dppolycount4\dpptx0\dppty0\dpptx7810\dppty0\dpptx7810\dppty1420\dpptx0\dppty1420
+\dpx287\dpy1249\dpxsize7810\dpysize1420\dpfillfgcr255\dpfillfgcg255\dpfillfgcb255\dpfillbgcr255\dpfillbgcg255\dpfillbgcb255\dpfillpat1\dplinew15\dplinecor0\dplinecog0\dplinecob0}}}}{Socket \endash  A Inprise desenvolveu um mecanismo simples e muito pr\'e1
+tico ser usado com o Delphi, baseado no Winsock 2.0. Muito indicado para ambientes de pequeno e m\'e9dio porte.
+\par }\pard \s15\sa240\nowidctlpar\widctlpar\adjustright {Fig.1.1 \endash  Diagrama Geral da aplica\'e7\'e3o 3 camadas
+\par 
+\par 
+\par }}
