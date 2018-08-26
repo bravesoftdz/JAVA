@@ -1,0 +1,29 @@
+Pacote View
+
+Pacote Model
+
+Pacote Controller
+
+Pacote Persistencia
+	->Aqui vai as conexos com banco de dados e alteracoes da base de dados
+
+	
+	Criar um modelo como exemplo
+Cadastro de Cor como exemplo
+
+Alteracao Cadastro de Cor
+Criar as classes padrao de cada pacote
+
+
+Model:Ok-Rever-Precisa tirar o construct e setar os dados direto nas views
+
+
+
+
+
+
+
+
+
+
+
